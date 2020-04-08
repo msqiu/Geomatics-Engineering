@@ -82,14 +82,14 @@ $$
 
 ### interaction of waves with matter
 
-* general remarks
+#### general remarks
   * the energy of the EM wave is proportional to frequency: $E = h*f$, long wave MW have far less energy than visible light
   * interaction of EM wave with molecules分子
     * optical domain/ infrared (VIS, NIR-FIR): in particular sensitive to chemical object structure
     * thermal radiance TIR热辐射: localize natural and anthropogenic heat sources
     * microwave domain MW: sensitive to conductivity, roughness, morphology
 
-* diffraction
+#### diffraction
   * fan out of wave behind obstacles
   * huygens principle
     * every point on the wave front is source of new elementary wave
@@ -101,14 +101,14 @@ $$
     2. angular resolution: $∆θ=1,22*λ/D$, with λ the wave length of signal, and D the antenna size (the optical aperture).
     3. If we want to improve such resolution without changing signal wavelength, we can increase the size of optical aperture 光学孔径
 
-* absorption/emission
+#### absorption/emission
   * energy transfer from wave to matter
   * subtractive color by absorption: CMYK
   * penetration of EM waves into Matter 穿透
     1. penetration proportional to wavelength
     2. microwaves: dependence on moisture 水分
 
-* scattering
+#### scattering
   * change of EM direction at particles in the atmosphere(Molecules, water droplets)
   * the radiance becomes absorbed and is immediately emitted again
   * Energy and wavelength remain the same, direction may change
@@ -124,7 +124,7 @@ $$
     The Mie signal is proportional to the square of the particle diameter.  
     Mie scattering is much stronger than Rayleigh scattering and, therefore, a potential source of interference for this weaker light scattering process.
 
-* reflection and refraction
+#### reflection and refraction
   * Light = Elektro-magnetic Wave
     ![Electromagnetic waves](Electromagnetic_waves.png)  
   * at surface boundaries
