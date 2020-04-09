@@ -96,9 +96,9 @@ $$
     * wave front propagates by coherent superposition/ interference
   * Which physical effect determines angular resolution of an imaging sensor? How can we improve such resolution without changing signal wavelength?
   
-  ![diffraction](diffraction.jpg)
-    1. Diffraction effect determines the angular resolution of an imaging sensor, because the narrower the slit, the more wave will fan out.
-    2. angular resolution: $∆θ=1,22*λ/D$, with λ the wave length of signal, and D the antenna size (the optical aperture).
+  ![diffraction](diffraction.jpg)  
+    1. Diffraction effect determines the angular resolution of an imaging sensor, because the narrower the slit, the more wave will fan out.  
+    2. angular resolution: $∆θ=1,22*λ/D$, with λ the wave length of signal, and D the antenna size (the optical aperture).  
     3. If we want to improve such resolution without changing signal wavelength, we can increase the size of optical aperture 光学孔径
 
 #### absorption/emission
@@ -171,3 +171,56 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
 * the difference between spectral and radiometric resolutions
   * Spectral resolution is the number and width of spectral bands
   * Radiometric resolution tells how many grey values (depends on the number of bits) can be coded, this resolution against to the same spectral band
+
+## image processing
+### introduction
+* acquisition of object features in image
+  * information carrier - electromagnetic radiation of specific wave length​
+    * reflected radiation: sunlight, laser, radar impuls
+    * projected radiation: X-ray device, computer tomography
+    * remitted radiation: thermal radiation
+  * recorded data - EMR energy or a value proportional to EMR energy​
+  * sensor
+    * photographic film
+    * electric sensors
+    * radar: antenna and high frequency electronics
+  * result
+    * film
+    * CCD
+    * brightness
+    * prior to processing(and storage) analogue-digital(A/D)-conversion(digitisation) required
+* image after digitization
+  * sample: spatially discrete
+  * quantized: discrete in energy values
+  * image elements - pixel
+* topics of digital image processing
+  * input image - processing - output image
+  * correct errors during acquisition by calibration
+  * modify colour/grey values by scaling
+  * transform to co-register images
+  * eliminate errors by filtering
+  * segment structures
+  * code images and image sequences, storage
+
+### image acquisition - CCD and CMOS technology
+* inner photoelectric effect
+* linear CCD sensor
+  * sensor moves along track, image generated line by line
+  * no shutter required
+* CCD matrix sensor - interline transfer technique
+* spectral sensitivity, problem
+  * photo diodes are sensitive for entire visible spectral domain
+  * in order to take color images mostly filters are used
+    * remote sensing: multi and hyperspectral images
+    * displays lick screen or beamer
+      * only 3 colour: RGB
+      * color perception by additive color mixing
+* The spatial resolution of hyperspectral bands is often lower than the resolution of panchromatic band
+  * hyperspectral bands have narrow bands so that they receive less energy. The percent of noise gets higher. To solve this problem we have to enhance the Signal-to-noise ratio(SNR), for this purpose, we have to enlarge the size of the chip (pixel size). The chip can receive more energy. And because the size of the chip gets larger, the resolution of hyperspectral bands gets lower.
+  * For panchromatic bands, we merge the visible bands(RGB). The energy is enough to get the high SNR. So we can use smaller chips. So that the resolution is better.
+* HSV color model - cylinder coordinates systems
+  ![Hsl-hsv](Hsl-hsv.png)  
+  * Hue is the value index of color, one hue represents one color
+  * Saturation defines the level of color, describes how colorful one color is
+  * Value equals the lightness of the color, defines how light or how dark the color is
+* pan sharpening of optical satellite images take place in IHS space
