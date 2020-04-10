@@ -215,12 +215,88 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
     * displays lick screen or beamer
       * only 3 colour: RGB
       * color perception by additive color mixing
+
 * The spatial resolution of hyperspectral bands is often lower than the resolution of panchromatic band
   * hyperspectral bands have narrow bands so that they receive less energy. The percent of noise gets higher. To solve this problem we have to enhance the Signal-to-noise ratio(SNR), for this purpose, we have to enlarge the size of the chip (pixel size). The chip can receive more energy. And because the size of the chip gets larger, the resolution of hyperspectral bands gets lower.
   * For panchromatic bands, we merge the visible bands(RGB). The energy is enough to get the high SNR. So we can use smaller chips. So that the resolution is better.
+  
 * HSV color model - cylinder coordinates systems
   ![Hsl-hsv](Hsl-hsv.png)  
   * Hue is the value index of color, one hue represents one color
   * Saturation defines the level of color, describes how colorful one color is
   * Value equals the lightness of the color, defines how light or how dark the color is
+  
 * pan sharpening of optical satellite images take place in IHS space
+  ![pan sharpening](pansharpening.jpg)  
+  * Pan-sharpening is a process of merging high-resolution panchromatic and lower resolution multispectral imagery to create a single high-resolution color image.
+  * Pan-sharpening produces a high-resolution colour image from three, four or more low-resolution multispectral satellite bands plus a corresponding high-resolution panchromatic band:
+  * Low-res colour bands + High-res grayscale band = Hi-res colour image
+  * steps
+    1. oversample RGB channels to resolution of pan channel
+    2. transform RGB to IHS(Intensity, Hue, Saturation)
+    3. exchange I with pan channel(I')
+    4. transform I'HS to R'G'B' image(pan sharpened image)
+   * fuse geometry and color data
+
+* spectral sensiticity of CCD-sensor
+  * spectral response for CCD sensors in relation to photography and human eye(400-700nm, RGB)
+  * colour infromation only can be based on colour filters in front of CCD
+
+* separation of spectral bands(color)
+  * three layer ship: penetration depth depends on wavelength, 2 color sensitive layers vertically, expensive
+  * color mosaic(Bayer Pattern)
+    * single chip with color filters on pixels
+    * later interpolation to full image size
+      * lower real resolution
+      * green domaintes(brightness)
+      * cheap, mostly uesd for consumer grade cameras
+      * 2 green: human vision more sensitive to green real resolution
+  * color bands
+    * panchromatic 400-900nm
+    * blue 400-580nm
+    * green 500-650nm
+    * red 590-675nm
+    * near infrared 675-900nm
+  * how many combinations(TM)?
+    * combinatorics : draw k elements form set of n bands
+      $$\frac{n !}{(n-k) ! \cdot k !}$$
+      TM: n= 7, k= 3
+    * possible ways of visualization
+    $$\frac{n !}{(n-k) ! \cdot k !} \cdot k !=\frac{n !}{(n-k) !}, \text { here: } 35 \cdot 6=\underline{210}$$
+    remote sensing: 321/432
+
+* ground sampling distance(GSD): distance of pixel centers on ground
+* diffraction limits angular resolution
+  * the real or effective resolution may be worse than GSD
+  * on the other hand, there is no point in choosing GSD smaller than diffraction limit
+  * diffraction at circular aperture: distance d of 1. order minima: $d=2.44*r*λ/D$
+* resolution should match the desired application
+* for recognition of a certain object, we need a handfull pixel
+
+### characterisation of digital images
+* average grey value - the average of all grey values of an image describes the general brightness of image: $\mu=\frac{1}{X \cdot Y} \cdot \sum_{x} \sum_{y} g(x, y)$
+  * dark image <<127
+  * bright image >>127
+  * homogeneous image(average) 127
+* varaince $\sigma^{2}=\frac{1}{X \cdot Y-1} \cdot \sum_{x} \sum_{y}(g(x, y)-\mu)^{2}$
+  * global measure for grey valure deviation from $μ$
+  * related to the contrast $K$ of an image: $K=(g_{max}-g_{min})/(g_{max}+g_{min})$
+  * varience of a homogeneous grey value image of arbitrary brightness $σ^2 = 0$
+* covariance(similarity)
+* correlation coefficients(similarity)
+  * qualitative measure of similarity, no quatitative result due to lack of normalization
+  * correlation coefficient $ρ_{g_1 g_2}$ of two images $G_1$ and $G_2$: [-1,1]  
+    the ratio between covariance and product of standard deviations of both images
+    ![correlation](correlation.jpg)  
+* histogram
+  * average $μ$ and variance $σ^2$ only allow for rather general characterisation of an image
+  * histogtrams deliever more detailed information about the number of pixels with a certain gray value $g_i$
+  * relative grey value occurrences $p(g)=a(g)/n, [0,1]$
+  * histogram: visualisation
+    * a hisogram does not contain information about the sptial distribution of grey values in the image
+    * lose the geomatic information
+  * histogram stretch
+
+### point operations
+
+### geometric transformation
