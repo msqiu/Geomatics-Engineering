@@ -1,6 +1,8 @@
 Remote sensing
 ====
-copyright by: Zhouyan Qiu, msqiuzy@outlook.com
+Source: Prof. Dr.-Ing. Uwe Sörgel, Lecture Remote Sensing  
+https://www.ifp.uni-stuttgart.de/en/teaching/geoengine/remote_sensing/
+Outline: Zhouyan Qiu, msqiuzy@outlook.com
 
 ## Introduction
 
@@ -298,5 +300,101 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
   * histogram stretch
 
 ### point operations
+* homogeneous
+  * only original grey value influences results, position does not
+  * transformation using charcteristic curve - the change of gray values from g1 to g2
+    * inversion: $g_{2}(x, y)=-g_{1}(x, y)+255$
+    ![inversion](inversion.jpg)  
+    * lineal scaling: $g_{2}(x, y)=\left(g_{1}(x, y)+k_{2}\right) \cdot k_{1}$  
+    $k_{2}>0$ makes image brighter  
+    $k_{2}<0$ makes image darker$  
+    $k_{1}>1$ enhances contrast$  
+    $k_{1}<1$ reduces contrast$  
+    ![lineal scaling](linealscaling.jpg)  
+    problem: g2 can become smaller than 0 or larger than 255
+    * characteristic curves: piecewise linear scaling
+    ![characteristic curve](characteristiccurve.jpg) 
+    $g_{2}(x, y)=\left\{\begin{array}{cccc}
+0 & \text { if } & \left(g_{1}(x, y)+k_{2}\right) \cdot k_{1} \leq 0 & k_{1}=\frac{255}{g_{\max }-g_{\min }} \\
+\left(g_{1}(x, y)+k_{2}\right) \cdot k_{1} & & \\
+255 & \text { if } & \left.g_{1}(x, y)+k_{2}\right) \cdot k_{1} \geq 255 & k_{2}=-g_{\min }
+\end{array}\right.$
+      * enhancement of interesting region only
+      * also non-linear function e.g. gamma correction
+      * often coded in LUT
+  * histogram normalisation
+  * transformation using look-up tables
+  * algebraic transformations
+
+* inhomogeneous
+  * local filter operations: a mixture of both
+    * neighbourhood around current pixel is considered
+    * neighbourhood is defined via a window(filter mask)
+    * filter mask is continuously moved across the image
+  * linear filtering
+    * lineal digital filters h(x,y) carry out convolution operations on the image g(x,y) - convolution with $3 \times 3$ - filter
+    $$g^{\prime}(x, y)=g(x, y) * h(x, y)=\sum_{i=-1}^{i=1} \sum_{j=-1}^{j=1} g(x+i, y+j) \cdot h(-i,-j)$$
+      use of local filters: smoothing, enhancement of specific features
+  * low pass filter - smoothing
+    * Different position - different opeators
+    * Homogeneouspoint operator - global calculation - take all the grey values intoconsideration
+    * Inhomogeneouspoint operator - only consider the local part - depends on original grey value and position in image - low pass filter
+    * reduce high frequency information
+      * visiual imprression becomes softer
+      * edges are smoothed
+      * details and noise are reduced
+      * no effect in homogeneous areas
+      * overall brightness constant
+    * box operator: $\frac{1}{9}\left[\begin{array}{lll}1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1\end{array}\right]$
+      * Disadvantage: not rotation invariant, does not suppress all high frequencies
+      * Advantage: recursive implementation possible
+    * gauss operator
+      * stay same in both domains
+      * Advantage: rotation invariant, suppresses all high frequencies
+      * Disadvantage: only approx. recursive implementation - binomial filter
+    * binomial filter: $b_{2,2}=\frac{1}{16}\left[\begin{array}{lll}1 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 1\end{array}\right]$
+      * discrete approximation of gauss filter, recursive implementation possible
+      * 2D-Filter: separable in two 1D functions
+  * High pass filters - edge detection
+    * prewitt-operator
+      * simple realization: $h_x=0.5*[-1\quad 0\quad  1], h_y=0.5*[-1\quad 0\quad  1]'$
+      * differencing enhances noise - noise suppression by low pass filtering(smoothing) in across direction
+      ![prewitt](prewitt.jpg) 
+      * filtering in both directions
+      * amplitude and direction of gradient
+      $$g_{MAG}=sqrt(g_x^2+g_y^2)\\g_{DIR}=arctan(g_y/g_x)$$
+    * laplacian operatoer - image sharpening
+      * use superposition principle of linear filters
+      * image sharpened by adding high-pass component from Laplacian
+      ![Laplacian](Laplacian.jpg) 
 
 ### geometric transformation
+* spatial transformation using a mathematical function
+  * simple geometric transformations  
+  translation: $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{l}x_{1} \\ y_{1}\end{array}\right)+\left(\begin{array}{l}d x \\ d y\end{array}\right)$
+2 degrees of freedom $\left(\mathrm{d}_{\mathrm{x}}, \mathrm{d}_{\mathrm{y}}\right)$  
+scaling:
+$\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{ll}s_{x} & 0 \\ 0 & s_{y}\end{array}\right) \cdot\left(\begin{array}{l}x_{1} \\ y_{1}\end{array}\right)$
+2 degrees of freedom $\left(s_{x}, s_{y}\right)$  
+skew:$\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{ll}1 & b_{x} \\ b_{y} & 1\end{array}\right) \cdot\left(\begin{array}{l}x_{1} \\ y_{1}\end{array}\right) \quad 2$ degrees of freedom $\left(b_{x}, b_{y}\right)$  
+rotation:
+$\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\cos \alpha & \sin \alpha \\ -\sin \alpha & \cos \alpha\end{array}\right) \cdot\left(\begin{array}{l}x_{1} \\ y_{1}\end{array}\right)$
+1 dof. $(\alpha)$
+  * further sptial transformations
+  ![sptial](sptial.jpg) 
+* grey value determination
+  * general spatial transformation results in the change from integer to non-integer positions
+  * indirect method
+    * compute inverse transformation T-1
+    * determine grey valued for each position in target image - no holes
+  * nearest neighbour interpolation
+  * bilinear interpolation - two dimensions
+  * Bicubic interpolation: The new grey value is interpolated from the neighbouring 16 values
+
+## Optical Satellite sensors
+
+## Classification
+
+## airborne laser scanning
+
+## radar
