@@ -1,7 +1,7 @@
 Remote sensing
 ====
 Source: Prof. Dr.-Ing. Uwe Sörgel, Lecture Remote Sensing  
-https://www.ifp.uni-stuttgart.de/en/teaching/geoengine/remote_sensing/
+https://www.ifp.uni-stuttgart.de/en/teaching/geoengine/remote_sensing/  
 Outline: Zhouyan Qiu, msqiuzy@outlook.com
 
 ## Introduction
@@ -155,7 +155,7 @@ $$
     ![brewster](BrewsterAngle.jpg)  
     * BRDF (Bidirectional Reflectivity Distribution Function): $R(Θ,Φ,θ,φ)$
     * influence of surface roughness
-    ![Roughness Criterion](RoughnessCriterion.png)  
+    ![Roughness Criterion](roughnesscriterion.png)  
       * rough surface - Diffuse reflection is the reflection of light or other waves or particles from a surface such that a ray incident on the surface is scattered at many angles rather than at just one angle as in the case of specular reflection.
       * smooth surface - specular reflection
       * Roughness Criterion: 
@@ -303,7 +303,7 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
 * homogeneous
   * only original grey value influences results, position does not
   * transformation using charcteristic curve - the change of gray values from g1 to g2
-    * inversion: $g_{2}(x, y)=-g_{1}(x, y)+255$
+    * inversion: $g_{2}(x, y)=-g_{1}(x, y)+255$  
     ![inversion](inversion.jpg)  
     * lineal scaling: $g_{2}(x, y)=\left(g_{1}(x, y)+k_{2}\right) \cdot k_{1}$  
     $k_{2}>0$ makes image brighter  
@@ -312,8 +312,8 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
     $k_{1}<1$ reduces contrast$  
     ![lineal scaling](linealscaling.jpg)  
     problem: g2 can become smaller than 0 or larger than 255
-    * characteristic curves: piecewise linear scaling
-    ![characteristic curve](characteristiccurve.jpg) 
+    * characteristic curves: piecewise linear scaling  
+    ![characteristic curve](characteristiccurve.jpg)  
     $g_{2}(x, y)=\left\{\begin{array}{cccc}
 0 & \text { if } & \left(g_{1}(x, y)+k_{2}\right) \cdot k_{1} \leq 0 & k_{1}=\frac{255}{g_{\max }-g_{\min }} \\
 \left(g_{1}(x, y)+k_{2}\right) \cdot k_{1} & & \\
@@ -366,7 +366,7 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
     * laplacian operatoer - image sharpening
       * use superposition principle of linear filters
       * image sharpened by adding high-pass component from Laplacian
-      ![Laplacian](Laplacian.jpg) 
+      ![Laplacian](laplacian.jpg) 
 
 ### geometric transformation
 * spatial transformation using a mathematical function
@@ -380,7 +380,7 @@ skew:$\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}
 rotation:
 $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\cos \alpha & \sin \alpha \\ -\sin \alpha & \cos \alpha\end{array}\right) \cdot\left(\begin{array}{l}x_{1} \\ y_{1}\end{array}\right)$
 1 dof. $(\alpha)$
-  * further sptial transformations
+  * further sptial transformations  
   ![sptial](sptial.jpg) 
 * grey value determination
   * general spatial transformation results in the change from integer to non-integer positions
@@ -392,6 +392,27 @@ $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\
   * Bicubic interpolation: The new grey value is interpolated from the neighbouring 16 values
 
 ## Optical Satellite sensors
+* motivation: mapping from space
+  * terrestrial and airborne mapping cannot deliver information necessary for sustainable development on global scale
+  * monitoring of climate change
+  * rapid hazard response
+  * large scale mapping
+* some technical issues
+  * geostationary satellites - orbit in 36000km altitude
+  * sun-synchronous orbit
+    * revolution takes about 90-100 minutes in 500-900km altitude
+    * inclination about 98° with respect to equator
+    * Step by step the entire globe is mapped (except poles)
+    * Pass over always at same local time (optical: acquire only images on dayside)
+  * image acquisition in the morning: data take approximately at half past 10 a.m.(equator)
+    * earlier: shadows too large
+    * later: too many clouds due to evaporation
+  * data broadcasted to ground stations
+  * direct sensor orientation: gyros (for determination of attitude change), star sensors and positioning system 
+  * opto-mechanical sensor (Whiskbroom Scanner)
+  ![Whiskbroom](whiskbroom.jpg)
+  * Linear CCD Array (push broom scanner)
+  ![pushbroom](pushbroom.jpg)
 
 ## Classification
 
