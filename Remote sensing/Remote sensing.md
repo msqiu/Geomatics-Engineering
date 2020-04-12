@@ -410,17 +410,17 @@ $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\
   * later: too many clouds due to evaporation
 * data broadcasted to ground stations
 * direct sensor orientation: gyros (for determination of attitude change), star sensors and positioning system 
-* opto-mechanical sensor (Whiskbroom Scanner/Cross-track scanner, back and forth)
+* opto-mechanical sensor (Whiskbroom Scanner/Cross-track scanner, back and forth)  
 ![Whiskbroom](whiskbroom.jpg)
-* Linear CCD Array (push broom scanner/along-track scanner)
+* Linear CCD Array (push broom scanner/along-track scanner)  
 ![pushbroom](pushbroom.jpg)
 * pixel size on the ground $p = δ * H/c$: Ground samping distance - usually nadir view
-  $$\frac{p}{H}=\frac{\delta}{c} \rightarrow p=\frac{\delta \cdot H}{c}$$
+  $$\frac{p}{H}=\frac{\delta}{c} \rightarrow p=\frac{\delta \cdot H}{c}$$  
   ![Ground samping distance](gsd.jpg)
   * size of sensor elements $δ$
   * focal length of sensor $c$
   * altitude $H$
-* TDI sensor: time delay and integration sensor
+* TDI sensor: time delay and integration sensor  
   ![TDI sensor](tdi.jpg)
   * 1m pixel size corresponds to 0.14 ms (~7km/s)
   * longer integration time by shift of charge corresponding to speed of image movement on sensor
@@ -443,7 +443,7 @@ $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\
   * celestial mechanics
   * ordering restrictions - one sensor for many users
 
-### indices NDVI: $\mathrm{NDVI}=\frac{\mathrm{NIR} \cdot \mathrm{Red}}{\mathrm{NIR}+\mathrm{Red}}$
+### indices NDVI: $\mathrm{NDVI}=\frac{\mathrm{NIR} \cdot \mathrm{Red}}{\mathrm{NIR}+\mathrm{Red}}$  
 ![NDVI](ndvi.jpg)
 * advantage of index(Ratio)
 due to different illumination, the same land cover has different grey values in band A, same problem for band B. However, in the ratio image of the two bands, i.e. band A/band B, we have similar grey values for each class.
@@ -452,12 +452,54 @@ band 4 near infared, band 3 red
 NDVI=-1: black, NDVI= 1: white  
 a larger NDVI value indicates higher vitality
 
-### hyperspectral sensors
+### hyperspectral sensors  
 ![hyperspectral sensors](hyperspectral.jpg)
 
 ### depth from stereo: two images requied of sufficient: overlap, baseline
 
 ## Classification
+### introduction
+* motivation: derive map from Remote sensing image
+* land cover and land use
+  * classification gives LAND cover
+  * many users are more interested in how the terrain is being used: land use - high resolution image
+  * example
+    * grass is land cover
+    * pasture and recreational parks are land use of grass
+  * land use extraction requires e.g. context
+* enlarging the dimension of feature space
+  * dimension of feature space space must not get too large
+  * a pixel of a multi-spectral image is one dimension of the feature
+  * the choice of features is crucial for classification performance: usually model knowledge required!
+* problem: too many features
+  * price and pay
+  * sometimes only a few of those dimensions important
+  * irrelevant dimensions might be misleading
+* from images to features
+  * separate different materials by different spectral response
+  * number n of bands gives feature space
+* feature space: multi-dimensional coordinate system
+* land classification
+  * aims to label each pixel in a scene to spectific land cover types
+  * pixels can then be either correctly classified, incorrectly classified, or unclassified
+  * two main types
+    * unsupervised classificaion
+    * supervised classification
+
+### unsupervised classification
+* not a prior knowledge assumed about data  
+* tries to spectrally separate the pixels  
+* users has control over: number of classes, number of iterations, convergence thresholds
+* example spectral plot  
+  ![example spectral plot](egus.jpg)
+  * two bands of data
+  * each pixel marks a location in this 2d spectral space
+  * our eyes can spite the data into clusters
+  * some points do not fit to clusters
+
+### supervised classification
+
+### quantify classification performance
 
 ## airborne laser scanning
 
