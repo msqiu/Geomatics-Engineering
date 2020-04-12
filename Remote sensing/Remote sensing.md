@@ -392,27 +392,70 @@ $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\
   * Bicubic interpolation: The new grey value is interpolated from the neighbouring 16 values
 
 ## Optical Satellite sensors
-* motivation: mapping from space
-  * terrestrial and airborne mapping cannot deliver information necessary for sustainable development on global scale
-  * monitoring of climate change
-  * rapid hazard response
-  * large scale mapping
-* some technical issues
-  * geostationary satellites - orbit in 36000km altitude
-  * sun-synchronous orbit
-    * revolution takes about 90-100 minutes in 500-900km altitude
-    * inclination about 98° with respect to equator
-    * Step by step the entire globe is mapped (except poles)
-    * Pass over always at same local time (optical: acquire only images on dayside)
-  * image acquisition in the morning: data take approximately at half past 10 a.m.(equator)
-    * earlier: shadows too large
-    * later: too many clouds due to evaporation
-  * data broadcasted to ground stations
-  * direct sensor orientation: gyros (for determination of attitude change), star sensors and positioning system 
-  * opto-mechanical sensor (Whiskbroom Scanner)
-  ![Whiskbroom](whiskbroom.jpg)
-  * Linear CCD Array (push broom scanner)
-  ![pushbroom](pushbroom.jpg)
+### motivation: mapping from space
+* terrestrial and airborne mapping cannot deliver information necessary for sustainable development on global scale
+* monitoring of climate change
+* rapid hazard response
+* large scale mapping
+  
+### some technical issues
+* geostationary satellites - orbit in 36000km altitude
+* sun-synchronous orbit
+  * revolution takes about 90-100 minutes in 500-900km altitude
+  * inclination about 98° with respect to equator
+  * Step by step the entire globe is mapped (except poles)
+  * Pass over always at same local time (optical: acquire only images on dayside)
+* image acquisition in the morning: data take approximately at half past 10 a.m.(equator)
+  * earlier: shadows too large
+  * later: too many clouds due to evaporation
+* data broadcasted to ground stations
+* direct sensor orientation: gyros (for determination of attitude change), star sensors and positioning system 
+* opto-mechanical sensor (Whiskbroom Scanner/Cross-track scanner, back and forth)
+![Whiskbroom](whiskbroom.jpg)
+* Linear CCD Array (push broom scanner/along-track scanner)
+![pushbroom](pushbroom.jpg)
+* pixel size on the ground $p = δ * H/c$: Ground samping distance - usually nadir view
+  $$\frac{p}{H}=\frac{\delta}{c} \rightarrow p=\frac{\delta \cdot H}{c}$$
+  ![Ground samping distance](gsd.jpg)
+  * size of sensor elements $δ$
+  * focal length of sensor $c$
+  * altitude $H$
+* TDI sensor: time delay and integration sensor
+  ![TDI sensor](tdi.jpg)
+  * 1m pixel size corresponds to 0.14 ms (~7km/s)
+  * longer integration time by shift of charge corresponding to speed of image movement on sensor
+* sensor geometry: focal plane, merged image line
+* correction of earth's rotation effects: fill in pixels are critical for classification, use only for visualization
+* orthophoto: correction of perspective effects
+  * Digital Terrain model: comon orthophoto
+  * digital surface model: true orthophoto
+
+### multispectral satellite sensors
+* optical high resolution satellite sensors
+  * use linear CCDs and are on sun-synchronous near-polar orbits
+  * most multispectral systems have 4 channels (RGB, near IR)
+  * accuracy on the ground depends on available additionnal information(GCP, DTM) - Geo-coding
+  * product specifications and availability varies, in particular: camera model, raw imagery, stereo imagery
+  * prices quotas vary with location, time to delivery and size
+  * value-added products(orthoimages)
+* space imagery can be obtained only at regular intervals
+* cannot be obtained on demand in real-time
+  * celestial mechanics
+  * ordering restrictions - one sensor for many users
+
+### indices NDVI: $\mathrm{NDVI}=\frac{\mathrm{NIR} \cdot \mathrm{Red}}{\mathrm{NIR}+\mathrm{Red}}$
+![NDVI](ndvi.jpg)
+* advantage of index(Ratio)
+due to different illumination, the same land cover has different grey values in band A, same problem for band B. However, in the ratio image of the two bands, i.e. band A/band B, we have similar grey values for each class.
+* normalized difference Vagetationindex(NDVI) = $(Band 4 - band3)/ (Band 4 + band3), [-1, +1]$  
+band 4 near infared, band 3 red  
+NDVI=-1: black, NDVI= 1: white  
+a larger NDVI value indicates higher vitality
+
+### hyperspectral sensors
+![hyperspectral sensors](hyperspectral.jpg)
+
+### depth from stereo: two images requied of sufficient: overlap, baseline
 
 ## Classification
 
