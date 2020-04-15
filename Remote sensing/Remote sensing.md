@@ -496,8 +496,46 @@ a larger NDVI value indicates higher vitality
   * each pixel marks a location in this 2d spectral space
   * our eyes can spite the data into clusters
   * some points do not fit to clusters
+* k-means
+  1. a set of number k of cluster centres are positioned randomly through the spectral space
+  2. pixels are assigned to theire nearest cluster
+  3. the mean location and variance(shape) are re-calculated for each cluster
+  4. repeat 2 and 3 until movement of cluster centres is below threshold
+  5. assigh class types to spectral clusters
+* isodata: extends k-means but also consider shape(standard deviation) of clusters
+  * steps
+    1. a set of number k of cluster centres are positioned randomly through the spectral space
+    2. pixels are assigned to theire nearest cluster
+    3. the mean location and variance(shape) are re-calculated for each cluster
+    4. combine clusters if centres are close
+    5. split clusters with large standard deviation in any dimension
+    6. delete clusters that are too small
+    7. reclassify each pixel and repear
+    8. stop after max iterations or at convergence limit
+    9. assign class types to spectral clusters
+  * application
+    * unsupervised classification can often produce information that is not obvious to visual inspection
+    * very useful where 'ground truth' data is difficult to obtain
+    * results may not coincide with desired land cover classes
+    * useful to trigger subsequent supervised classification
 
 ### supervised classification
+2 ways to get the ground truth: ground truth, empirical identification
+* principle of selecting training areas
+  * homogeneous areas
+  * several areas per class
+  * areas well distributed across the scene
+* minimum distance classifier
+  * calculates mean of the specteral values for the training set for each class
+  * measures the distance from a pixel of unknown class to the mean of each class
+  * assigns the pixel to the class with the shorest distance
+  * assigns a pixel as unknown if the pixel is bayond the distance defind by the analyst(optional)
+* hierarchical decision tree
+  * according to threshold the data are divided step by step
+  * the thresholds are either set manually or derived by training
+  * however, the same data can be separated in many ways
+  * subjective, tendency to overfitting
+  * problem: limited solution to too closed data
 
 ### quantify classification performance
 
