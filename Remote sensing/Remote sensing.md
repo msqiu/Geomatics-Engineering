@@ -536,8 +536,92 @@ a larger NDVI value indicates higher vitality
   * however, the same data can be separated in many ways
   * subjective, tendency to overfitting
   * problem: limited solution to too closed data
+* bayesian classification
+  * generative approach
+    * the posterior probability $p(C|x)$ is maximized
+    * posterior $p(C|x)$ is modelled indireclyaccording to the therom of Bayes
+    * requires a model of the joint distribution $p(C, x)$ of the data x and the class label C
+    * possible to generate synthetic data sets by sampling from the joint distribution
+  * strong theoretical foundation: if the required distribution are known, Bayesian classification will deliver the result with the lowest proportion of classification errors!
+  * recap: probabilities  
+    the joint probability: $\frac{|A, B|}{|\Omega|}=P(A, B)$  
+    the conditional probability: $P(B | A)=\frac{P(A, B)}{P(A)}$   
+
+  **Derivation**: 
+  joint distribution $p(x, C)$ of data $x(A)$ and classes $C(B)$: $p(x, C) =  p(C|x)*p(x)$  
+  likewise, $p(C, x) = p(x|C)*p(C)$  
+  due to $p(C|x)=p(x|C)$  
+  $p(C|x)*p(x)=p(x|C)*p(C)$  
+  **Therefore, theory of Bayestheory of Bayes:** $p(C | \mathbf{x})=\frac{p(\mathbf{x} | C) \cdot p(C)}{p(\mathbf{x})}$   
+  **the theorem of Bayes allows inverse reasoning derive information about the cause(the object type) from the effect(the observed features)**
+  * $p(C)$: prior probability - corresponds to knowledge(bias) for the occurrence C
+    * if no information is available: uniform fistribution, all classes have same probability, maximum-likelihood
+    * p(C) can be determined iteratively
+      * classification under th eassumption of a uniform distribution of the occurrence of the indicidual classes
+      * determination of $p(C)$ from the relative frequences of occurrence of the individual classes $C^*$
+      * classicification according to the theroem of bayes
+  * $p(x|C)$: likelihood
+    * probability to observe x if it is known to belonging to class C
+    * **the likelihood is no probability density function of the classes C**
+    * for each class $C^*$ there is a model for $p(x|C=C^*)$, which describes the distribution of the feature for the classes
+    * detemination from data in training areas
+    * non-parametric Models: direct determination of $p(x|C)$ from the training data
+    * Parametric Models: based on the assumption of an analytical model for $p(x|C)$, whose parameters are estimated from the training data
+  * $p(x)$: probability of the data(also called evidence)
+    * equal for all values of C because it does not depend on C -  MAP can also be applied without knowing p(x)   $max(p(C|x))=max(p(x|C)*p(C))$
+    * $p(x)$ ensure that $p(C|x)$ can be interpreted as a probability and can be used as such in further probabilistic process
+    * p(x) can be determined as the marginal distribution of p(x,C)
+    * compute P(x) using the law of total probability:
+    $$\begin{aligned}
+    &P(B)=\sum_{j} P\left(B | A_{j}\right) P\left(A_{j}\right)\\
+    &\Rightarrow P\left(A_{i} | B\right)=\frac{P\left(B | A_{i}\right) P\left(A_{i}\right)}{\sum_{j} P\left(B | A_{j}\right) P\left(A_{j}\right)}\\
+    &P(A | B)=\frac{P(B | A) P(A)}{P(B | A) P(A)+P(B | \neg A) P(\neg A)}
+    \end{aligned}$$
+  * Examples  
+  It is known that from 100000 people 20 suffer from a certain severe illness:$p(K=i l l)=0.0002, p(\bar{K}=\text {healthy})=0.9998$  
+  It exists a screening method for this disease:  
+  Sensitivity of the tests: $95 \%$ of all ill persons are detected $(T=1)$ : $p(T | K)=0.95, p(\bar{T} | K)=0.05$  
+  Unfortunately, the test delivers false positive result for $1 \%$ of healthy persons: $p(T | \bar{K})=0.01, p(\bar{T} | \bar{K})=0.99$  
+  We may be interested in the portion of ill persons in the set of all persons with positive test results:  
+  $P(K | T)=\frac{P(T | K) P(K)}{P(T | K) P(K)+P\left(T | K^{c}\right) P\left(K^{c}\right)}=\frac{0,95 \cdot 0,0002}{0,95 \cdot 0,0002+0,01 \cdot 0,9998} \approx 0,0186$
+  ![bayes](bayes.jpg)
+  * workflow of Bayesian classification  
+    * Given:
+      1. Models for the likelihoods $p\left(\mathbf{x} | C^{k}\right)$ of all classes $C^{k}$
+      2. Priori probabilities $p\left(C^{k}\right)$ of all classes $C^{k}$
+      3. A feature vector $x$ to be classified
+    * Wanted: Class $C_{map}$ of $x$ according to the MAP criterion
+    * Procedure:
+      1. For all $C^{k}$. calculate $p\left(\mathbf{x}, C^{k}\right)=p\left(\mathbf{x} | C^{k}\right) \cdot p\left(C^{k}\right)$
+      2. Calculate
+      $p(x)=\sum_{i} p\left(x | c^{t}\right) \cdot p\left(c^{t}\right)$
+      1. For all $C^{k}$ : calculate $p\left(C^{k} | \mathbf{x}\right)=p\left(\mathbf{x}, C^{k}\right) / p(\mathbf{x})$
+      2. $C_{m a p}$ results as the label $C^{k}$ for which $p\left(C^{k} | \mathbf{x}\right)$ is a maximum.
+  * training: provision of examples
+    * user marks image resion which correspond to a class $C^k$
+    * assumption: all pixels in the selected region belong to $C^k$
+    * training data must be provided for all classes
+    * the training data must be representative for all classes
+  * modelling of the likelihood for the classes
+    * based on training data
+    * different for paramentric and non-paramentric methods
+
+* maximum likelihood method  
+bayesian classification method **special case**: prior probability unknown - only likelihood
+  * the classes $C$ are often modelled to as multivariate normal distribution over feate space $x$
+  * the corresponding probability density function for a sample of n independent identically distributed normal random variables (the likelihood) : $f\left(x_{1}, \ldots, x_{n} | \mu, \sigma^{2}\right)=\left(\frac{1}{2 \pi \sigma^{2}}\right)^{n / 2} \exp \left(-\frac{\sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^{2}+n(\bar{x}-\mu)^{2}}{2 \sigma^{2}}\right)$, where $\bar {x}$ is the sample mean.
+  * the pixel to be classified is labeled to belong to the class of the highest probability
 
 ### quantify classification performance
+* Overall measure
+  * Overall accuracy: Percentage of correctly classified pixels
+  * Kappa coefficient: Agreement between classified pixels and ground truth $[-1, 1]$
+* user's accuracy/Commission error: number correctly identified in a given map class/ number claimed to be in that map class
+* producer's accuracy/Omission error: number correctly identified in reference plots of a given class/ number actually in that reference class
+* error matrix
+![error matrix](errormatrix.jpg)  
+reference source - y -user's accuracy  
+classified map - x - producer's accuracy
 
 ## airborne laser scanning
 
