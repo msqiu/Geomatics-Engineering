@@ -625,4 +625,36 @@ classified map - x - producer's accuracy
 
 ## airborne laser scanning
 
+### overview
+* measurement principle, 3D cloud
+  * 3D position information
+  * radiomatric information
+* properties of airborne laser scanning
+  * multi sensor system
+    * GNSS receiver for position of sensor
+    * inertial measurement unit(IMU) fir measuring the orientation of the platform
+    * laser scanner: scanning and ranging
+  * active measurement system
+    * light source
+    * laser, independent from sunlight, no cast shadows
+  * polar measurement system: point determined via measurement of a single direction and range(one position, good in vegetation)
+  * penetraion渗透 capability: laser pulse can penetrate vegetation through small openings in the foliage
+  * multi-target capability: for a single laser pulse, multiple echoes(i.e. returns) can be recorded
+  * surface measurement system
+    * random laser beam direction, no targeting of specific object points, capturing of surface via scanning
+    * object reconstruction from 3D point cloud(in post processing)
+  * radiometric infromation: laser = monochromatic light
+
+### basics
+* conponents of an ALS systems
+  * positioning: GNSS receiver
+  * attitude: inertial measurement unit IMU
+  * object detection: laser scanners
+
+### from 3D point clouds to digital terrain models
+
+### specific ALS systems
+
+### selected applications
+
 ## radar
