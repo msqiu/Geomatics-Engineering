@@ -650,11 +650,80 @@ classified map - x - producer's accuracy
   * positioning: GNSS receiver
   * attitude: inertial measurement unit IMU
   * object detection: laser scanners
+  ![laser](laser.jpg)  
+    * laser source
+    * beam deflection - scanning
+    * transmitter optics
+    * receiver optics
+    * photodiode; conversion of optical signal - electric signal
+    * analog digital converter; electric signal - digital signal
+    * target detection
+    * range estimation unit(discrete echoes or full waveforem)
+* available laser sources/ wavelength for ALS
+  ![als](als.jpg) 
+* reflectance at different wavelengths for different application
+  * 1550nm - soil, terrain model
+  * 1064nm - vegetation, forestry - snow, glacier, snow heights
+  * 532nm - snow, glacier, snow heights - penetrates water, bathymetry水深 **!problem: eye safety!**
+* properties of laser pulses
+  ![laser pulses](laserpulses.jpg) 
+  d: diameter of main maximum(footprint - limit image resolution) d on the ground  
+  no laser point in the mathematical sense
+* time = distance:  
+  typical pulse length in ALS: $1ns - 10ns = 30cm - 3m$
+* range estimation and range resolution
+  * range estimation: round-trip travel time delta t of signal(sensor-target-sensor) $R=\frac{c \cdot \Delta t}{2}$
+  * range solution: echoes representing targets(i.e. objects) maybe sepearble $\delta_{R}=\frac{c \cdot \tau}{2}$
+  * overlay
+  ![overlay](overlay.jpg) 
+* signal recording: discrete echo vs. full waveform
+* signal strength: laser-rader equation
+* ALS sensor model: direct georeferencing
+![alssystem](alssystem.jpg) 
+* Scanning mechanisms
+![scanning](scanning.jpg) 
+* stripwise data acquisition
+  * overlap of adjacent strips required for
+    * seamless coverage of project area
+    * redundant acquisition at strip boundary
+    * optional: increase of point density(overlap>50%)
+  * oscillating mirror
+    * middle low density
+    * side high density
+* flight planning, quality assesment, strip adjustment
 
 ### from 3D point clouds to digital terrain models
+3d poind cloud  
+digital surface model, DSM: open terrain with buildings and vegetation
+digital terrain model, DTM: terrain surface without buildings and vegetation
 
 ### specific ALS systems
+* laser bathymetry
+* single photon LiDAR
+* UAV laser scanning
+* multispectral laser scanning: NDVI
 
 ### selected applications
+* building modeling
+  * basis: 3D point cloud or 2.5D-DSM
+  * mature solution available - commercial: semi-automatic approaches predominant
+  * research
+    * detection and modelling of detialed structures
+    * inrease of lecel of automation
+* power lines(ALS/ULS)
+  * polar measurement system - one position
+  * duties of poer supply companies
+    * detectio of dameges on power lines and poles
+    * monitoring of construciton work
+    * monitoring of distance between power lines and vegetation
+  * satandard techniques: expensive and laborious or not possible(photogrammetry)
+* forest
+* laser bathymetry
+* the fusion of ALS+multi and hyperspectral images
+  * full waveform laser: geometry
+  * hyperspectral sensor: chemical composition  
+    advantages:  
+    1. lawn and sealed surfaces hardly separable with (monochromatic) laser  
+    2. resolution of mixed pixels based on geometry feasible
 
 ## radar
