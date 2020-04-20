@@ -727,3 +727,70 @@ digital terrain model, DTM: terrain surface without buildings and vegetation
     2. resolution of mixed pixels based on geometry feasible
 
 ## radar
+### basics of radar
+* Radar = radio frequency detection and ranging
+* active illumination and sampling of echo signals
+* no optic devices, but antennas and high frequency electronics
+* interesting object feature - radar cross section, object geometry, object velocity
+* signal feature: amplitude, phase and polariyation of the signal
+* spectral domains used for remote sensing - Transmission of Atmosphere at good weather conditions:  
+![Transmission of Atmosphere at good weather conditions](transmission.jpg) 
+* radar(large wavelength) almost wather independent!
+* absorption
+  * the energy of the EM wave is proportional to frequency: long wave EM have far less energy than visible light
+  * absorption in the MW domain is mainly governed by the conductivity that depends on permittivity $ε$
+    * introduction of currect in matter
+    * rotation of dipole molecules(water) -> thermal energy(microwave oven)
+    * low conductivity leads to transmission
+* object model: backscatter cross section $σ$
+  * describes reflection of a single target
+    * depends on
+      1. directivity, geometric cross section area and reflectance
+      2. signal frequency , signal polarization and moisture
+    * backscatter cross section
+      * The smaller $λ$ (= the higher frequency), the larger $σ$!
+      * high frequency returns more wavelength drops
+  * strong aspect dependency of SAR: different aspects, different response
+
+### passive sensors  
+microwave radiometer  
+* passive instruments for measurement of reflected or emitted radiance of earth surface and/or atmosphere
+* measurement depends on: wavelength, observation position, polarization, material(particulary water content)
+* major applications
+  * determinatio of liquid and vapor water content of atmosphere
+  * correction of altimeter data
+  * mapping of soil moisture, ice cover ocean salinity and sea ice cover
+
+### active non-imageing sensors
+1. radar altimeter
+   * active illumination in nadir direction with short pulse
+   * distance to water surface from two-way signal runtime
+   * product: global maps of sea level anomalied caused by variations of the earth's gravity and ocean currents
+   * principle of radar altimetry
+     ![radar altimetry](altimetry.jpg)  
+     in remote sensing, resolution is usually governed by pulse length. however, due to large distance and short pulses better then diffraction limit $R* λ/D$ we face here a exception  
+     note: lasers usually work in diffraction limit domain  
+     **pulse-limited resolution:**  
+     **diffraction limit**: $δ = λ*H/D$  
+     sensor altitude $H$  
+     pulse duration $τ$  
+     wavelength $λ$  
+     **pulse limit**: $δ =2*rs$
+     radius of resolution circle $r_s = \sqrt{(c*H*\tau)}$  
+     velocity of light $c$
+    * radar altimetry: error sources and accuracy
+      * ionosphere: signal delay dependent on dispersive 'total electron content'(TOC)  
+        remedy: 2 frequencies
+      * troposphere: water vapor delays signal  
+        remedy: correction accoring to simultaneous radiometer measurements
+      * height accurancy over ocean: 3-10cm
+
+2. scatterometer  
+   ![scatterometer](scatterometer.jpg)  
+* main application: measurement of wind velocity oversea
+* principle: precision measurement of backscatter
+* in case of oblique signal, the backscatter of ocean is dominated by ripple waves induces by wind
+* Bragg resonance: interference maxima in case of pasth difference of both signal components $2 d \sin \theta=n \lambda$
+
+### active imageing sensors
+
