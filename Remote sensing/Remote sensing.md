@@ -793,4 +793,9 @@ microwave radiometer
 * Bragg resonance: interference maxima in case of pasth difference of both signal components $2 d \sin \theta=n \lambda$
 
 ### active imageing sensors
+1. real aperture radar(RAR)
+   * angular resolution of imaging sensors
+  
 
+
+2. synthetic aperture radar(SAR)
