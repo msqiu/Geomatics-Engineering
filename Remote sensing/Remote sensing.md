@@ -793,9 +793,23 @@ microwave radiometer
 * Bragg resonance: interference maxima in case of pasth difference of both signal components $2 d \sin \theta=n \lambda$
 
 ### active imageing sensors
-1. real aperture radar(RAR)
-   * angular resolution of imaging sensors
-  
-
+1. real aperture radar(RAR): poor angular resolution of radar
+   * angular resolution of imaging sensors  
+    ![angularresolution](angularresolution.jpg)  
+   * range resolution of imaging Radar
+     * resolution in range direction requires oblique illumination
+       * sampling of back scatter
+       * object separation according signal runtime
+     * resolution in slant range $δ_r$
+      ![slant](slant.jpg)  
+      independent from the sensor to scene distance  
+      high range resolution requires large signal bandwidth $B$
+     * azimuth resolution  
+      ![azimuth](azimuth.jpg)  
+   * applications
+     * pro of real aperture radar: data can be interpreted at once without further processing
+     * no high spatial resolution requried
+     * real time requirements
+     * e.g. coast guards: monitoring of oil pollution from ships
 
 2. synthetic aperture radar(SAR)
