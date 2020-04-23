@@ -813,3 +813,108 @@ microwave radiometer
      * e.g. coast guards: monitoring of oil pollution from ships
 
 2. synthetic aperture radar(SAR)
+   * principle of synthetic aperture radar  
+    ![synthetic aperture radar](sar.png) 
+     * measurement sequence along sensor flight pass - assembly of large antenna
+     * synthesis of SAR image using doppler signal shift
+       * **side -looking illumination required!**
+       * $\delta a_{syn}=\frac{D}{2\left( D-real\,\,size\,\,of\,\,antenna \right)}$
+       * for image synthesis, all individual signal contributions are integrated into the correct image cell by compensation of their different runtimes (phase delays) - SAR processing  
+       ![phase delays](phasedelays.jpg)  
+   * radar backscatter coefficient
+     * classical radar
+       * detection of single/few targets, e.g. planes
+       * non-targets(clutter) are not useful and disturb target detection
+       * the feature of interest is in most cases the Radar cross section σ if the target(unit m^2)
+     * radar remote sensings
+       * there is no equivalent to clutter
+       * besides point target(masts, cars etc,)
+       * distributed targets(grass, fields, forests) often dominate the image content
+         * their scatterer density determines mainly the appearance of the image
+           * they are described by a dimensionless radar backscatter coefficient $σ_0$
+           * different brightness caused by different density
+    * from cartesian to polar coordinates
+       * the phase is evenly distributed(not further considered for single images)
+       * however, the difference of the phase of two images carries valuable information - SAR interferometry
+       * why is speckle a Nuisance  
+         the speckle hides the quantity of interest, namely the typical radar backscatter coefficient $σ_0$ of the given land cover class  
+         on average a grey value according to the radar backscatter coefficient σ0 of grass is exoected  
+         speckle reduction: increses the radiometrc resolution of the image; allows the usage of standard means of image processing(extraction of regions, edges, lines, contours)
+    * influence of topography on SAR mapping  
+      ![topography](topography.jpg)  
+      * foreshortening: smaller area in image - brighter
+      * layover
+        * shift towards sensor
+        * object order changed
+        * signal mixtual
+        * top of mountain closer than the foot to the sensor
+      * shadow(occlusion)
+        * no signal behind obstacles
+        * black image - cannot be observed in the image
+    * SAR polarimetry - reflections may change wave's polarization direction
+      * in remote sensing usually linear polarisation are used
+        * E-Field vector either horizontal H or vertical V
+        * 4 images $S=\left[\begin{array}{ll}S_{H H} & S_{H V} \\ S_{V H} & S_{V V}\end{array}\right]$
+      * is used for
+        * separation of surface or volume(vegetation) scattering process
+        * object geometry
+    * SAR interferometry
+      * amplitude & phase
+      * InSAR: measurement of elevation angle  
+        ![InSAR](insar.jpg)  
+        * SAR
+          * diffraction limits resolution in elevation direction θ
+          * only know the distance
+          * dont know the position
+        * Two SAR image separated across-track by baseline B
+          * different run-times of signal
+          * iso range lines intersect
+          * phase difference Φ is exploited
+        * phase difference Φ depends on θ: Φ -> θ -> Height
+        * ambiguity problem: for undulated terrain phase-unwrapping required
+      * modes for data acquisition
+        * repeat-pass-interferometry
+          * at least two passes
+          * mainly satellite sensors
+          * problem for multi-temporal data
+            * decorrelation of signals because we measure different things
+            * atmospheric signal delay - phase delay
+        * single-pass-interferometry
+          * 1 satellite for 2 images
+          * images are taken simultaneously
+          * airborne sensors
+          * same time, same atmosphere
+          * distance cancel out
+      * Digital elevation models(DEM) from InSAR data
+        * phase values $ΔΦ$: 0-2 pi
+        * add 2 pi regularly
+      * after phase unwrapping and phase to elevation conversion ->DEM
+    * differential SAR interferometry  
+      ![differential SAR interferometry](disar.jpg)  
+       * terms of the differential phase  
+         ![differential phase ](diphase.jpg)  
+         possibility to measure the surface deformation of a few millimeters because 2 pi equals to a few centimeters only!  
+         1 phase cycle(fringle) = λ/2
+       * horizontal and vertical surface deformation
+         * measured radial velocity can be split in horizontal and vertical components
+         * those components can be distinguished using ascending and descending orbit
+       * problems  
+         ![problems](problems.jpg)  
+          * atmospheric signal delay
+            * interferograms from only two images are problematic
+            * atmospheric effects are spatially but not temporally correlated
+              * use as many images as possible and filter out this phase term(high-pass filter)
+              * estimate atmospheric effects from GPS or imaging spectrometer
+          * temporal decorrelation
+            * large temporal gap: only noise in vegetation areas
+            * good signal: dominant reflection at buildings , rocks etc.
+        * alternative method: Persistent scatterer interferometry
+          * time-series of many SAR images
+          * consider only pixel, which show stable reflection over time - sparse matrix of reliable motion vectors
+          * dorts - buildings, urban
+          * low density - algricuture area
+          * persistent scatterer interferometry density rises with spatial resolution of SAR  
+            ![resolution](resolution.jpg) 
+            the smaller the resolution cell, the less clutter pro PS - we are able to detect weaker PS
+
+
