@@ -69,10 +69,50 @@ contain information about the **georeferencing** of the image and other infomati
 * Georelated and other disciplines: specific sensors, field inspections,...
 
 
-### Secondary data acquisition: acquisition of already interpreted data
-* Map digitizing
-  * 
+### Secondary data acquisition: acquisition of already interpreted data - Map digitizing
+* manual: digitizier tablets, on-screen digitizing
+  * advantage
+    * low hardware costs
+    * high accuracy(0.075-0.25mm)
+    * direct checks and error handling
+    * flexibility
+  * disadvantage: time intensive
+  * on-screen-digitizing
+    * using image processing operations, objects in the images can be enhances - support measurement
+    * already measured objects can be suppressed
+    * acquisition accuracy
+      * Digitizing accuracy varies from 0.075 mm to 0.25 mm -> = 0.20 mm (assumption)
+      * the acquisition accuracy is calculated by: = digitizing accuracy × scale
+      * digititing of 1:10.000 map: 0.2mm*10.000 = 2m
+  * Transformation between systems necessary in order to directly measure world coordinates at the digitizer
+* semi-automatic: operator supported measurement on scanned maps
+  * Prerequisite: scanned images, manual object identification, automatic measurement
+  * advantages
+    * automatic tracking of objects(lines, areas, symbols, text)
+    * operator only has to work in case of errors
+  * disadvantages: presume high quality data
+* automatic: fully automatic process, pattern recognition and image understanding
+  * raster-vector transformation
+  * pattern recognition: numbers, letters, graphical objects, symbols
+  * later checks and interactive error removal
+  * special software for specific map types
 ### Geo basis data
+* Geo-basis data in Germany: ATKIS – Amtliches Topographisch Kartographisches Informationssystem(official topographic cartographic information system)
+  * DLM25: 1:25.000 (accuracy +- 3m)
+  * DLM250: 1:250.000 (accuracy +- 30m)
+  * DLM1000: 1:1.000.000 (accuracy +- 100m)
+* Street network data
+* GDF - Geographic Data File: International Standard for the acquisition and exchange of road network data
+* Navigation Systems
+* Volunteered Geographic Information(VGI)
+  * provision of tools to create, assemble, and disseminate geographic data provided voluntarily by individuals
+  * Wikimapia
+  * Google My Maps
+  * OpenStreetMap - a free project open to everyone to collect spatial data
+    * GPS receiver - most important data source
+    * images: landsat 7 images & areal images
+    * local knowledge
+    * import data
 
 ## Data Modeling
 
