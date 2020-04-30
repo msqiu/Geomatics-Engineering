@@ -114,14 +114,66 @@ contain information about the **georeferencing** of the image and other infomati
     * local knowledge
     * import data
 
-## Data Modeling
+## Data Modeling  
+reality - data model(abstraction selection) - data structure(computer readable) - file structure(physical storage)
 
-### Geometrical Data Modeling
+### 4 layer model of a GIS
+* external view - external model - selection of objects and relations  
+transition from reality to computer system involves abstraction process. thus the model only reflects certain aspects of reality
+* conceptual view - geometric topologic - thematic modeling
+  * describes the transformation of the objects of the external model into computer readable data structures
+$$objects<\frac{thematric}{geometry<\frac{position}{topology}}$$
+  * Queries to Spatial Information System
+    * give identification of the line the cursor points - geometry
+    * give attributes of the area the cursor pointss - geometry+thematic
+    * give all houses in the given rectangles - geometry+thematic
+    * give all parcels adjacent to street - thematic
+    * who is owner of house - thematic
+* Metric
+Definition: a distance function d: $X \times X \Rightarrow \Re_{0}^{+}$ is a metric if the following three conditions are fulfilled for all $(P, Q) \in X \times X:$  
+One dimension  
+$\sqrt{(q-p)^{2}}=|q-p|$  
+Three dimensions  
+$d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\left(p_{3}-q_{3}\right)^{2}}$  
+n dimensions  
+$d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\cdots+\left(p_{i}-q_{i}\right)^{2}+\cdots+\left(p_{n}-q_{n}\right)^{2}}$
+* logical view - data relation model - caption
+* internal view - how you store data
 
-### Topological Data Modeling
+### Different types of GIS
+![gis](gis.jpg)
+* raster GIS: store and analyses raster data
+* vector GIS: store and analyses vector data
+* hybrid GIS: store and analyses raster and vector data
+* advantages and disadvantages of raster and vector data
+  * simple strcuture - complex structure
+  * large amount data - compact data structure
+  * positional presition depends on resolution - precise coodinate positions through continous coordinate space
+  * graphical representation is less aesthetical - accurate graohical representation
+  * weak topology - complete encoding of topology
+  * various kinds of spatial analysis are easy - overlay operation are difficult to implement
 
-### Thematic Data Modeling
+### 2.5D and 3D Data
+* 2.5D: for every Position (x, y) exactly one z-Value (Surfaces)
+* 3D: one (x, y) Position can have several z-Values (Bodies or Solids)
 
-### Data Structures
+### Modeling of Surfaces
+* Surface Reconstruction with Polynoms: only simple forms are possible
+* Surface Reconstruction with Irregular Triangulated Networks (TIN)
+  * TIN - triangulated irregular networks
+    * network of the triangules connected together to create a 3D surface with no overlaps and no gaps
+    * analysis of a surface's slope and aspect and for modelling 2.5D data.
+  * The height at a position (x, y) is calculated by interpolating in the corresponding triangle - interpolatio in triangles
+  * **brute force triangulation**  
+  ![brute force triangulation](brute.jpg)  
+    * triangulation
+      * calculate the distance between all point pairs: n points -> n(n-1)/2 cost
+      * search for minimum distance and delete all distance which larger that distance
+      * calculate with 1 until no line intersections
+    * pros and cons
+      * easy implyment
+      * good results
+      * high computing time
+    * Linear Interpolation in Triangles $z = f(x, y) = a_0 + a_1x + a_2y$
 
 ## Data Analysis
