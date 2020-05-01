@@ -176,4 +176,59 @@ $d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\cdots+
       * high computing time
     * Linear Interpolation in Triangles $z = f(x, y) = a_0 + a_1x + a_2y$
 
+### geometrical data modelling - Description of the geometry of spatial objects
+* Primitive Instancing  
+  ![Primitive Instancing](primitive.jpg)  
+  * define for each object type a complete List of description parameters to describe the form and the position of an object.
+  * Pro: Simple model, low Data Volume
+  * Contra: use only predefined Models -> it is not possible to combine Instances to create new more complex Structuress
+* Spatial Occupancy Enumeration
+  * A 3D Object is modeled by a List of spatial Cells occupied by the Object
+  * The Cells (or Voxels) are cubes of a fixed Size and are arranged in a fixed spatial grid
+  * analog to raster Modelling in 2D
+  * Pro: simple structure (a list of occupied Cells).
+  * Contra: Higher Model Accuracy requires higher Number of Cells
+  * Popular for medical Purposes such as CAT scans
+  * Octree: a Tree Data Structure in which each (internal) Node has eight Children  
+    ![Octree](Octree.png)  
+    * The Leafs are analog to Voxels in Spatial Occupancy Enumeration
+    * Octrees are the three-dimensional analog to Quadtrees
+    * Pro: less Data Volume as Spatial Occupancy Enumeration
+    * Contra: access to the Data is not so easy as in Spatial Occupancy Enumeration
+* Cell Decomposition(LEGO)
+  * an Extension of Spatial Occupancy Enumeration
+  * Cells are not only Cubes but also other Primitives like Prisms, Spheres, Cylinders, Cones
+  * The Cells can optionally be parameterized with Primitive Instancing
+    ![cell](cell.jpg)  
+    * Pro: better Representation of 3D Objects (no blocky Structures because of Voxels)
+    * Contra: more difficult to guarantee Correctness (Cells must fit together – it is not allowed that one Cell penetrates other Cells)
+* Boundary Representation (BREP)  https://www.brainkart.com/article/Boundary-representation-method-(B-rep)-and-Constructive-Solid-Geometry-(CSG-and-C-rep)_5689/  
+  ![Boundary Representation](brep.jpg)  
+  * 3D Objects are defined by their enclosing Surfaces - Topological Representation
+  * Pro
+    * very flexible
+    * direct Extension of 2D Vector Data
+    * it is possible to make local changes without complete new Construction
+    * Topology is completely stored -> Topological Analyses are possible
+  * Contra
+    * Correctness is difficult to prove
+    * High Data Volumes
+* Constructive Solid Geometry (CSG)  
+  ![Constructive Solid Geometry](csg.jpg)  
+  * CSG uses Primitives (Prisms, Spheres, Cylinders, Cones, etc.) and Boolean Operations(Union, Subtraction, Intersection) to create 3D Objects
+  * The Primitives are modeled with Primitive Instancing
+  * Pro
+    * Easy to construct very complex Models with few Primitives
+    * less storage
+    * can be converted to BREP
+  * Contra
+    * not unique
+    * CPU intensive
+* Sweep Representations
+  ![Sweep Representations](sweep.jpg)  
+  * construct 3D Objects that have some kind of Symmetry
+  * A Sweep Representation consists of a Shape and a Trajectory
+  * Sweep Representations allow the Modelling of very Complex Objects
+* Freeform Shapes
+
 ## Data Analysis
