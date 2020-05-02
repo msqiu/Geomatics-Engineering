@@ -231,4 +231,34 @@ $d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\cdots+
   * Sweep Representations allow the Modelling of very Complex Objects
 * Freeform Shapes
 
+### topological data modelling - Description of spatial relations of objects without considering the coordinates
+* Topology
+  * describes spatial relations among geometric objects
+  * based on Leibniz' analysis situs
+  * metric aspects are not relevant
+  * graph-theory
+  * spatial relations among the geometric primitives: node, edge, mesh
+* The Königsberger Bridge Problem  
+![Königsberger Bridge Problem](bridge.png)  
+  * Is it possible to make a walk which uses every bridge exactly one time  
+  * a sequence of letters is a sequence of bridges
+  * a bridge ends in that area where the next bridge starts. Therefore the letter is used twice
+  * every letter NIES is represented even times - except for two letters (start and end)
+* The Supply-Net-Problem: Is it possible to find a intersection-free configuration  
+![Supply-Net-Problem](intersection.jpg)  
+* Travelling Salesman Problem: visit n cities and come back to the starting point in shortest time
+* Center problem: k firehouses shall be build in n cities in such a way that every city is reachable as fast as possible
+* Graph: A Graph G(N, E) consists of a set of Nodes N and Edges E
+  * Undirected, directed, weighted, directed + weighted
+  * Cyclic, only cyclic, accyclic
+  * tree
+  * not connected
+* topological primitive: node, edge, mesh/face, body
+* planaer graph: a graph if it can be drawn in 2D without intersection  
+Euler equation: $C = n - e + f = 2 (2)$ test if a graph is planar  
+* topological data model  
+![topological](topological.jpg)  
+* importance of Topology
+  * description of relations between elementary objects (node, edge, area)
+
 ## Data Analysis
