@@ -260,5 +260,41 @@ Euler equation: $C = n - e + f = 2 (2)$ test if a graph is planar
 ![topological](topological.jpg)  
 * importance of Topology
   * description of relations between elementary objects (node, edge, area)
+  * important for consistency checks
+  ![consistency checks](consistency.jpg) 
+    1. under- / overshoots
+    2. dead ends
+    3. weird polygons
+    4. closed polygons
+  * redandance free storage
+* [incidence and adjacency](http://www.btechsmartclass.com/data_structures/graph-representations.html) 
+![incidence and adjacency](adjacent.jpg)   
+![incidence and adjacency](undirected.jpg)  
+![incidence and adjacency](directed.jpg)  
+![incidence and adjacency](incidence.jpg)  
+![incidence and adjacency](list.jpg)  
+  * Incidence names the meeting of different topologic primitives  
+  Incidence matrix:  
+  $B(i,j) = 1$ if edge i starts in node j  
+  $B(i,j) = -1$ if edge i ends in node j  
+  * Adjacency names the meeting of same topologic primitives
+    * Adjacency matrix
+      * Main diagonal contains number of adjacent nodes
+      * Nodes adjacent to each other -1
+      * symmetrical
+    * The adjacency matrix A can be calculated directly from the incidence matrix: $\underline{A}=\underline{B}^{\top} \underline{B}$
+* [Minimal Spanning Tree](https://aquarchitect.github.io/swift-algorithm-club/Minimum%20Spanning%20Tree/)
+  * A spanning tree connects all nodes of a graph. A minimal spanning tree is that tree where the length (costs) of the spanning tree is minimal
+  * A minimal spanning tree has no cycles. That means that there are no redundancies.
+  * Kruskal Algorithm  
+  ![Kruskal Algorithm](kruskal.png)   
+    * take the shortest edge and check if the two nodes of that edge are in the same set
+    * if yes: this would lead to a cycle and the edge can be discarded
+    * if no: merge the two sets which contain the beginning and end node of the edge
+  * Prim's Algorithm  
+  ![Prim's Algorithm](prim.png)    
+  * Bubblesort
+ ![Bubblesort Algorithm](bubblesort.jpg)  
+
 
 ## Data Analysis
