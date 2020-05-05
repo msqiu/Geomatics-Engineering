@@ -198,11 +198,11 @@ $d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\cdots+
 * Cell Decomposition(LEGO)
   * an Extension of Spatial Occupancy Enumeration
   * Cells are not only Cubes but also other Primitives like Prisms, Spheres, Cylinders, Cones
-  * The Cells can optionally be parameterized with Primitive Instancing
+  * The Cells can optionally be parameterized with Primitive Instancing  
     ![cell](cell.jpg)  
     * Pro: better Representation of 3D Objects (no blocky Structures because of Voxels)
     * Contra: more difficult to guarantee Correctness (Cells must fit together – it is not allowed that one Cell penetrates other Cells)
-* Boundary Representation (BREP)  https://www.brainkart.com/article/Boundary-representation-method-(B-rep)-and-Constructive-Solid-Geometry-(CSG-and-C-rep)_5689/  
+* [Boundary Representation (BREP)]  https://www.brainkart.com/article/Boundary-representation-method-(B-rep)-and-Constructive-Solid-Geometry-(CSG-and-C-rep)_5689/  
   ![Boundary Representation](brep.jpg)  
   * 3D Objects are defined by their enclosing Surfaces - Topological Representation
   * Pro
@@ -224,7 +224,7 @@ $d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\cdots+
   * Contra
     * not unique
     * CPU intensive
-* Sweep Representations
+* Sweep Representations  
   ![Sweep Representations](sweep.jpg)  
   * construct 3D Objects that have some kind of Symmetry
   * A Sweep Representation consists of a Shape and a Trajectory
@@ -260,7 +260,7 @@ Euler equation: $C = n - e + f = 2 (2)$ test if a graph is planar
 ![topological](topological.jpg)  
 * importance of Topology
   * description of relations between elementary objects (node, edge, area)
-  * important for consistency checks
+  * important for consistency checks  
   ![consistency checks](consistency.jpg) 
     1. under- / overshoots
     2. dead ends
@@ -293,7 +293,7 @@ Euler equation: $C = n - e + f = 2 (2)$ test if a graph is planar
     * if no: merge the two sets which contain the beginning and end node of the edge
   * Prim's Algorithm  
   ![Prim's Algorithm](prim.png)    
-  * Bubblesort
+  * Bubblesort  
  ![Bubblesort Algorithm](bubblesort.jpg)  
 
  ### thematic data modeling - Description of the thematic of spatial objects
@@ -352,7 +352,7 @@ use thematic layers and object hierarchies to combine objects with the same them
   * protocol in the Internet and is used to transport data
   * packages from a sender to a recipient in the Internet
   * IPV4: 4 Bytes, 0-255, 4 blocks, separate with points, e.g., 129.45.56.345, therefore 2^32 different addresses
-  * IPV6: 16 Bytes, 8 blocks of each 4 hexadecimal十六进制 numbers, separate with columns, e.g., 2a01:0db8:85a3:08d3:1319:8a2e:0370:7344, therefore 2^128 different addresses
+  * IPV6: 16 Bytes, 8 blocks of each 4 hexadecimal numbers, separate with columns, e.g., 2a01:0db8:85a3:08d3:1319:8a2e:0370:7344, therefore 2^128 different addresses
 * Internet services: protocols for accessing, using or participating in the Internet that are developed on the internet protocol.
 * Word wide web - hypertext system: documents are connected with hyperlinks
   * HTTP(HyperText Transfer Protocol) is the underlying protocol
