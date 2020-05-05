@@ -202,7 +202,7 @@ $d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\cdots+
     ![cell](cell.jpg)  
     * Pro: better Representation of 3D Objects (no blocky Structures because of Voxels)
     * Contra: more difficult to guarantee Correctness (Cells must fit together – it is not allowed that one Cell penetrates other Cells)
-* [Boundary Representation (BREP)]  https://www.brainkart.com/article/Boundary-representation-method-(B-rep)-and-Constructive-Solid-Geometry-(CSG-and-C-rep)_5689/  
+* [Boundary Representation (BREP)](https://www.brainkart.com/article/Boundary-representation-method-(B-rep)-and-Constructive-Solid-Geometry-(CSG-and-C-rep)_5689/)  
   ![Boundary Representation](brep.jpg)  
   * 3D Objects are defined by their enclosing Surfaces - Topological Representation
   * Pro
