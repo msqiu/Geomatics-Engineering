@@ -347,3 +347,72 @@ use thematic layers and object hierarchies to combine objects with the same them
 * thematic data: tables
 
 ## Web based GIS technologies
+* Internet Protocol
+  * The Internet Protocol (IP) is the basic communication
+  * protocol in the Internet and is used to transport data
+  * packages from a sender to a recipient in the Internet
+  * IPV4: 4 Bytes, 0-255, 4 blocks, separate with points, e.g., 129.45.56.345, therefore 2^32 different addresses
+  * IPV6: 16 Bytes, 8 blocks of each 4 hexadecimal十六进制 numbers, separate with columns, e.g., 2a01:0db8:85a3:08d3:1319:8a2e:0370:7344, therefore 2^128 different addresses
+* Internet services: protocols for accessing, using or participating in the Internet that are developed on the internet protocol.
+* Word wide web - hypertext system: documents are connected with hyperlinks
+  * HTTP(HyperText Transfer Protocol) is the underlying protocol
+  * HTML (HyperText Markup Language) is a language to compose text,
+    * Document Type Declaration is an instruction that associates the document with a particular version of HTML). E.g.: HTML 4.01 Strict
+    * HTML Head contains additional technical or documentary information which is not shown in the browser
+    * HTML BODY contains the visible information of the document
+  * images and other material into web pages
+  * URLs(Uniform Resource Locater) are used for the unique identification of resources in the Internet.  protocol://host/location
+    * protocol defines the network protocol followed by a colon and two slashes, e.g., http://, ftp://
+    * host identifies the computers by its hostname (e.g. www.ifp.unistuttgart.de) or by its IP address (e.g. 127.58.140.33). Host names can be translated automatically into IP addresses with Domain Name Servers (DNS) in the Internet
+    * location identifies the path of the resource on the server (e.g.:lehre/vorlesungen.html)
+  * CSS – Cascading Style Sheets
+    * HTML is used to structure a document in different semantic parts
+    * CSS is used to define the Look and formatting of a document(colors, font types, font sizes, …)
+  * publish geodata in the WWW
+  * Static Maps realized with HTML images  
+    Image Maps: an image with different clickable areas (as opposed to a normal image link, in which the entire area of the image links to a single destination)  
+    provide an easy way of linking various parts of an image without dividing the image into separate image files  
+  * Static vs. Dynamic Map Server
+    * Static Map Server
+      * All maps are preprocessed (static)
+      * Only those maps can be visualized which are preprocessed
+      * Complex queries (selection of object types or analysis functionality) or a individual map representations are not (hardly) possible
+    * Dynamic Map Server
+    ![Dynamic Map Server](dynamic.jpg)   
+      * The maps are created dynamically when the client makes a request
+      * The Internet Web Server is connected to a GIS (3-level-Architecture)
+      * The maps are images (gif, png, jpg, etc.) in HTML documents or vector data (e.g. GML Geography Markup Language)
+  * Thick Server and Thin Client vs. Thin Server and Thick Client
+    * Thick Server and Thin Client - Realization with server-side technologies
+    * Thin Server and Thick Client - Realization with client-side technologies
+* Server-side Technologies: connect a GIS with a Web Server
+![Server-side Technologies](serverside.jpg)   
+  * CGI(Common Gateway Interface): generate dynamic content on Web pages. called with a http-request
+  * Webserver API (Application Interface)
+    * The function is not external processes as with CGI but are executed in the address space of the server
+    * Advantage: higher execution speed
+    * Disadvantage: an error in the external function can crash the Webserver
+  * ASP (Active Server Pages): proprietary technology which runs only on Microsoft Webserver
+  * JSP (Java Server Pages): run on Windows and Linux/Unix
+  * PHP
+* Client-side Technologies
+  * DHTML – Dynamic HTML
+    * HTML for  writing of documents
+    * a client-side Script Language – usually JavaScript
+    * VBScript: supported only by Microsoft Internet Explorer (with Plug-In also Mozilla)
+    * Disadvantages of JavaScript and VBScript: Everyone can see the code because it is embedded in the HTML document - combinations of JavaScript and Java
+  * JAVA-Applets: run interactive programs on a Webbrowser without sending or reciving data from a server
+  * ActiveXControls: Microsoft Internet Explorer
+  * PlugIns
+    * An Applet has to be reloaded if the corresponding HTML-page is reloaded
+    * A Plug-In has to be installed only one time: less network load
+    * different Web Browser and different Operating Systems are not compatible and need different Plug-In versions
+* SVG - Scalable Vector Graphics - XML-based data format for the exchange of 2-dimensional vector graphics
+* Flash
+  * Platform for the programming and visualization of multi-media and interactive content
+  * possible to visualize,  animate and manipulate raster and vector
+  * graphics and video
+* Virtual Globes
+  * Conventional Globes
+  * Virtual Globes
+  * Special Types of Digital Globes
