@@ -341,4 +341,9 @@ use thematic layers and object hierarchies to combine objects with the same them
     * OMT (Object Modeling Technique)
     * UML (Unified Modeling Language)
 
-## Data Analysis
+### data structures
+* vector data: spaghetti data, node and edge lists
+* raster data: matrix, compression algorithms
+* thematic data: tables
+
+## Web based GIS technologies
