@@ -296,5 +296,49 @@ Euler equation: $C = n - e + f = 2 (2)$ test if a graph is planar
   * Bubblesort
  ![Bubblesort Algorithm](bubblesort.jpg)  
 
+ ### thematic data modeling - Description of the thematic of spatial objects
+  ![thematic](thematic.jpg)  
+referred to the description, handling and storage of the thematic of spatial objects  
+use thematic layers and object hierarchies to combine objects with the same thematic  
+* thematic data
+  * refers to the data that is independent from geometry and topology relations
+  * describes the attributes and sematic relations between objects
+  * coded additionally in the graphic representation
+  * represented by alphanumertical symbol in the database
+    * geometric information are represented by points, lines and areas
+    * topologic information are represented by nodes, edges and meshes
+* Layer principle
+  * layer principle stores geometric data with different thematic meanings in different layers
+  * to produce different kinds of maps, the transparencies could be selected and combined, instead of drawing a new map each time
+  * all layers must be defined in the same coordinate system!
+  * each layer contains different information
+  * simple model; easy superimposition
+  * no hierarchy - all layers are of equal priority
+  * not flexible: all layers have to be of same size
+* objects class principle  
+![objects class principle](objects.jpg)  
+  * the modern form of thematic modeling
+  * object class principle is linked to object-oriented programming paradigm
+  * Hierarchical Organization $(1:n)$
+    * subclass inherit all attributes from their superclasses
+    * hierarchical organization describes dependencies between objects
+  * Semantic Network $(m:n)$
+    * allows higher order relations(m:n) between object classes, e.g., a river can be both a subclass of waters and of traffic
+* thematic modeling
+  * objects can have relations(attributes) to other objects
+  * different modeling language
+    * ER (Entity-Relationship-Model)
+      * objects - entities - rectangles
+      * attributes - ellipses
+      * relationships - rhombs
+      * cardinality - number of involved attributes
+        * 1:1 man - married - woman
+        * 1:n owner - own - parcel
+        * n:m students - attend - lecture
+      * similar entity types can be grouped with a is-a relation representation with hexagon
+        * subtypes inherit the attributes of supertypes
+    * NIAM (Nijsen Information Analysis Method)
+    * OMT (Object Modeling Technique)
+    * UML (Unified Modeling Language)
 
 ## Data Analysis
