@@ -416,3 +416,20 @@ use thematic layers and object hierarchies to combine objects with the same them
   * Conventional Globes
   * Virtual Globes
   * Special Types of Digital Globes
+
+## Exercises
+### Affine transformation
+$$\begin{array}{l}
+\mathrm{X}=a_{0}+a_{1} x+a_{2} y \\
+\mathrm{Y}=b_{0}+b_{1} x+b_{2} y
+\end{array}$$
+$a_0, b_0=$ shifting
+$a_1, a_2, b_ 1, b_2=$ rotation and shear  
+* problems of this approach regarding checkability and accuracy of the transformation result
+  * outlier research, check of results,information on precision is not possible
+  * so that to improve the accuracy and ensure its checkability, we need to introduce more known points and then we are able to do the adjustment, e.g., least-square adjustment to improve its performance
+
+### geometric modelling
+#### interpolate the height
+Linear Interpolation (like affine transformation): $f(x, y)=a 0+a 1 x+a 2 y$  
+Cubic Interpolation (curved surfaces): $f(x, y)=a 0+a 1 x+a 2 y+a 3 x y$
