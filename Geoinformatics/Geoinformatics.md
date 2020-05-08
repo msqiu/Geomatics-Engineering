@@ -433,3 +433,41 @@ $a_1, a_2, b_ 1, b_2=$ rotation and shear
 #### interpolate the height
 Linear Interpolation (like affine transformation): $f(x, y)=a 0+a 1 x+a 2 y$  
 Cubic Interpolation (curved surfaces): $f(x, y)=a 0+a 1 x+a 2 y+a 3 x y$
+#### calculate the gradient in x and y direction
+Gradient in x-direction: $a_1$  
+Gradient in y-direction: $a_2$  
+Total gradient: $(a1^2 + a2^2)^1/2$
+
+### topological modeling
+an incidence matrix is not always symmetrical
+
+### Transformation Parameter
+$$
+\left[ \begin{array}{c}
+	E\\
+	N\\
+\end{array} \right] =\left[ \begin{matrix}
+	a&		b\\
+	d&		e\\
+\end{matrix} \right] \left[ \begin{array}{c}
+	r\\
+	c\\
+\end{array} \right] +\left[ \begin{array}{c}
+	c\\
+	f\\
+\end{array} \right] 
+$$
+a,b,d,e -- planar transformations including stretching, squeezing, rotation, shearing, reflection and orthogonal projection  
+c,f -- movement in the two directions on a 2-D plane
+
+## GISneyland exercises
+* shapefiles are files containing geometric data like points, line or polygon shaped objects, as so called features
+* Explain Data View / Layout View
+  * Data view is an all-purpose view for exploring, displaying, and  querying the data on your map. This view hides all the map elements on  the layout, such as titles, north arrows, and scale bars, and lets you focus on the data in a single data frame, for instance, editing or  analysis.
+  * In layout view, you'll see a virtual page on which you can place and  arrange map elements, and you can do almost everything you can in data  view, plus design your map.
+* Explain Table Join / Spatial Join
+  * join a table of data to a layer based on the value of a field that can be found in both tables
+  * A spatial join joins the attributes of two layers based on the location of the features in the layers
+* Geocoding: the process of finding geographic coordinates based on queries from street addesses.
+* Explain Worldfile: Some image formats store the georeferencing information in the header of the image file. However, other image formats store this information in a separate ASCII file. This file is generally referred to as the world file, since it contains the real-world transformation information used by the image.
+* The Spatial Query rule allows you to detect new schematic features from one or more schematic feature classes, based on where their associated GIS features are located in relation to the GIS features in input, and add these detected schematic features to the generated schematic diagram.
