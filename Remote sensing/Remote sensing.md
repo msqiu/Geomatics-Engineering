@@ -86,7 +86,7 @@ $$
 
 #### general remarks
   * the energy of the EM wave is proportional to frequency: $E = h*f$, long wave MW have far less energy than visible light
-  * interaction of EM wave with molecules分子
+  * interaction of EM wave with molecules
     * optical domain/ infrared (VIS, NIR-FIR): in particular sensitive to chemical object structure
     * thermal radiance TIR热辐射: localize natural and anthropogenic heat sources
     * microwave domain MW: sensitive to conductivity, roughness, morphology
@@ -97,8 +97,7 @@ $$
     * every point on the wave front is source of new elementary wave
     * wave front propagates by coherent superposition/ interference
   * Which physical effect determines angular resolution of an imaging sensor? How can we improve such resolution without changing signal wavelength?
-  
-  ![diffraction](diffraction.jpg)  
+    ![diffraction](diffraction.jpg)  
     1. Diffraction effect determines the angular resolution of an imaging sensor, because the narrower the slit, the more wave will fan out.  
     2. angular resolution: $∆θ=1,22*λ/D$, with λ the wave length of signal, and D the antenna size (the optical aperture).  
     3. If we want to improve such resolution without changing signal wavelength, we can increase the size of optical aperture 光学孔径
@@ -618,7 +617,7 @@ bayesian classification method **special case**: prior probability unknown - onl
   * Kappa coefficient: Agreement between classified pixels and ground truth $[-1, 1]$
 * user's accuracy/Commission error: number correctly identified in a given map class/ number claimed to be in that map class
 * producer's accuracy/Omission error: number correctly identified in reference plots of a given class/ number actually in that reference class
-* error matrix
+* error matrix  
 ![error matrix](errormatrix.jpg)  
 reference source - y -user's accuracy  
 classified map - x - producer's accuracy
