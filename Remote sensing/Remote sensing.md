@@ -1,7 +1,8 @@
-Remote sensing
+# Remote sensing
+
 ====
 Source: Prof. Dr.-Ing. Uwe Sörgel, Lecture Remote Sensing  
-https://www.ifp.uni-stuttgart.de/en/teaching/geoengine/remote_sensing/  
+<https://www.ifp.uni-stuttgart.de/en/teaching/geoengine/remote_sensing/>  
 Outline: Zhouyan Qiu, msqiuzy@outlook.com
 
 ## Introduction
@@ -18,15 +19,15 @@ Remote Sensing uses the radiant energy that is reflected, emitted or scattered f
 
 * electrical effects play an important role in the remote sensing
 
-  * Coulomb's law $F=(q_1 q_2)/(4πεr^2 )$. 
+  * Coulomb's law $F=(q_1 q_2)/(4πεr^2 )$.
   * The permittivity $ε=ε_0*ε_r$, with the electric constant, and is complex and the magnitude varies by the object. For example,  in the mean water level is 81, which is rather large.
 
 * magnetic effects can be neglected in remote sensing
 
-  * In the static magnetic field, ${\vec{B}}=\mu _r∙\mu _0∙\vec{H},$, With $μ_r$ the permeability and $μ_0$ the magnetic constant, and the permeability varies little for the most important types of matter.
+  * In the static magnetic field, ${\vec{B}}=\mu_r∙\mu_0∙\vec{H},$, With $μ_r$ the permeability and $μ_0$ the magnetic constant, and the permeability varies little for the most important types of matter.
   * permanent magnet
 
-### oscillations and waves 
+### oscillations and waves
 
 * the difference between oscillation and wave
   
@@ -59,12 +60,12 @@ Remote Sensing uses the radiant energy that is reflected, emitted or scattered f
 ### radiation budget
 
 * radiometry
-    * measurement of electromagnetic radiance
-    * emits radiance depending on its temperature  
-      idealized pbject model: Black body(black body radiation)
+  * measurement of electromagnetic radiance
+  * emits radiance depending on its temperature  
+    idealized pbject model: Black body(black body radiation)
 
-      * Wien's displacement law: The frequency of maximal radiance is proportional to temperature
-      * Stephan-Boltzmann law: The total amount of thermal radiation emitted is directly proportional to the fourth power of its absolute temperature
+    * Wien's displacement law: The frequency of maximal radiance is proportional to temperature
+    * Stephan-Boltzmann law: The total amount of thermal radiation emitted is directly proportional to the fourth power of its absolute temperature
 
 * radiation Budegt equation $Φ_iλ=Φ_rλ+Φ_aλ+Φ_tλ$
 
@@ -85,84 +86,91 @@ $$
 ### interaction of waves with matter
 
 #### general remarks
-  * the energy of the EM wave is proportional to frequency: $E = h*f$, long wave MW have far less energy than visible light
-  * interaction of EM wave with molecules
-    * optical domain/ infrared (VIS, NIR-FIR): in particular sensitive to chemical object structure
-    * thermal radiance TIR热辐射: localize natural and anthropogenic heat sources
-    * microwave domain MW: sensitive to conductivity, roughness, morphology
+
+* the energy of the EM wave is proportional to frequency: $E = h*f$, long wave MW have far less energy than visible light
+* interaction of EM wave with molecules
+  * optical domain/ infrared (VIS, NIR-FIR): in particular sensitive to chemical object structure
+  * thermal radiance TIR热辐射: localize natural and anthropogenic heat sources
+  * microwave domain MW: sensitive to conductivity, roughness, morphology
 
 #### diffraction
-  * fan out of wave behind obstacles
-  * huygens principle
-    * every point on the wave front is source of new elementary wave
-    * wave front propagates by coherent superposition/ interference
-  * Which physical effect determines angular resolution of an imaging sensor? How can we improve such resolution without changing signal wavelength?
-    ![diffraction](diffraction.jpg)  
-    1. Diffraction effect determines the angular resolution of an imaging sensor, because the narrower the slit, the more wave will fan out.  
-    2. angular resolution: $∆θ=1,22*λ/D$, with λ the wave length of signal, and D the antenna size (the optical aperture).  
-    3. If we want to improve such resolution without changing signal wavelength, we can increase the size of optical aperture 光学孔径
+
+* fan out of wave behind obstacles
+* huygens principle
+  * every point on the wave front is source of new elementary wave
+  * wave front propagates by coherent superposition/ interference
+* Which physical effect determines angular resolution of an imaging sensor? How can we improve such resolution without changing signal wavelength?
+  ![diffraction](diffraction.jpg)  
+  1. Diffraction effect determines the angular resolution of an imaging sensor, because the narrower the slit, the more wave will fan out.  
+  2. angular resolution: $∆θ=1,22*λ/D$, with λ the wave length of signal, and D the antenna size (the optical aperture).  
+  3. If we want to improve such resolution without changing signal wavelength, we can increase the size of optical aperture
 
 #### absorption/emission
-  * energy transfer from wave to matter
-  * subtractive color by absorption: CMYK
-  * penetration of EM waves into Matter 穿透
-    1. penetration proportional to wavelength
-    2. microwaves: dependence on moisture 水分
+
+* energy transfer from wave to matter
+* subtractive color by absorption: CMYK
+* penetration of EM waves into Matter 穿透
+   1. penetration proportional to wavelength
+   2. microwaves: dependence on moisture 水分
 
 #### scattering
-  * change of EM direction at particles in the atmosphere(Molecules, water droplets)
-  * the radiance becomes absorbed and is immediately emitted again
-  * Energy and wavelength remain the same, direction may change
-  * rayleigh-scattering
-    1. object size is small compared to wavelength
-         * molecules in visible domain
-         * raindrops in microwave domain
-    2. strongly dependent on wavelength  
-      blue sky - shorter blue wavelength scatters more
-    3. large wavelength signal can penetrate clouds
-  * Mie-scattering  
-    Mie scattering is elastic scattered light of particles that have a diameter similar to or larger than the wavelength of the incident light.  
-    The Mie signal is proportional to the square of the particle diameter.  
-    Mie scattering is much stronger than Rayleigh scattering and, therefore, a potential source of interference for this weaker light scattering process.
+
+* change of EM direction at particles in the atmosphere(Molecules, water droplets)
+* the radiance becomes absorbed and is immediately emitted again
+* Energy and wavelength remain the same, direction may change
+* rayleigh-scattering
+  1. object size is small compared to wavelength
+       * molecules in visible domain
+       * raindrops in microwave domain
+  2. strongly dependent on wavelength  
+    blue sky - shorter blue wavelength scatters more
+  3. large wavelength signal can penetrate clouds
+* Mie-scattering  
+  Mie scattering is elastic scattered light of particles that have a diameter similar to or larger than the wavelength of the incident light.  
+  The Mie signal is proportional to the square of the particle diameter.  
+  Mie scattering is much stronger than Rayleigh scattering and, therefore, a potential source of interference for this weaker light scattering process.
 
 #### reflection and refraction
-  * Light = Elektro-magnetic Wave
-    ![Electromagnetic waves](Electromagnetic_waves.png)  
-  * at surface boundaries
-  * polarization
-    ![polarization](polarization.jpg) 
-    1. polarization linear
-      * light maybe polarized
-      * polarization filter
-        * effect of filter depending upon rotation
-        * 2 linear polarizing filter with 90 difference in direction - no lights go through
-        * 2 linear polarizing filter with any other difference in rotation - intensity reduced
-      * separation of stereo images
-    2. circular (3D glasses)  
-      electric and magnetic field are permanently changing
-    3. elliptic
-  * velocity of light depends on matter
-    * the frequency remains, the wavelength becomes smaller
-    * the refraction index is a function of wavelength
-    * disperion, prism
-  * snell's law of refration: $n1*sin(α)=n2*sin(β)$
-  * cause of refraction
-    * wave front hits surface oblique
-    * dipoles inside matter are forced to oscillate
-    * the change of velocity of light causes change of direction
-    * brewster's angle
-    ![brewster](BrewsterAngle.jpg)  
-    * BRDF (Bidirectional Reflectivity Distribution Function): $R(Θ,Φ,θ,φ)$
-    * influence of surface roughness
-    ![Roughness Criterion](roughnesscriterion.png)  
-      * rough surface - Diffuse reflection is the reflection of light or other waves or particles from a surface such that a ray incident on the surface is scattered at many angles rather than at just one angle as in the case of specular reflection.
-      * smooth surface - specular reflection
-      * Roughness Criterion: 
+
+* Light = Elektro-magnetic Wave
+  ![Electromagnetic waves](Electromagnetic_waves.png)  
+* at surface boundaries
+* polarization
+  ![polarization](polarization.jpg)  
+  * polarization linear
+    * light maybe polarized
+    * polarization filter
+      * effect of filter depending upon rotation
+      * 2 linear polarizing filter with 90 difference in direction - no lights go through
+      * 2 linear polarizing filter with any other difference in rotation - intensity reduced
+    * separation of stereo images
+  * circular (3D glasses)  
+    electric and magnetic field are permanently changing
+  * elliptic
+* velocity of light depends on matter
+  * the frequency remains, the wavelength becomes smaller
+  * the refraction index is a function of wavelength
+  * disperion, prism
+* snell's law of refration: $n1*sin(α)=n2*sin(β)$
+* cause of refraction
+  * wave front hits surface oblique
+  * dipoles inside matter are forced to oscillate
+  * the change of velocity of light causes change of direction
+  * brewster's angle
+  ![brewster](BrewsterAngle.jpg)  
+  * BRDF (Bidirectional Reflectivity Distribution Function): $R(Θ,Φ,θ,φ)$
+  * influence of surface roughness
+  ![Roughness Criterion](roughnesscriterion.png)  
+    * rough surface - Diffuse reflection is the reflection of light or other waves or particles from a surface such that a ray incident on the surface is scattered at many angles rather than at just one angle as in the case of specular reflection.
+    * smooth surface - specular reflection
+    * Roughness Criterion:
+
 $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$  
-  $σ_h$: the standard deviation of the roughness height regarding to a reference height  
-  $θ$: the local incident angle
+$σ_h$: the standard deviation of the roughness height regarding to a reference height  
+$θ$: the local incident angle
 
 ### various kinds of resolution
+
 * digitalization = sampling and quantization
 * sampling
   * spatial resolution
@@ -174,7 +182,9 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
   * Radiometric resolution tells how many grey values (depends on the number of bits) can be coded, this resolution against to the same spectral band
 
 ## image processing
+
 ### introduction
+
 * acquisition of object features in image
   * information carrier - electromagnetic radiation of specific wave length​
     * reflected radiation: sunlight, laser, radar impuls
@@ -204,6 +214,7 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
   * code images and image sequences, storage
 
 ### image acquisition - CCD and CMOS technology
+
 * inner photoelectric effect
 * linear CCD sensor
   * sensor moves along track, image generated line by line
@@ -237,7 +248,7 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
     2. transform RGB to IHS(Intensity, Hue, Saturation)
     3. exchange I with pan channel(I')
     4. transform I'HS to R'G'B' image(pan sharpened image)
-   * fuse geometry and color data
+  * fuse geometry and color data
 
 * spectral sensiticity of CCD-sensor
   * spectral response for CCD sensors in relation to photography and human eye(400-700nm, RGB)
@@ -275,6 +286,7 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
 * for recognition of a certain object, we need a handfull pixel
 
 ### characterisation of digital images
+
 * average grey value - the average of all grey values of an image describes the general brightness of image: $\mu=\frac{1}{X \cdot Y} \cdot \sum_{x} \sum_{y} g(x, y)$
   * dark image <<127
   * bright image >>127
@@ -299,6 +311,7 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
   * histogram stretch
 
 ### point operations
+
 * homogeneous
   * only original grey value influences results, position does not
   * transformation using charcteristic curve - the change of gray values from g1 to g2
@@ -358,16 +371,17 @@ $$\sigma_{h}>\frac{\lambda}{8 \cdot \cos (\theta)}$$
     * prewitt-operator
       * simple realization: $h_x=0.5*[-1\quad 0\quad  1], h_y=0.5*[-1\quad 0\quad  1]'$
       * differencing enhances noise - noise suppression by low pass filtering(smoothing) in across direction
-      ![prewitt](prewitt.jpg) 
+      ![prewitt](prewitt.jpg)  
       * filtering in both directions
       * amplitude and direction of gradient
       $$g_{MAG}=sqrt(g_x^2+g_y^2)\\g_{DIR}=arctan(g_y/g_x)$$
     * laplacian operatoer - image sharpening
       * use superposition principle of linear filters
       * image sharpened by adding high-pass component from Laplacian
-      ![Laplacian](laplacian.jpg) 
+      ![Laplacian](laplacian.jpg)  
 
 ### geometric transformation
+
 * spatial transformation using a mathematical function
   * simple geometric transformations  
   translation: $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{l}x_{1} \\ y_{1}\end{array}\right)+\left(\begin{array}{l}d x \\ d y\end{array}\right)$
@@ -380,7 +394,7 @@ rotation:
 $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\cos \alpha & \sin \alpha \\ -\sin \alpha & \cos \alpha\end{array}\right) \cdot\left(\begin{array}{l}x_{1} \\ y_{1}\end{array}\right)$
 1 dof. $(\alpha)$
   * further sptial transformations  
-  ![sptial](sptial.jpg) 
+  ![sptial](sptial.jpg)  
 * grey value determination
   * general spatial transformation results in the change from integer to non-integer positions
   * indirect method
@@ -391,13 +405,16 @@ $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\
   * Bicubic interpolation: The new grey value is interpolated from the neighbouring 16 values
 
 ## Optical Satellite sensors
+
 ### motivation: mapping from space
+
 * terrestrial and airborne mapping cannot deliver information necessary for sustainable development on global scale
 * monitoring of climate change
 * rapid hazard response
 * large scale mapping
   
 ### some technical issues
+
 * geostationary satellites - orbit in 36000km altitude
 * sun-synchronous orbit
   * revolution takes about 90-100 minutes in 500-900km altitude
@@ -408,7 +425,7 @@ $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\
   * earlier: shadows too large
   * later: too many clouds due to evaporation
 * data broadcasted to ground stations
-* direct sensor orientation: gyros (for determination of attitude change), star sensors and positioning system 
+* direct sensor orientation: gyros (for determination of attitude change), star sensors and positioning system
 * opto-mechanical sensor (Whiskbroom Scanner/Cross-track scanner, back and forth)  
 ![Whiskbroom](whiskbroom.jpg)
 * Linear CCD Array (push broom scanner/along-track scanner)  
@@ -430,6 +447,7 @@ $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\
   * digital surface model: true orthophoto
 
 ### multispectral satellite sensors
+
 * optical high resolution satellite sensors
   * use linear CCDs and are on sun-synchronous near-polar orbits
   * most multispectral systems have 4 channels (RGB, near IR)
@@ -442,8 +460,10 @@ $\left(\begin{array}{l}x_{2} \\ y_{2}\end{array}\right)=\left(\begin{array}{cc}\
   * celestial mechanics
   * ordering restrictions - one sensor for many users
 
-### indices NDVI: $\mathrm{NDVI}=\frac{\mathrm{NIR} \cdot \mathrm{Red}}{\mathrm{NIR}+\mathrm{Red}}$  
+### indices NDVI: $\mathrm{NDVI}=\frac{\mathrm{NIR} \cdot \mathrm{Red}}{\mathrm{NIR}+\mathrm{Red}}$
+
 ![NDVI](ndvi.jpg)
+
 * advantage of index(Ratio)
 due to different illumination, the same land cover has different grey values in band A, same problem for band B. However, in the ratio image of the two bands, i.e. band A/band B, we have similar grey values for each class.
 * normalized difference Vagetationindex(NDVI) = $(Band 4 - band3)/ (Band 4 + band3), [-1, +1]$  
@@ -451,13 +471,16 @@ band 4 near infared, band 3 red
 NDVI=-1: black, NDVI= 1: white  
 a larger NDVI value indicates higher vitality
 
-### hyperspectral sensors  
+### hyperspectral sensors
+
 ![hyperspectral sensors](hyperspectral.jpg)
 
 ### depth from stereo: two images requied of sufficient: overlap, baseline
 
 ## Classification
+
 ### introduction
+
 * motivation: derive map from Remote sensing image
 * land cover and land use
   * classification gives LAND cover
@@ -486,6 +509,7 @@ a larger NDVI value indicates higher vitality
     * supervised classification
 
 ### unsupervised classification
+
 * not a prior knowledge assumed about data  
 * tries to spectrally separate the pixels  
 * users has control over: number of classes, number of iterations, convergence thresholds
@@ -519,7 +543,9 @@ a larger NDVI value indicates higher vitality
     * useful to trigger subsequent supervised classification
 
 ### supervised classification
+
 2 ways to get the ground truth: ground truth, empirical identification
+
 * principle of selecting training areas
   * homogeneous areas
   * several areas per class
@@ -544,14 +570,14 @@ a larger NDVI value indicates higher vitality
   * strong theoretical foundation: if the required distribution are known, Bayesian classification will deliver the result with the lowest proportion of classification errors!
   * recap: probabilities  
     the joint probability: $\frac{|A, B|}{|\Omega|}=P(A, B)$  
-    the conditional probability: $P(B | A)=\frac{P(A, B)}{P(A)}$   
+    the conditional probability: $P(B | A)=\frac{P(A, B)}{P(A)}$  
 
-  **Derivation**: 
+  **Derivation**:  
   joint distribution $p(x, C)$ of data $x(A)$ and classes $C(B)$: $p(x, C) =  p(C|x)*p(x)$  
   likewise, $p(C, x) = p(x|C)*p(C)$  
   due to $p(C|x)=p(x|C)$  
   $p(C|x)*p(x)=p(x|C)*p(C)$  
-  **Therefore, theory of Bayestheory of Bayes:** $p(C | \mathbf{x})=\frac{p(\mathbf{x} | C) \cdot p(C)}{p(\mathbf{x})}$   
+  **Therefore, theory of Bayestheory of Bayes:** $p(C | \mathbf{x})=\frac{p(\mathbf{x} | C) \cdot p(C)}{p(\mathbf{x})}$  
   **the theorem of Bayes allows inverse reasoning derive information about the cause(the object type) from the effect(the observed features)**
   * $p(C)$: prior probability - corresponds to knowledge(bias) for the occurrence C
     * if no information is available: uniform fistribution, all classes have same probability, maximum-likelihood
@@ -594,8 +620,8 @@ a larger NDVI value indicates higher vitality
       1. For all $C^{k}$. calculate $p\left(\mathbf{x}, C^{k}\right)=p\left(\mathbf{x} | C^{k}\right) \cdot p\left(C^{k}\right)$
       2. Calculate
       $p(x)=\sum_{i} p\left(x | c^{t}\right) \cdot p\left(c^{t}\right)$
-      1. For all $C^{k}$ : calculate $p\left(C^{k} | \mathbf{x}\right)=p\left(\mathbf{x}, C^{k}\right) / p(\mathbf{x})$
-      2. $C_{m a p}$ results as the label $C^{k}$ for which $p\left(C^{k} | \mathbf{x}\right)$ is a maximum.
+         1. For all $C^{k}$ : calculate $p\left(C^{k} | \mathbf{x}\right)=p\left(\mathbf{x}, C^{k}\right) / p(\mathbf{x})$
+         2. $C_{m a p}$ results as the label $C^{k}$ for which $p\left(C^{k} | \mathbf{x}\right)$ is a maximum.
   * training: provision of examples
     * user marks image resion which correspond to a class $C^k$
     * assumption: all pixels in the selected region belong to $C^k$
@@ -612,6 +638,7 @@ bayesian classification method **special case**: prior probability unknown - onl
   * the pixel to be classified is labeled to belong to the class of the highest probability
 
 ### quantify classification performance
+
 * Overall measure
   * Overall accuracy: Percentage of correctly classified pixels
   * Kappa coefficient: Agreement between classified pixels and ground truth $[-1, 1]$
@@ -625,6 +652,7 @@ classified map - x - producer's accuracy
 ## airborne laser scanning
 
 ### overview
+
 * measurement principle, 3D cloud
   * 3D position information
   * radiomatric information
@@ -645,6 +673,7 @@ classified map - x - producer's accuracy
   * radiometric infromation: laser = monochromatic light
 
 ### basics
+
 * conponents of an ALS systems
   * positioning: GNSS receiver
   * attitude: inertial measurement unit IMU
@@ -659,13 +688,13 @@ classified map - x - producer's accuracy
     * target detection
     * range estimation unit(discrete echoes or full waveforem)
 * available laser sources/ wavelength for ALS
-  ![als](als.jpg) 
+  ![als](als.jpg)  
 * reflectance at different wavelengths for different application
   * 1550nm - soil, terrain model
   * 1064nm - vegetation, forestry - snow, glacier, snow heights
   * 532nm - snow, glacier, snow heights - penetrates water, bathymetry水深 **!problem: eye safety!**
 * properties of laser pulses
-  ![laser pulses](laserpulses.jpg) 
+  ![laser pulses](laserpulses.jpg)  
   d: diameter of main maximum(footprint - limit image resolution) d on the ground  
   no laser point in the mathematical sense
 * time = distance:  
@@ -674,13 +703,13 @@ classified map - x - producer's accuracy
   * range estimation: round-trip travel time delta t of signal(sensor-target-sensor) $R=\frac{c \cdot \Delta t}{2}$
   * range solution: echoes representing targets(i.e. objects) maybe sepearble $\delta_{R}=\frac{c \cdot \tau}{2}$
   * overlay
-  ![overlay](overlay.jpg) 
+  ![overlay](overlay.jpg)  
 * signal recording: discrete echo vs. full waveform
 * signal strength: laser-rader equation
 * ALS sensor model: direct georeferencing
-![alssystem](alssystem.jpg) 
+![alssystem](alssystem.jpg)  
 * Scanning mechanisms
-![scanning](scanning.jpg) 
+![scanning](scanning.jpg)  
 * stripwise data acquisition
   * overlap of adjacent strips required for
     * seamless coverage of project area
@@ -692,17 +721,20 @@ classified map - x - producer's accuracy
 * flight planning, quality assesment, strip adjustment
 
 ### from 3D point clouds to digital terrain models
+
 3d poind cloud  
 digital surface model, DSM: open terrain with buildings and vegetation
 digital terrain model, DTM: terrain surface without buildings and vegetation
 
 ### specific ALS systems
+
 * laser bathymetry
 * single photon LiDAR
 * UAV laser scanning
 * multispectral laser scanning: NDVI
 
 ### selected applications
+
 * building modeling
   * basis: 3D point cloud or 2.5D-DSM
   * mature solution available - commercial: semi-automatic approaches predominant
@@ -726,14 +758,16 @@ digital terrain model, DTM: terrain surface without buildings and vegetation
     2. resolution of mixed pixels based on geometry feasible
 
 ## radar
+
 ### basics of radar
+
 * Radar = radio frequency detection and ranging
 * active illumination and sampling of echo signals
 * no optic devices, but antennas and high frequency electronics
 * interesting object feature - radar cross section, object geometry, object velocity
 * signal feature: amplitude, phase and polariyation of the signal
 * spectral domains used for remote sensing - Transmission of Atmosphere at good weather conditions:  
-![Transmission of Atmosphere at good weather conditions](transmission.jpg) 
+![Transmission of Atmosphere at good weather conditions](transmission.jpg)  
 * radar(large wavelength) almost wather independent!
 * absorption
   * the energy of the EM wave is proportional to frequency: long wave EM have far less energy than visible light
@@ -751,8 +785,10 @@ digital terrain model, DTM: terrain surface without buildings and vegetation
       * high frequency returns more wavelength drops
   * strong aspect dependency of SAR: different aspects, different response
 
-### passive sensors  
+### passive sensors
+
 microwave radiometer  
+
 * passive instruments for measurement of reflected or emitted radiance of earth surface and/or atmosphere
 * measurement depends on: wavelength, observation position, polarization, material(particulary water content)
 * major applications
@@ -761,13 +797,14 @@ microwave radiometer
   * mapping of soil moisture, ice cover ocean salinity and sea ice cover
 
 ### active non-imageing sensors
+
 1. radar altimeter
    * active illumination in nadir direction with short pulse
    * distance to water surface from two-way signal runtime
    * product: global maps of sea level anomalied caused by variations of the earth's gravity and ocean currents
    * principle of radar altimetry
      ![radar altimetry](altimetry.jpg)  
-     in remote sensing, resolution is usually governed by pulse length. however, due to large distance and short pulses better then diffraction limit $R* λ/D$ we face here a exception  
+     in remote sensing, resolution is usually governed by pulse length. however, due to large distance and short pulses better then diffraction limit $R*λ/D$ we face here a exception
      note: lasers usually work in diffraction limit domain  
      **pulse-limited resolution:**  
      **diffraction limit**: $δ = λ*H/D$  
@@ -777,21 +814,23 @@ microwave radiometer
      **pulse limit**: $δ =2*rs$
      radius of resolution circle $r_s = \sqrt{(c*H*\tau)}$  
      velocity of light $c$
-    * radar altimetry: error sources and accuracy
-      * ionosphere: signal delay dependent on dispersive 'total electron content'(TOC)  
+     * radar altimetry: error sources and accuracy
+       * ionosphere: signal delay dependent on dispersive 'total electron content'(TOC)  
         remedy: 2 frequencies
-      * troposphere: water vapor delays signal  
+       * troposphere: water vapor delays signal  
         remedy: correction accoring to simultaneous radiometer measurements
-      * height accurancy over ocean: 3-10cm
+       * height accurancy over ocean: 3-10cm
 
 2. scatterometer  
-   ![scatterometer](scatterometer.jpg)  
+![scatterometer](scatterometer.jpg)  
+
 * main application: measurement of wind velocity oversea
 * principle: precision measurement of backscatter
 * in case of oblique signal, the backscatter of ocean is dominated by ripple waves induces by wind
 * Bragg resonance: interference maxima in case of pasth difference of both signal components $2 d \sin \theta=n \lambda$
 
 ### active imageing sensors
+
 1. real aperture radar(RAR): poor angular resolution of radar
    * angular resolution of imaging sensors  
     ![angularresolution](angularresolution.jpg)  
@@ -812,108 +851,106 @@ microwave radiometer
      * e.g. coast guards: monitoring of oil pollution from ships
 
 2. synthetic aperture radar(SAR)
-   * principle of synthetic aperture radar  
-    ![synthetic aperture radar](sar.png) 
-     * measurement sequence along sensor flight pass - assembly of large antenna
-     * synthesis of SAR image using doppler signal shift
-       * **side -looking illumination required!**
-       * $\delta a_{syn}=\frac{D}{2\left( D-real\,\,size\,\,of\,\,antenna \right)}$
-       * for image synthesis, all individual signal contributions are integrated into the correct image cell by compensation of their different runtimes (phase delays) - SAR processing  
-       ![phase delays](phasedelays.jpg)  
-   * radar backscatter coefficient
-     * classical radar
-       * detection of single/few targets, e.g. planes
-       * non-targets(clutter) are not useful and disturb target detection
-       * the feature of interest is in most cases the Radar cross section σ if the target(unit m^2)
-     * radar remote sensings
-       * there is no equivalent to clutter
-       * besides point target(masts, cars etc,)
-       * distributed targets(grass, fields, forests) often dominate the image content
-         * their scatterer density determines mainly the appearance of the image
-           * they are described by a dimensionless radar backscatter coefficient $σ_0$
-           * different brightness caused by different density
-    * from cartesian to polar coordinates
-       * the phase is evenly distributed(not further considered for single images)
-       * however, the difference of the phase of two images carries valuable information - SAR interferometry
-       * why is speckle a Nuisance  
-         the speckle hides the quantity of interest, namely the typical radar backscatter coefficient $σ_0$ of the given land cover class  
-         on average a grey value according to the radar backscatter coefficient σ0 of grass is exoected  
-         speckle reduction: increses the radiometrc resolution of the image; allows the usage of standard means of image processing(extraction of regions, edges, lines, contours)
-    * influence of topography on SAR mapping  
-      ![topography](topography.jpg)  
-      * foreshortening: smaller area in image - brighter
-      * layover
-        * shift towards sensor
-        * object order changed
-        * signal mixtual
-        * top of mountain closer than the foot to the sensor
-      * shadow(occlusion)
-        * no signal behind obstacles
-        * black image - cannot be observed in the image
-    * SAR polarimetry - reflections may change wave's polarization direction
-      * in remote sensing usually linear polarisation are used
-        * E-Field vector either horizontal H or vertical V
-        * 4 images $S=\left[\begin{array}{ll}S_{H H} & S_{H V} \\ S_{V H} & S_{V V}\end{array}\right]$
-      * is used for
-        * separation of surface or volume(vegetation) scattering process
-        * object geometry
-    * SAR interferometry
-      * amplitude & phase
-      * InSAR: measurement of elevation angle  
-        ![InSAR](insar.jpg)  
-        * SAR
-          * diffraction limits resolution in elevation direction θ
-          * only know the distance
-          * dont know the position
-        * Two SAR image separated across-track by baseline B
-          * different run-times of signal
-          * iso range lines intersect
-          * phase difference Φ is exploited
-        * phase difference Φ depends on θ: Φ -> θ -> Height
-        * ambiguity problem: for undulated terrain phase-unwrapping required
-      * modes for data acquisition
-        * repeat-pass-interferometry
-          * at least two passes
-          * mainly satellite sensors
-          * problem for multi-temporal data
-            * decorrelation of signals because we measure different things
-            * atmospheric signal delay - phase delay
-        * single-pass-interferometry
-          * 1 satellite for 2 images
-          * images are taken simultaneously
-          * airborne sensors
-          * same time, same atmosphere
-          * distance cancel out
-      * Digital elevation models(DEM) from InSAR data
-        * phase values $ΔΦ$: 0-2 pi
-        * add 2 pi regularly
-      * after phase unwrapping and phase to elevation conversion ->DEM
-    * differential SAR interferometry  
-      ![differential SAR interferometry](disar.jpg)  
-       * terms of the differential phase  
-         ![differential phase ](diphase.jpg)  
-         possibility to measure the surface deformation of a few millimeters because 2 pi equals to a few centimeters only!  
-         1 phase cycle(fringle) = λ/2
-       * horizontal and vertical surface deformation
-         * measured radial velocity can be split in horizontal and vertical components
-         * those components can be distinguished using ascending and descending orbit
-       * problems  
-         ![problems](problems.jpg)  
-          * atmospheric signal delay
-            * interferograms from only two images are problematic
-            * atmospheric effects are spatially but not temporally correlated
-              * use as many images as possible and filter out this phase term(high-pass filter)
-              * estimate atmospheric effects from GPS or imaging spectrometer
-          * temporal decorrelation
-            * large temporal gap: only noise in vegetation areas
-            * good signal: dominant reflection at buildings , rocks etc.
-        * alternative method: Persistent scatterer interferometry
-          * time-series of many SAR images
-          * consider only pixel, which show stable reflection over time - sparse matrix of reliable motion vectors
-          * dorts - buildings, urban
-          * low density - algricuture area
-          * persistent scatterer interferometry density rises with spatial resolution of SAR  
-            ![resolution](resolution.jpg) 
-            the smaller the resolution cell, the less clutter pro PS - we are able to detect weaker PS
+![synthetic aperture radar](sar.png)  
 
-
+* measurement sequence along sensor flight pass - assembly of large antenna
+* synthesis of SAR image using doppler signal shift
+  * **side -looking illumination required!**
+  * $\delta a_{syn}=\frac{D}{2\left( D-real\,\,size\,\,of\,\,antenna \right)}$
+  * for image synthesis, all individual signal contributions are integrated into the correct image cell by compensation of their different runtimes (phase delays) - SAR processing  
+ ![phase delays](phasedelays.jpg)  
+* radar backscatter coefficient
+* classical radar
+  * detection of single/few targets, e.g. planes
+  * non-targets(clutter) are not useful and disturb target detection
+  * the feature of interest is in most cases the Radar cross section σ if the target(unit m^2)
+* radar remote sensings
+  * there is no equivalent to clutter
+  * besides point target(masts, cars etc,)
+  * distributed targets(grass, fields, forests) often dominate the image content
+    * their scatterer density determines mainly the appearance of the image
+    * they are described by a dimensionless radar backscatter coefficient $σ_0$
+    * different brightness caused by different density
+* from cartesian to polar coordinates
+  * the phase is evenly distributed(not further considered for single images)
+  * however, the difference of the phase of two images carries valuable information - SAR interferometry
+  * why is speckle a Nuisance  
+   the speckle hides the quantity of interest, namely the typical radar backscatter coefficient $σ_0$ of the given land cover class  
+   on average a grey value according to the radar backscatter coefficient σ0 of grass is exoected  
+   speckle reduction: increses the radiometrc resolution of the image; allows the usage of standard means of image processing(extraction of regions, edges, lines, contours)
+* influence of topography on SAR mapping  
+![topography](topography.jpg)  
+  * foreshortening: smaller area in image - brighter
+  * layover
+    * shift towards sensor
+    * object order changed
+    * signal mixtual
+  * top of mountain closer than the foot to the sensor
+  * shadow(occlusion)
+    * no signal behind obstacles
+    * black image - cannot be observed in the image
+* SAR polarimetry - reflections may change wave's polarization direction
+  * in remote sensing usually linear polarisation are used
+    * E-Field vector either horizontal H or vertical V
+    * 4 images $S=\left[\begin{array}{ll}S_{H H} & S_{H V} \\ S_{V H} & S_{V V}\end{array}\right]$
+  * is used for
+    * separation of surface or volume(vegetation) scattering process
+    * object geometry
+* SAR interferometry
+  * amplitude & phase
+  * InSAR: measurement of elevation angle  
+ ![InSAR](insar.jpg)  
+    * SAR
+      * diffraction limits resolution in elevation direction θ
+      * only know the distance
+      * dont know the position
+    * Two SAR image separated across-track by baseline B
+      * different run-times of signal
+      * iso range lines intersect
+      * phase difference Φ is exploited
+    * phase difference Φ depends on θ: Φ -> θ -> Height
+    * ambiguity problem: for undulated terrain phase-unwrapping required
+* modes for data acquisition
+  * repeat-pass-interferometry
+    * at least two passes
+    * mainly satellite sensors
+    * problem for multi-temporal data
+      * decorrelation of signals because we measure different things
+      * atmospheric signal delay - phase delay
+  * single-pass-interferometry
+    * 1 satellite for 2 images
+    * images are taken simultaneously
+    * airborne sensors
+    * same time, same atmosphere
+    * distance cancel out
+* Digital elevation models(DEM) from InSAR data
+  * phase values $ΔΦ$: 0-2 pi
+  * add 2 pi regularly
+* after phase unwrapping and phase to elevation conversion ->DEM
+* differential SAR interferometry  
+![differential SAR interferometry](disar.jpg)  
+  * terms of the differential phase  
+   ![differential phase ](diphase.jpg)  
+   possibility to measure the surface deformation of a few millimeters because 2 pi equals to a few centimeters only!  
+    1 phase cycle(fringle) = λ/2
+  * horizontal and vertical surface deformation
+    * measured radial velocity can be split in horizontal and vertical components
+    * those components can be distinguished using ascending and descending orbit
+  * problems  
+   ![problems](problems.jpg)  
+    * atmospheric signal delay
+      * interferograms from only two images are problematic
+      * atmospheric effects are spatially but not temporally correlated
+        * use as many images as possible and filter out this phase term(high-pass filter)
+        * estimate atmospheric effects from GPS or imaging spectrometer
+    * temporal decorrelation
+      * large temporal gap: only noise in vegetation areas
+      * good signal: dominant reflection at buildings , rocks etc.
+  * alternative method: Persistent scatterer interferometry
+    * time-series of many SAR images
+    * consider only pixel, which show stable reflection over time - sparse matrix of reliable motion vectors
+    * dorts - buildings, urban
+    * low density - algricuture area
+    * persistent scatterer interferometry density rises with spatial resolution of SAR  
+     ![resolution](resolution.jpg)  
+     the smaller the resolution cell, the less clutter pro PS - we are able to detect weaker PS
