@@ -1,19 +1,24 @@
-Thematic cartography
+# Thematic cartography
+
 ===
+
 Source: Dr.-Ing. Li Zhang, Lecture Thematic cartography  
-https://www.iigs.uni-stuttgart.de/en/education/geoengine/thematic_cartography-ws/  
+<https://www.iigs.uni-stuttgart.de/en/education/geoengine/thematic_cartography-ws/>  
 Outline: Zhouyan Qiu, msqiuzy@outlook.com
 
 ## Introduction
+
 A map is a planar, full-scale, generalized and content limited model of spatial information  
 Cartography is a discipline, dealing with the conception, the production, the distribution and the field of study of maps.  
 
 ### Tasks of cartography
+
 * Processing and transfer of spatial related information(interpretation, choice, generalization, presentation)  
 * Compilation, design
 * Realization, distribution
 
 ### Classification of maps
+
 * Kind of realization
   * Analogue
   * Digital
@@ -32,27 +37,31 @@ Cartography is a discipline, dealing with the conception, the production, the di
 * Content
   * Topographic map
   * Thematic map
-      * Analytical and synthetic
-      * Primary and derived(source) maps
-      * Concrete and abstract maps
-      * Inductive and deductive maps
-      * Representation of unchangeable and changeable issues
-      * Representation of bounded and continuous issues
-      * Map and cartograms
-      * Large scale and small scale maps
-      * Single maps, map series, atlases
+    * Analytical and synthetic
+    * Primary and derived(source) maps
+    * Concrete and abstract maps
+    * Inductive and deductive maps
+    * Representation of unchangeable and changeable issues
+    * Representation of bounded and continuous issues
+    * Map and cartograms
+    * Large scale and small scale maps
+    * Single maps, map series, atlases
 * Map types(method-oriented structure): Point maps, isopleth maps, areal maps, signature maps, diagram maps...
 
 ### Maps are never completely objective but they should transfer the highest level of objectivity - due to the different methods of generalization for map visualization
 
 ### Definition of digital map
+
 ![digital map](/digital.jpg)
 
 ### Definition of digital road map
+
 ![digital road map](/road.jpg)
 
 ### geodata
+
 Data about objects, land forms and infrastructure on the earth's surface, resource.
+
 * Essential characteristic - spatial relation
   * Geo data can be linked by its spatial relation
   * New information can be derived by using gis functionalities
@@ -77,7 +86,9 @@ Data about objects, land forms and infrastructure on the earth's surface, resour
   * Compressibility: Information can be aggregated to support different application levels
 
 ## Map series
+
 ### Classification
+
 * content
   * **Topographic maps**: landscape is represented in a characteristically simplified way(situation(building, roads, rails), waters, terrain profile, vegetation,…)
   * **Thematic maps**: phenomena and facts about the perception of the information are represented(e.g. cadastral maps, planning maps)
@@ -86,14 +97,20 @@ Data about objects, land forms and infrastructure on the earth's surface, resour
   * Digital: already available in a computerized form and can be imported
 
 ### modelling within map seies: can be modelled and represented by different object types and in various levels of detail
+
 ![modelling within map seies](/modelling.jpg)
+
 ### topographic maps
+
 landscape is represented in a characteristically simplified way.  
 main objects - situations(buildings, roads, rails), waters, terrain profile, vegetation and a number of other phenomena
+
 #### topographic maps in germany
+
 ![topographic maps in germany](/germanymap1.jpg)  
 ![topographic maps in germany](/germanymap2.jpg)  
 roman characters indicate the map scale  
+
 * series of numbers indicate the location
   * first both for north-south-direction: 00 (=N) to 87 (=S)
   * last both for west-east-direction: 00 (=W) to 50 (=E)
@@ -110,6 +127,7 @@ roman characters indicate the map scale
   * DLM - digital landscape model (Landschaftsmodelle)
   
 ### thematic maps
+
 * phenomena and facts about perception of the information
 * types of the thematic maps
   * nature: geology/soils/temperature
@@ -121,7 +139,7 @@ roman characters indicate the map scale
     * cadastre numbering series with survey sketches and coordinate catalogs
     * cadastral map series: field parts with their number and boundary, buildings, topographical objects and kind-of-use
     * cadastral book series: field parts with their area, ownership, location, kind-of-use and result of official land classification for valuation purposes
-  * integrated AFIS – ALKIS – ATKIS-model(AAA-Model) 
+  * integrated AFIS – ALKIS – ATKIS-model(AAA-Model)
     * AFIS: official bench mark database(gravity, heights,...)
     * ALKIS: official land property cadastre information system
     * ATKIS: official topographic cartographic information system
@@ -151,3 +169,27 @@ roman characters indicate the map scale
         * ATKIS: new object due to attribute change
 
 ## data processing
+
+### digitizing
+
+#### digital methods
+
+![digital methods](/digitizing.jpg)  
+
+* manual
+  * digitizer tablets
+    * acquisition of coordinate pairs
+    * identification of point
+    * the integrated grid provides coordinates w.r.t. the reference frame defined by the software
+  * on screen digitizing
+    * digital acquisition of geometry directly on the screen
+    * raster data in the background are used to create a digital representation of the objects found in the raster data(e.g. satellite image)
+* semi automatic
+  * a line is automatically traced down within an analog map using a sensor
+  * start and end of the line as well as crossroads have to be entered manually
+  * advantage: faster than manual digitalising
+  * disadvantage: complex and expensive hardware
+* automatic
+  * scanning: the analog image is transformed into a digital image(raster data)
+  * raster-vector-transformation: the captured raster data(grid) is transformed into vector data. In order to derive areas, symbols and fonts for object recognition
+  * pattern recognition: image processing
