@@ -9,7 +9,7 @@ Outline: Zhouyan Qiu, msqiuzy@outlook.com
 
 ### geographical information system(GIS) - IMAP of spatial data/geodata  
 
-computer-based systems for the acquisition and update,  storage and query, analyses and simulation as well as output and presentation of spatial data 
+computer-based systems for the acquisition and update,  storage and query, analyses and simulation as well as output and presentation of spatial data.
 
 * acquisition and update - input
 * storage and query - management
