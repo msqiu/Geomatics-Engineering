@@ -1,17 +1,23 @@
-Geoinformatics
+# Geoinformatics
+
 ===
 Source: Dr.-Ing. Volker Walter, Lecture Geoinformatics  
-https://www.ifp.uni-stuttgart.de/en/teaching/geoengine/geoinformatics/  
+<https://www.ifp.uni-stuttgart.de/en/teaching/geoengine/geoinformatics/>  
 Outline: Zhouyan Qiu, msqiuzy@outlook.com
 
 ## Introduction
+
 ### geographical information system(GIS) - IMAP of spatial data/geodata  
-computer-based systems for the acquisition and update,  storage and query, analyses and simulation as well as output and presentation of spatial data  
+
+computer-based systems for the acquisition and update,  storage and query, analyses and simulation as well as output and presentation of spatial data 
+
 * acquisition and update - input
 * storage and query - management
 * analyses and simulation - analyses
 * output and presentation - presentation
+
 ### geodata: data elements which are referenced to a part of the earth
+
 * satellite data
 * aerial data
 * topographic maps
@@ -19,19 +25,25 @@ computer-based systems for the acquisition and update,  storage and query, analy
 * thematic maps - represent information
 * cadastre data
 * 3D city models
+
 ### GeoTIFF: special form of tiff  
+
 contain information about the **georeferencing** of the image and other infomation, e.g., map projection
+
 ### GIS-Environments LNSED
+
 * Land Information Systems(LIS): systems which are developed and operated by state surveying institutes
 * Network Information Systems(NIS): Facility management of networks (for example from energy, water and gas supply companies)
 * Space Information Systems(SIS): systems for the decision support for planning and development
 * Environmental Information Systems(EIS)
 * Domain Information Systems(DIS): systems which have special applications
+
 ### What can I do with a GIS: planning, presentation, navigation, simulation, management of geodata
 
 ## Data Acquisition
 
 ### Primary data acquisition: acquisition **directly** from the object or from an image from it
+
 * Geodesy: measurement with theodolite, total station, gps-receiver,...
 * Photogrammetry: Reconstruction of objects regarding their form and position from photographic images
   * Aerial film camera with FMC(Foward motion compensation)
@@ -68,8 +80,8 @@ contain information about the **georeferencing** of the image and other infomati
     * low resolution and accuracy as by airborne systems
 * Georelated and other disciplines: specific sensors, field inspections,...
 
-
 ### Secondary data acquisition: acquisition of already interpreted data - Map digitizing
+
 * manual: digitizier tablets, on-screen digitizing
   * advantage
     * low hardware costs
@@ -96,7 +108,9 @@ contain information about the **georeferencing** of the image and other infomati
   * pattern recognition: numbers, letters, graphical objects, symbols
   * later checks and interactive error removal
   * special software for specific map types
+
 ### Geo basis data
+
 * Geo-basis data in Germany: ATKIS – Amtliches Topographisch Kartographisches Informationssystem(official topographic cartographic information system)
   * DLM25: 1:25.000 (accuracy +- 3m)
   * DLM250: 1:250.000 (accuracy +- 30m)
@@ -114,15 +128,17 @@ contain information about the **georeferencing** of the image and other infomati
     * local knowledge
     * import data
 
-## Data Modeling  
+## Data Modeling
+
 reality - data model(abstraction selection) - data structure(computer readable) - file structure(physical storage)
 
 ### 4 layer model of a GIS
+
 * external view - external model - selection of objects and relations  
 transition from reality to computer system involves abstraction process. thus the model only reflects certain aspects of reality
 * conceptual view - geometric topologic - thematic modeling
   * describes the transformation of the objects of the external model into computer readable data structures
-$$objects<\frac{thematric}{geometry<\frac{position}{topology}}$$
+  $$objects<\frac{thematric}{geometry<\frac{position}{topology}}$$
   * Queries to Spatial Information System
     * give identification of the line the cursor points - geometry
     * give attributes of the area the cursor pointss - geometry+thematic
@@ -141,7 +157,9 @@ $d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\cdots+
 * internal view - how you store data
 
 ### Different types of GIS
+
 ![gis](gis.jpg)
+
 * raster GIS: store and analyses raster data
 * vector GIS: store and analyses vector data
 * hybrid GIS: store and analyses raster and vector data
@@ -154,10 +172,12 @@ $d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\cdots+
   * various kinds of spatial analysis are easy - overlay operation are difficult to implement
 
 ### 2.5D and 3D Data
+
 * 2.5D: for every Position (x, y) exactly one z-Value (Surfaces)
 * 3D: one (x, y) Position can have several z-Values (Bodies or Solids)
 
 ### Modeling of Surfaces
+
 * Surface Reconstruction with Polynoms: only simple forms are possible
 * Surface Reconstruction with Irregular Triangulated Networks (TIN)
   * TIN - triangulated irregular networks
@@ -177,6 +197,7 @@ $d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\cdots+
     * Linear Interpolation in Triangles $z = f(x, y) = a_0 + a_1x + a_2y$
 
 ### geometrical data modelling - Description of the geometry of spatial objects
+
 * Primitive Instancing  
   ![Primitive Instancing](primitive.jpg)  
   * define for each object type a complete List of description parameters to describe the form and the position of an object.
@@ -232,6 +253,7 @@ $d(p, q)=\sqrt{\left(p_{1}-q_{1}\right)^{2}+\left(p_{2}-q_{2}\right)^{2}+\cdots+
 * Freeform Shapes
 
 ### topological data modelling - Description of spatial relations of objects without considering the coordinates
+
 * Topology
   * describes spatial relations among geometric objects
   * based on Leibniz' analysis situs
@@ -261,14 +283,14 @@ Euler equation: $C = n - e + f = 2 (2)$ test if a graph is planar
 * importance of Topology
   * description of relations between elementary objects (node, edge, area)
   * important for consistency checks  
-  ![consistency checks](consistency.jpg) 
+  ![consistency checks](consistency.jpg)  
     1. under- / overshoots
     2. dead ends
     3. weird polygons
     4. closed polygons
   * redandance free storage
-* [incidence and adjacency](http://www.btechsmartclass.com/data_structures/graph-representations.html) 
-![incidence and adjacency](adjacent.jpg)   
+* [incidence and adjacency](http://www.btechsmartclass.com/data_structures/graph-representations.html)  
+![incidence and adjacency](adjacent.jpg)  
 ![incidence and adjacency](undirected.jpg)  
 ![incidence and adjacency](directed.jpg)  
 ![incidence and adjacency](incidence.jpg)  
@@ -287,19 +309,21 @@ Euler equation: $C = n - e + f = 2 (2)$ test if a graph is planar
   * A spanning tree connects all nodes of a graph. A minimal spanning tree is that tree where the length (costs) of the spanning tree is minimal
   * A minimal spanning tree has no cycles. That means that there are no redundancies.
   * Kruskal Algorithm  
-  ![Kruskal Algorithm](kruskal.png)   
+  ![Kruskal Algorithm](kruskal.png)  
     * take the shortest edge and check if the two nodes of that edge are in the same set
     * if yes: this would lead to a cycle and the edge can be discarded
     * if no: merge the two sets which contain the beginning and end node of the edge
   * Prim's Algorithm  
-  ![Prim's Algorithm](prim.png)    
+  ![Prim's Algorithm](prim.png)  
   * Bubblesort  
  ![Bubblesort Algorithm](bubblesort.jpg)  
 
- ### thematic data modeling - Description of the thematic of spatial objects
+### thematic data modeling - Description of the thematic of spatial objects
+
   ![thematic](thematic.jpg)  
 referred to the description, handling and storage of the thematic of spatial objects  
 use thematic layers and object hierarchies to combine objects with the same thematic  
+
 * thematic data
   * refers to the data that is independent from geometry and topology relations
   * describes the attributes and sematic relations between objects
@@ -342,11 +366,13 @@ use thematic layers and object hierarchies to combine objects with the same them
     * UML (Unified Modeling Language)
 
 ### data structures
+
 * vector data: spaghetti data, node and edge lists
 * raster data: matrix, compression algorithms
 * thematic data: tables
 
 ## Web based GIS technologies
+
 * Internet Protocol
   * The Internet Protocol (IP) is the basic communication
   * protocol in the Internet and is used to transport data
@@ -362,7 +388,7 @@ use thematic layers and object hierarchies to combine objects with the same them
     * HTML BODY contains the visible information of the document
   * images and other material into web pages
   * URLs(Uniform Resource Locater) are used for the unique identification of resources in the Internet.  protocol://host/location
-    * protocol defines the network protocol followed by a colon and two slashes, e.g., http://, ftp://
+    * protocol defines the network protocol followed by a colon and two slashes, e.g., $http://, ftp://$
     * host identifies the computers by its hostname (e.g. www.ifp.unistuttgart.de) or by its IP address (e.g. 127.58.140.33). Host names can be translated automatically into IP addresses with Domain Name Servers (DNS) in the Internet
     * location identifies the path of the resource on the server (e.g.:lehre/vorlesungen.html)
   * CSS – Cascading Style Sheets
@@ -378,7 +404,7 @@ use thematic layers and object hierarchies to combine objects with the same them
       * Only those maps can be visualized which are preprocessed
       * Complex queries (selection of object types or analysis functionality) or a individual map representations are not (hardly) possible
     * Dynamic Map Server
-    ![Dynamic Map Server](dynamic.jpg)   
+    ![Dynamic Map Server](dynamic.jpg)  
       * The maps are created dynamically when the client makes a request
       * The Internet Web Server is connected to a GIS (3-level-Architecture)
       * The maps are images (gif, png, jpg, etc.) in HTML documents or vector data (e.g. GML Geography Markup Language)
@@ -386,7 +412,7 @@ use thematic layers and object hierarchies to combine objects with the same them
     * Thick Server and Thin Client - Realization with server-side technologies
     * Thin Server and Thick Client - Realization with client-side technologies
 * Server-side Technologies: connect a GIS with a Web Server
-![Server-side Technologies](serverside.jpg)   
+![Server-side Technologies](serverside.jpg)  
   * CGI(Common Gateway Interface): generate dynamic content on Web pages. called with a http-request
   * Webserver API (Application Interface)
     * The function is not external processes as with CGI but are executed in the address space of the server
@@ -418,49 +444,60 @@ use thematic layers and object hierarchies to combine objects with the same them
   * Special Types of Digital Globes
 
 ## Exercises
+
 ### Affine transformation
+
 $$\begin{array}{l}
 \mathrm{X}=a_{0}+a_{1} x+a_{2} y \\
 \mathrm{Y}=b_{0}+b_{1} x+b_{2} y
 \end{array}$$
 $a_0, b_0=$ shifting
-$a_1, a_2, b_ 1, b_2=$ rotation and shear  
-* problems of this approach regarding checkability and accuracy of the transformation result
-  * outlier research, check of results,information on precision is not possible
-  * so that to improve the accuracy and ensure its checkability, we need to introduce more known points and then we are able to do the adjustment, e.g., least-square adjustment to improve its performance
+$a_1,a_2,b_1,b_2=$ rotation and shear  
+
+#### problems of this approach regarding checkability and accuracy of the transformation result
+
+* outlier research, check of results,information on precision is not possible
+* so that to improve the accuracy and ensure its checkability, we need to introduce more known points and then we are able to do the adjustment, e.g., least-square adjustment to improve its performance
 
 ### geometric modelling
+
 #### interpolate the height
+
 Linear Interpolation (like affine transformation): $f(x, y)=a 0+a 1 x+a 2 y$  
 Cubic Interpolation (curved surfaces): $f(x, y)=a 0+a 1 x+a 2 y+a 3 x y$
+
 #### calculate the gradient in x and y direction
+
 Gradient in x-direction: $a_1$  
 Gradient in y-direction: $a_2$  
 Total gradient: $(a1^2 + a2^2)^1/2$
 
 ### topological modeling
+
 an incidence matrix is not always symmetrical
 
 ### Transformation Parameter
+
 $$
 \left[ \begin{array}{c}
-	E\\
-	N\\
+E\\
+N\\
 \end{array} \right] =\left[ \begin{matrix}
-	a&		b\\
-	d&		e\\
+a&b\\
+d&e\\
 \end{matrix} \right] \left[ \begin{array}{c}
-	r\\
-	c\\
+r\\
+c\\
 \end{array} \right] +\left[ \begin{array}{c}
-	c\\
-	f\\
-\end{array} \right] 
+c\\
+f\\
+\end{array} \right]
 $$
 a,b,d,e -- planar transformations including stretching, squeezing, rotation, shearing, reflection and orthogonal projection  
 c,f -- movement in the two directions on a 2-D plane
 
 ## GISneyland exercises
+
 * shapefiles are files containing geometric data like points, line or polygon shaped objects, as so called features
 * Explain Data View / Layout View
   * Data view is an all-purpose view for exploring, displaying, and  querying the data on your map. This view hides all the map elements on  the layout, such as titles, north arrows, and scale bars, and lets you focus on the data in a single data frame, for instance, editing or  analysis.
