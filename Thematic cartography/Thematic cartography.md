@@ -193,3 +193,112 @@ roman characters indicate the map scale
   * scanning: the analog image is transformed into a digital image(raster data)
   * raster-vector-transformation: the captured raster data(grid) is transformed into vector data. In order to derive areas, symbols and fonts for object recognition
   * pattern recognition: image processing
+
+#### digitising hardware
+
+digitizing workplace  
+drum scanner  
+flatbed scanner  
+
+#### digitizing software: arcgis
+
+* homogenization: geometric restrictions were applied to the result of digitization. This is to ensure quality and contour accuracy.
+  * rectangularity, straightness, parallelism
+  * large scale
+* possible sources of error: overlap and gap
+* solotions: GIS support edit-functions like complete, copy, delete,...
+
+### data. processing
+
+#### georeference and coordinate transformation
+
+* importance
+  * get the other points in the map as accurate as possible
+  * represent new data in the right place
+* georeferencing: assigns a reference system to a data set
+  * geodetic datum: a set of parameters and points used to exactly define the 3D shape of the earth
+  * coordinate system: consists of two or three coordinate axes and/or reference bearing within a plane or space
+  * map projections: the mathematical relationship between an ellipsoidal or spherical earth model and the mapping plane. - define the transformation from a 3D earth model into 2D coordinates
+* transformations
+  ![transformations](/transformations.jpg)  
+  * euclidian - 3 parameter, 2 points
+    * translation in X and Y, rotation - 3 parameters
+    * measurement with fixed scale
+  * similarity - 4/5 parameter, 2/3 points
+    * translation in X and Y, rotation, scale
+    * standard case/ direction dependent paper distortion(scale in X and Y)
+  * affine translation - 6 parameter, 3 points
+    * translation, rotation, scale, shearing
+    * deformation of the axes multi-parameter
+  * rubber sheeting
+    * all data points are adjusted in order to achieve a better correlation at a small number of known points within the data set
+    * connections between elements within a dataset(topology) remain the same
+    * distances between points are changed by expansion, contraction or other manipulations
+    * application: paper distortion, unknown map projection and generalisation
+* distortion of maps
+  * analog
+    * generalization
+    * storage(vertically hanging maps)
+    * folding of the map
+    * production process
+  * digital
+    * map projection
+    * generalization
+    * incorrected coordinates
+    * individual data sources
+
+#### matching & merging
+
+* map matching: absolute coordinates are transformed into local coordinates within the graph
+* edge matching
+  * comparison and adjusting of edge along the borders of the digital map or other saved units
+  * goal: agreement in position, form, and attributes
+* merging
+  * join objects(line, polygon) from the same or different data sets into one data set
+  * forms
+    * geometry
+      * Deletion of Duplicates
+      * Changes in topology/ deletion and insertion of identical points
+      * Geometric adjustment/ extension and contraction of objects
+    * attributes
+      * usage of segmented attributes
+      * add the information as attribute tables linked to the objects - a fully automatical process is not possible because the classification of different kinds of information have to be done manually
+      * choose new object segmentation
+      * generalization of information
+    * relations: introduction of relations between service station and road network
+
+#### generalization
+
+![generalization](/generalization.jpg)  
+
+* visualization of the same information in different(usually smaller) scales
+* derived from orthophoto
+  * simplification, smoothing, classification, creating signatures, evaluation
+* advantage - definition
+  * reducing the information content of maps due to scale change, map purpose, intended audience, and/or technical constraints
+* disadvantage
+  * main problem: geometric distortion - streets are wider and buildings are displaced and combined
+  * loss of details
+* digital data storage reduction, scale manipulation, statistical classification, symbolization
+* line smoothing
+  * there are more coordinates contained in the data set than needed to define the line or polygon
+  * decrease the number or coordinates
+  * simplification of lines by mean of vector procedures
+    ![simplification](/simplification.jpg)  
+    * douglas-peucker line smoothing: check whether a point is outside the tolerance band. If yes, draw a straight line to the point furthest away
+    <https://upload.wikimedia.org/wikipedia/commons/3/30/Douglas-Peucker_animated.gif>
+    ![douglas-peucker](/peucker.jpg)  
+* semantic generalization
+  * creation and classification of object classes
+    * content: data have to be classified by an appropriated method
+      * class limits: upper and lower limit of each class
+      * class interval or width and mid-point of class
+    * graphical aspect: choice of an appropriated display
+  * choice of a framework: geographic/geometric/administrative
+  ![choice of a framework](/framework.jpg)  
+
+### data analysis
+
+#### aggregation: information is not only in one dataset
+
+![aggregation](/aggregation.jpg)
