@@ -302,3 +302,103 @@ flatbed scanner
 #### aggregation: information is not only in one dataset
 
 ![aggregation](/aggregation.jpg)
+
+#### measuring, counting, calculating
+
+![measuring](/measuring.jpg)
+
+#### overlay: determine whether two area objects overlap, to determine the area of overlap, and to define the area formed by the overlap as one or more new area objects
+
+attributes are tranferred to the new objects  
+boolean logic operators(And, or, not)
+
+#### digital terrain model(DTM)
+
+interpolation of points  
+calculation of contour lines  
+calulation of visibility  
+3D visualization  
+
+## Thematic maps
+
+**map elements: graticule, map content and map margin**
+![map elements](/elements.jpg)
+
+### graticule
+
+### map content
+
+* Visual variables
+  ![Visual variables](/variables.jpg)  
+  * Map Coloring
+    ![Map Coloring](/colouring.jpg)  
+    * conjure up associations for cleaness
+      * natural colors(forest=green, water=blue,..)
+      * symbolic colors(black = coal; blue = iron; yellow = gold; climate/ temperature: red-orange-yellow = warm, blue-green = cold; …)
+    * little-much visualized as bright-dark
+    * symphony of colors
+      * strong colors for small faces
+      * subdued, neutal colors for the background
+    * differentiability of the colour ranges: max 12 different colours in one map, better only 6-8
+    * accurate interpretability is more important than the cartographer's favourite colors
+  * map fonts
+    ![map fonts](/fonts.jpg)  
+    * intention of using fonts
+      * conment on the topic and the visualization of the map: title, legend
+      * create georeferences inside the map: geographic names, graticule
+    * fonts as symbol
+      * classes: systematic use of charater sets, size, style and colour
+      * hierariches: systematic use of upper/lower case, size, style and brightness
+      * geographic names
+      * places: positioning, enlargement
+    * Properties of map fonts
+      * single words or small complex phrases
+      * No fixed rows or columns
+      * Linked with objects
+      * Not only placed horizontally
+      * Placed diagonal or curved type
+      * Implied object ranking
+      * In front of homogeneous background
+      * rapidly understandable
+    * Criteria for font styles
+      * Simple character sets
+      * Not only upper cases
+      * Neither too small nor wide
+      * Use bold fonts only in exceptional cases
+      * Only use a few fonts within one map
+      * justifiable!
+    * rules for text placement
+      * areal features: horizontal or in direction of greatest extension
+      * linear features: parallel to the line
+      * point feature: at the above right of the signature
+* organization of map elements
+![organization of map elements](/organization.jpg)  
+![organization of map elements](/organization1.jpg)  
+  * resulting in visual harmony and balance
+  * avoid to place legend parts without a recognizable order principle on the map
+  * legend parts should always be presented as connected blocks
+
+### map margin
+
+* Map title
+* Legend
+  * to figure out the information on the map: signs and symbols of all used points, line or areal signatures
+  * to design the map: definition of the symbol, part of the editorial
+  * not only abbreviation, also used as translation between cartographer and map user
+  * demands on the legend
+    * expalain about topic and statement of a map
+      * clearly arranges, explict connection to the map
+      * interconnected system
+    * strcutured with hieracrical groups, e.g., in context of the feature classes
+    * values are comparable to the values on the map
+* North arrow or compass rose
+* Map scale and scale bar
+* Name of author and cartographer
+* Indication of sources
+* Publishing house(manufacture, editor or publisher)
+* Printing press
+* Year of production
+* Map projection
+* Copyright note
+* Other texts
+
