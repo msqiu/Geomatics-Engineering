@@ -402,3 +402,6 @@ calulation of visibility
 * Copyright note
 * Other texts
 
+## Cartographic animations & current trends in cartography
+
+### cartographic animations
