@@ -405,3 +405,49 @@ calulation of visibility
 ## Cartographic animations & current trends in cartography
 
 ### cartographic animations
+
+#### basic of animations
+
+![basic of animations](/animations.jpg)  
+* variation
+  * sychronisation
+  * frequency
+  * intensity
+  * sequence
+  * duration
+  * point in time
+* acousic variable
+  * position
+  * volume
+  * ton pitch
+  * sound
+  * swang
+  * jitter
+  * rhythm
+* computer animation offers the oppetunity, to leave the currently static and isolated forms of representation
+* comperter animation is a sequential presentation, i.e., only the factor time is new
+
+#### components of animation
+
+* animation objects(=basic animation objects)
+  * graphic objects - information carrier
+  * camera definition(point of observation, distance, angle) displayed map detail, scale and perspective
+  * source of light
+* scene(frames)
+  * composition of animation objects to a overall picture
+  * dedicated scenes - key frames
+  * inbetweens are derived
+* sequences
+  * all scenes depending to a particular action, are combined to sequence
+  * transitions connect the different sequences
+* changes
+  * time series
+  * parameter changes in the data pre-processing(e.g., variation of classification)
+  * parameter changes in the graphical presentation(e.g., change of point of view)
+* sound audio or sound track
+  * additional information medium
+  * steering of perception and attention
+
+#### The animation process: Design
+
+### current trends in cartography
