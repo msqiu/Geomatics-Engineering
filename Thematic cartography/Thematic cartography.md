@@ -450,4 +450,85 @@ calulation of visibility
 
 #### The animation process: Design
 
+![basic of animations](/design.jpg)
+
+#### The animation process: Realisation
+
+![basic of animations](/realisation.jpg)
+
+#### classification of cartographic animations
+
+* morphing animation
+  * transfers starting form into final form
+  * represent distortions of an area due to various map projection
+* path animation
+  * moving an object along a defined path
+  * this path is committed on an own path level within the animation program
+  * an animation is generated moving the animation object along this path
+* camera animation
+  * for 3d animation with variable camera adjustment and light sources
+  * camera flight around the earth
+* colour animation
+  * produced directed colour waves
+  * representing continually flowing movements
+* actors animations
+  * leads animation objects according certain scripts on a determined background level
+
 ### current trends in cartography
+
+#### internet cartpgraphy
+
+* intersection of the system classes  
+  ![intersection of the system classes](/system.jpg)  
+* client server communication
+  * take the different functions of the various GIS into account
+  * Server(database+middlewave) - url - browser(client)
+* map server  
+  ![map server](/mapserver.jpg)  
+  * static map server allows the visualization of spatial data via the Internet, clients can get prefabricated预制 maps  
+  ![map server](/static.jpg)  
+  * interactive map servers allow users to have an impact on the visualization e.g. the colouring  
+  ![map server](/interactive.jpg)  
+  * online information system, map-based information retrieval systems allow access to static or interactive maps and furthermore first simple thematic or spatial queries  
+  ![map server](/online.jpg)  
+  * online-GIS offers unlimited access to the data and function of a GIS  
+  ![map server](/onlinegis.jpg)  
+  * function-server offers GIS function and algorithms as a web-service, results are visualized by the client, often combined with a e-commerce system  
+  ![map server](/function.jpg)  
+  * geodata server/spatial data warehouse offers geographic data via the Internet
+* products and technologies
+  * GIS system: geomedia professional(Intergraph)
+  * application server: geomedia webmap professional(Intergraph)
+  * database management system(DBMS)
+  * Web Server: Internet Information Server (Microsoft)
+  * Programming/ scripting language: Active Server Pages/PHP/HTML
+* current development of open geospatial consortum(OGC)
+  * web map service(WMS): specification to publish spatial data as map
+  * web feature service(WFS): de-facto standard for access of vertor-based spatial data
+    * geodata stored within a database or files
+    * harmonisation of data access by definition of a standardised interface
+    * xml-based query
+
+#### spatial data infrastructure: distributed data and services inside the internet
+
+* worldwide: global spatial data infrastructure(GSDI)
+* europe: INSPIRE
+* germany: GDI
+* federal states of germany
+
+#### open street map
+
+* collaborative project to create a free editable map of the world
+* created by users worldwide
+
+#### 3D cartography
+
+graphic representation of a part of the ground in a perspectively inclined view with topographical information about the ground
+
+#### mobile cartography
+
+* theories and technologies of dynamic cartographical visualisation of spatial data and their inter-active use on mobile devices
+* chanllege: get the data anywhere and any time
+* small display and limited computing server: web server, readable information
+
+#### dynamic cartography
