@@ -532,3 +532,87 @@ graphic representation of a part of the ground in a perspectively inclined view 
 * small display and limited computing server: web server, readable information
 
 #### dynamic cartography
+
+## geodata market
+
+### information chain
+
+![information chain](/informationchain.jpg)
+
+* introduction
+  * buying and selling of information
+  * add value by aggregation of information of different sources
+  * providing diagnosis, prognosis, recommendation and information maintenance提供诊断，预后，推荐和信息维护
+* information survice provider
+  * data proprietors(publishers, public authorities and private owners)
+  * agensies acquiring data to acquire, pre-processing, verify, administer and aggregate information
+* information services: analysis of existing information
+  * buy base information
+  * offer added value services
+* service provider
+  * actual purchaser of information and application systems
+* communicaion network providers: owners and providers of these networks provide the communication infrastructure
+* communication services: they pay for the usage of existing communication networks and offer own services to the customer
+
+### standadization of spatial data
+
+* data agencies, added-value services, and end-users are based on a standardised information structure with a common data model
+* different parties agree on a apecific catalogue of objects, a common information structure, a data model, and an exchange format
+* motivation and basics
+  * to simplify data exchange between different GIS systems
+  * GIS standards
+    * manufacture specific standards
+      * shape files(ESRI)
+      * DXF(AutoCAD exchage format)
+      * SQD(SICAD)
+    * user-specific standards
+      * ATKIS(topograohic data) in germany
+      * EDBS(data exchange for ATKIS/ALK) in germany
+      * DIGEST(digital information geographic exchange standard) within different NATO-countries
+      * GDF(geographic data file) for road navigation
+      * SDTA(spatial data transfer standard) in North America
+* important standardization committees
+  * ISO: international organization for standardization
+    * develop and publish International Standards
+  * DIN: Deutsches Institut für Normung(german standardization committee)
+  * OGC: open geospatial consortium
+    * non-profit, international, voluntary consensus standards organizations for geospatial and location based services
+    * OGC takes over the ISO standards as abstract specifications and develops implementation specification
+
+### spatial data infrastructure(SDI)
+
+![spatial data infrastructure(SDI)](/sdi.jpg)  
+
+* spatial data infrastructure consists of regulations, technical and organizational aspects for spatial data resources
+* components
+  * spatial data and their meta data
+  * services and standards
+  * general political conditions, e.g., prices and availability
+  * inter-organizational arrangements
+* goal and purpose: simplification of data access and exchange
+* conditions: coorperation and standardization
+* initiatives to set up SDIs by public and private organizations on different levels: regional, national, european, global
+* application
+  * Regional planning, building industry
+  * Environmental management and nature protection management
+  * Internal security
+  * National defense,
+  * Civil defense and disaste control,
+  * Supply and disposal,
+  * Water management,
+  * Geoscientific resource protection,
+  * Agriculture and forestry,
+  * Meteorology, climatic research,
+  * Statistics,
+  * Insurance,
+  * Telematics / Traffic management
+
+### metadata
+
+* metadata is supporting descriptive information about data
+* types of metadata
+  * semantic metadata: define the functional meaning by a content-related description of the spatial data(units, etc.)
+  * syntactic metadata: deliver the structural and formal description
+  * pragmatic metadata: describe questions concerning usability, like access path or assignments concerning data protection
+
+### copyright
