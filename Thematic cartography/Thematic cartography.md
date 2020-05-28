@@ -52,11 +52,11 @@ Cartography is a discipline, dealing with the conception, the production, the di
 
 ### Definition of digital map
 
-![digital map](/digital.jpg)
+![digital map](digital.jpg)
 
 ### Definition of digital road map
 
-![digital road map](/road.jpg)
+![digital road map](road.jpg)
 
 ### geodata
 
@@ -98,7 +98,7 @@ Data about objects, land forms and infrastructure on the earth's surface, resour
 
 ### modelling within map seies: can be modelled and represented by different object types and in various levels of detail
 
-![modelling within map seies](/modelling.jpg)
+![modelling within map seies](modelling.jpg)
 
 ### topographic maps
 
@@ -107,8 +107,8 @@ main objects - situations(buildings, roads, rails), waters, terrain profile, veg
 
 #### topographic maps in germany
 
-![topographic maps in germany](/germanymap1.jpg)  
-![topographic maps in germany](/germanymap2.jpg)  
+![topographic maps in germany](germanymap1.jpg)  
+![topographic maps in germany](germanymap2.jpg)  
 roman characters indicate the map scale  
 
 * series of numbers indicate the location
@@ -120,7 +120,7 @@ roman characters indicate the map scale
   * contour lines - brown
   * forests - green
 * ATKIS: official topographic cartographic information system(TOLG)  
-![ATKIS](/atkis.jpg)  
+![ATKIS](atkis.jpg)  
   * DTK - digital topographic map (Topographische Karten)
   * DGM - digital terrain model (Geländemodelle)
   * DOP - digital ortho photo (Orthophotos)
@@ -135,7 +135,7 @@ roman characters indicate the map scale
 * cadastral maps
   * land survey register maps proves the partitioning of the ground with field parts and indicates their location, size and kind-of-use
   * three parts
-   ![cadastral maps](/cadastral.jpg)  
+   ![cadastral maps](cadastral.jpg)  
     * cadastre numbering series with survey sketches and coordinate catalogs
     * cadastral map series: field parts with their number and boundary, buildings, topographical objects and kind-of-use
     * cadastral book series: field parts with their area, ownership, location, kind-of-use and result of official land classification for valuation purposes
@@ -148,7 +148,7 @@ roman characters indicate the map scale
   * map with large to medium scale(city maps, property maps, topographical maps) are the bases for thematic city maps
 * maps for spatial planning
   * general planning: land development plan, regional plan, land use plan, local development plan  
-   ![spatial planning](/spatial.jpg)  
+   ![spatial planning](spatial.jpg)  
   * department planning
     * representation of redevelopment of specific sections, e.g. transport routes, agrarian structure, recreation areas
     * large scale maps
@@ -174,7 +174,7 @@ roman characters indicate the map scale
 
 #### digital methods
 
-![digital methods](/digitizing.jpg)  
+![digital methods](digitizing.jpg)  
 
 * manual
   * digitizer tablets
@@ -220,7 +220,7 @@ flatbed scanner
   * coordinate system: consists of two or three coordinate axes and/or reference bearing within a plane or space
   * map projections: the mathematical relationship between an ellipsoidal or spherical earth model and the mapping plane. - define the transformation from a 3D earth model into 2D coordinates
 * transformations  
-  ![transformations](/transformations.jpg)  
+  ![transformations](transformations.jpg)  
   * euclidian - 3 parameter, 2 points
     * translation in X and Y, rotation - 3 parameters
     * measurement with fixed scale
@@ -269,7 +269,7 @@ flatbed scanner
 
 #### generalization
 
-![generalization](/generalization.jpg)  
+![generalization](generalization.jpg)  
 
 * visualization of the same information in different(usually smaller) scales
 * derived from orthophoto
@@ -284,10 +284,10 @@ flatbed scanner
   * there are more coordinates contained in the data set than needed to define the line or polygon
   * decrease the number or coordinates
   * simplification of lines by mean of vector procedures
-    ![simplification](/simplification.jpg)  
+    ![simplification](simplification.jpg)  
     * douglas-peucker line smoothing: check whether a point is outside the tolerance band. If yes, draw a straight line to the point furthest away
     <https://upload.wikimedia.org/wikipedia/commons/3/30/Douglas-Peucker_animated.gif>
-    ![douglas-peucker](/peucker.jpg)  
+    ![douglas-peucker](peucker.jpg)  
 * semantic generalization
   * creation and classification of object classes
     * content: data have to be classified by an appropriated method
@@ -295,17 +295,17 @@ flatbed scanner
       * class interval or width and mid-point of class
     * graphical aspect: choice of an appropriated display
   * choice of a framework: geographic/geometric/administrative  
-  ![choice of a framework](/framework.jpg)  
+  ![choice of a framework](framework.jpg)  
 
 ### data analysis
 
 #### aggregation: information is not only in one dataset
 
-![aggregation](/aggregation.jpg)
+![aggregation](aggregation.jpg)
 
 #### measuring, counting, calculating
 
-![measuring](/measuring.jpg)
+![measuring](measuring.jpg)
 
 #### overlay: determine whether two area objects overlap, to determine the area of overlap, and to define the area formed by the overlap as one or more new area objects
 
@@ -322,16 +322,16 @@ calulation of visibility
 ## Thematic maps
 
 **map elements: graticule, map content and map margin**  
-![map elements](/elements.jpg)
+![map elements](elements.jpg)
 
 ### graticule
 
 ### map content
 
 * Visual variables  
-  ![Visual variables](/variables.jpg)  
+  ![Visual variables](variables.jpg)  
   * Map Coloring  
-    ![Map Coloring](/colouring.jpg)  
+    ![Map Coloring](colouring.jpg)  
     * conjure up associations for cleaness
       * natural colors(forest=green, water=blue,..)
       * symbolic colors(black = coal; blue = iron; yellow = gold; climate/ temperature: red-orange-yellow = warm, blue-green = cold; …)
@@ -342,7 +342,7 @@ calulation of visibility
     * differentiability of the colour ranges: max 12 different colours in one map, better only 6-8
     * accurate interpretability is more important than the cartographer's favourite colors
   * map fonts  
-    ![map fonts](/fonts.jpg)  
+    ![map fonts](fonts.jpg)  
     * intention of using fonts
       * conment on the topic and the visualization of the map: title, legend
       * create georeferences inside the map: geographic names, graticule
@@ -372,8 +372,8 @@ calulation of visibility
       * linear features: parallel to the line
       * point feature: at the above right of the signature
 * organization of map elements  
-![organization of map elements](/organization.jpg)  
-![organization of map elements](/organization1.jpg)  
+![organization of map elements](organization.jpg)  
+![organization of map elements](organization1.jpg)  
   * resulting in visual harmony and balance
   * avoid to place legend parts without a recognizable order principle on the map
   * legend parts should always be presented as connected blocks
@@ -408,7 +408,7 @@ calulation of visibility
 
 #### basic of animations
 
-![basic of animations](/animations.jpg)  
+![basic of animations](animations.jpg)  
 * variation
   * sychronisation
   * frequency
@@ -450,11 +450,11 @@ calulation of visibility
 
 #### The animation process: Design
 
-![basic of animations](/design.jpg)
+![basic of animations](design.jpg)
 
 #### The animation process: Realisation
 
-![basic of animations](/realisation.jpg)
+![basic of animations](realisation.jpg)
 
 #### classification of cartographic animations
 
@@ -479,22 +479,22 @@ calulation of visibility
 #### internet cartpgraphy
 
 * intersection of the system classes  
-  ![intersection of the system classes](/system.jpg)  
+  ![intersection of the system classes](system.jpg)  
 * client server communication
   * take the different functions of the various GIS into account
   * Server(database+middlewave) - url - browser(client)
 * map server  
-  ![map server](/mapserver.jpg)  
+  ![map server](mapserver.jpg)  
   * static map server allows the visualization of spatial data via the Internet, clients can get prefabricated预制 maps  
-  ![map server](/static.jpg)  
+  ![map server](static.jpg)  
   * interactive map servers allow users to have an impact on the visualization e.g. the colouring  
-  ![map server](/interactive.jpg)  
+  ![map server](interactive.jpg)  
   * online information system, map-based information retrieval systems allow access to static or interactive maps and furthermore first simple thematic or spatial queries  
-  ![map server](/online.jpg)  
+  ![map server](online.jpg)  
   * online-GIS offers unlimited access to the data and function of a GIS  
-  ![map server](/onlinegis.jpg)  
+  ![map server](onlinegis.jpg)  
   * function-server offers GIS function and algorithms as a web-service, results are visualized by the client, often combined with a e-commerce system  
-  ![map server](/function.jpg)  
+  ![map server](function.jpg)  
   * geodata server/spatial data warehouse offers geographic data via the Internet
 * products and technologies
   * GIS system: geomedia professional(Intergraph)
@@ -537,7 +537,7 @@ graphic representation of a part of the ground in a perspectively inclined view 
 
 ### information chain
 
-![information chain](/informationchain.jpg)
+![information chain](informationchain.jpg)
 
 * introduction
   * buying and selling of information
@@ -581,7 +581,7 @@ graphic representation of a part of the ground in a perspectively inclined view 
 
 ### spatial data infrastructure(SDI)
 
-![spatial data infrastructure(SDI)](/sdi.jpg)  
+![spatial data infrastructure(SDI)](sdi.jpg)  
 
 * spatial data infrastructure consists of regulations, technical and organizational aspects for spatial data resources
 * components
@@ -621,7 +621,7 @@ graphic representation of a part of the ground in a perspectively inclined view 
 
 ### project management - general view
 
-![5 process groups](/process.jpg)  
+![5 process groups](process.jpg)  
 
 * managing a project typically includes
   * identifying requirements
@@ -650,7 +650,7 @@ graphic representation of a part of the ground in a perspectively inclined view 
   * focus the requirements on the problem domain and the needs of the stakeholders
   * quantitative statements
 * problems with the requirement engineering
-  ![problems with the requirement engineering](/reproblems.jpg)  
+  ![problems with the requirement engineering](reproblems.jpg)  
   * stakeholders have divergent goals
   * conflict of interest between the parties
   * difficulties in the choice of priorities in conflicting requirements
@@ -699,4 +699,4 @@ graphic representation of a part of the ground in a perspectively inclined view 
   * accuracy characteristic - describe the limitation of accuracy and resolution of measurement and interpretation
     * accuracy
 * possible source of errors within gis analysis  
-  ![possible source of errors within gis analysis](/sourceoferrors.jpg)  
+  ![possible source of errors within gis analysis](sourceoferrors.jpg)  
