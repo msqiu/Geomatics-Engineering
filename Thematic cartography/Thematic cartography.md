@@ -616,3 +616,88 @@ graphic representation of a part of the ground in a perspectively inclined view 
   * pragmatic metadata: describe questions concerning usability, like access path or assignments concerning data protection
 
 ### copyright
+
+## project management
+
+### project management - general view
+
+![5 process groups](/process.jpg)  
+
+* managing a project typically includes
+  * identifying requirements
+  * addressing the various needs, concerns and expectations of the stakeholders as the project is planned and carried out
+  * balanceing th ecompeting project constrains including but not limited to: scope, quality, schedule, budget, resources and risk
+* the project management knowledge areas 9
+  * project **integration** management: to indentify, define, combine, unify and coordinate the various processes and project management activities
+  * project **scope** management: to ensure that the project includes all the work required, and only the work required, to complete the project successfully
+  * project **time** management: to manage timely completion of the project
+  * project **cost** management: estimating, budgeting, and controlling costs so that the project can be completed within the approve budget
+  * project **quality** management: determine quality policies, objectives, and responsibilities so that the project will satisfy the needs for which it was undertaken
+  * project **human** **resource** management: organize, manage, and lead the project team
+  * project **communications** management: to ensure timely and appropriate generation, collection, distribution, storage, retrieval and ultimate disposition of project information
+  * project **risk** management: conducting risk management planning, identification, analysis, response planning and monitoring and control on a project
+  * project **procurement** management: to purchase or acquire products, services, or results needed from outside the project team
+
+### requirement engineering
+
+* motivation
+  * customers' requirements on the system have to be documented completely, consistently and testable in written form
+  * the customer requirement is a comprehensive description of the performance(e.g. technical, economical, organizational), necessary or demanded to reach objectives.
+  * requirement analysis is basement of the development of information systems. Errors at this phase can often only be remedied with very high costs in the later course of the project
+* capturing requirements
+  * readable and traceable form
+  * positive phrases
+  * focus the requirements on the problem domain and the needs of the stakeholders
+  * quantitative statements
+* problems with the requirement engineering
+  ![problems with the requirement engineering](/reproblems.jpg)  
+  * stakeholders have divergent goals
+  * conflict of interest between the parties
+  * difficulties in the choice of priorities in conflicting requirements
+  * unclear and changing organizational framework
+  * constantly changing requirements
+* success factors in determining the requirement
+  * stability of the requirements of the project period
+  * discipline in change management
+  * the extent to which the project paticipants understand the objectives of the project
+  * the extent to which the user/client are involved in the project
+* Requirements modeling and specification
+  * unified modeling language(UML)
+    * UML - use case diagram
+    * UML - classes diagram
+    * UML - sequence diagram
+  * funcion trees
+    * general function - sub function
+* content of a requirement engineering specification
+  * objective
+  * general discription: environment, general function, restrictions, user
+  * specific functional requirements
+    * possible quantitative(e.g. table format)
+    * clearly indetifiable(numbers)
+  * specific non-functional requirements: e.g. response time, mermory requirement
+  * design and product standards
+  * quality destination
+  * expected evolution of the system
+  * crude identification of the versions
+
+### data costs
+
+* hardware
+* software(operating system, GIS, database, text processing)
+* personnel costs(basic salary, overhead)
+
+### data quality
+
+* Following quality characteristics have to be taken into account for quality description and evaluation of spatial data
+  * dependability characteristics - describe the time related aspects of data quality
+    * availability
+    * up-to-dateness
+  * integrity characteristics - describe the applicability of data
+    * completeness
+    * consistency
+    * correctness
+  * accuracy characteristic - describe the limitation of accuracy and resolution of measurement and interpretation
+    * accuracy
+* possible source of errors within gis analysis  
+  ![possible source of errors within gis analysis](/sourceoferrors.jpg)  
+  
