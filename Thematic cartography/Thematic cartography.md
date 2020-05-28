@@ -219,7 +219,7 @@ flatbed scanner
   * geodetic datum: a set of parameters and points used to exactly define the 3D shape of the earth
   * coordinate system: consists of two or three coordinate axes and/or reference bearing within a plane or space
   * map projections: the mathematical relationship between an ellipsoidal or spherical earth model and the mapping plane. - define the transformation from a 3D earth model into 2D coordinates
-* transformations
+* transformations  
   ![transformations](/transformations.jpg)  
   * euclidian - 3 parameter, 2 points
     * translation in X and Y, rotation - 3 parameters
@@ -294,7 +294,7 @@ flatbed scanner
       * class limits: upper and lower limit of each class
       * class interval or width and mid-point of class
     * graphical aspect: choice of an appropriated display
-  * choice of a framework: geographic/geometric/administrative
+  * choice of a framework: geographic/geometric/administrative  
   ![choice of a framework](/framework.jpg)  
 
 ### data analysis
@@ -321,16 +321,16 @@ calulation of visibility
 
 ## Thematic maps
 
-**map elements: graticule, map content and map margin**
+**map elements: graticule, map content and map margin**  
 ![map elements](/elements.jpg)
 
 ### graticule
 
 ### map content
 
-* Visual variables
+* Visual variables  
   ![Visual variables](/variables.jpg)  
-  * Map Coloring
+  * Map Coloring  
     ![Map Coloring](/colouring.jpg)  
     * conjure up associations for cleaness
       * natural colors(forest=green, water=blue,..)
@@ -341,7 +341,7 @@ calulation of visibility
       * subdued, neutal colors for the background
     * differentiability of the colour ranges: max 12 different colours in one map, better only 6-8
     * accurate interpretability is more important than the cartographer's favourite colors
-  * map fonts
+  * map fonts  
     ![map fonts](/fonts.jpg)  
     * intention of using fonts
       * conment on the topic and the visualization of the map: title, legend
@@ -371,7 +371,7 @@ calulation of visibility
       * areal features: horizontal or in direction of greatest extension
       * linear features: parallel to the line
       * point feature: at the above right of the signature
-* organization of map elements
+* organization of map elements  
 ![organization of map elements](/organization.jpg)  
 ![organization of map elements](/organization1.jpg)  
   * resulting in visual harmony and balance
@@ -700,4 +700,3 @@ graphic representation of a part of the ground in a perspectively inclined view 
     * accuracy
 * possible source of errors within gis analysis  
   ![possible source of errors within gis analysis](/sourceoferrors.jpg)  
-  
