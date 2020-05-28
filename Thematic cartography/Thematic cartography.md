@@ -649,7 +649,7 @@ graphic representation of a part of the ground in a perspectively inclined view 
   * positive phrases
   * focus the requirements on the problem domain and the needs of the stakeholders
   * quantitative statements
-* problems with the requirement engineering
+* problems with the requirement engineering  
   ![problems with the requirement engineering](reproblems.jpg)  
   * stakeholders have divergent goals
   * conflict of interest between the parties
