@@ -144,3 +144,106 @@ information results from the application of rules and instructions on data
   * application of mobile mapping vehicles
     * metrological acquisition of road geometry by an positioning system
     * acquistion of road related attributes and relationships by geo coded video images
+
+#### ATKIS - official topographic cartographic information system
+
+* object-based, signature-based and picture-based presentation of the earch's surface
+  * digital landscape model(DLM)
+  * digital topographic map(DTK)
+  * digital terrain model(DGM)
+  * digital ortho photo(DOP)
+* object catalogue - essential data are missing(e.g. oneway streets, turn relations): ATKIS data are not suitable for navigation and routing  
+  ![object catalogue](catalogue.jpg)  
+* feature representation of roads  
+  ![feature representation of roads](roads.jpg)  
+  * road
+    * linear
+    * complex feature composed of centre lines(represent spatial basic feature)
+  * road with divided carriageway
+    * linear and areal
+    * road is a complex feature composed of carriageway axes(for both directions) and a centre line(midway division)
+    * areas between are classified with feature type(road traffic)
+
+#### GDF & ATKIS - difference in data model
+
+![GDF & ATKIS](difference.jpg)  
+
+### OKSTRA - Feature catalogue for road engineering and transportation
+
+* realization of a continuous information flow by data exchange without lost of any data and information
+* concerned parties
+  * surveying agencies, road administration, federal government, federal states and municipalities
+  * planning and engineering offices, commercial suppliers of map series
+
+### Openstreetmap - more users, more detailed, may have mistakes, license model
+
+* collaborative project to create a free editable map of the world
+* OSM has all rights to the data
+* congested urban areas are good acquired, other regions are acquired only partly or not at all
+* data Model
+  * own data model realized in XML
+  * points(node), lines(way) and relations are available
+  * no restrictions on attributes for the objects - differend by tags
+* data format
+  * export in common raster data - jpg, png, pdf
+  * export in vector based format(XML)
+  * convert OSM in common geodata format like GML, KML, SHAPE...
+* license - open content license, the author has no copyright
+
+### NDS - navigation data standard
+
+* NDS association member: car manufacturers, application/compiler developers, map data providers, service providers
+* comparing to GDF: new support for road conditions(more lines to represent the road)
+* challenge
+  * localize the user's own car
+  * to plan the path on streets
+* Open Lane Model
+  * Improves localization and path planning on routes
+  * stores lane topology and high-precision geometries of up to 1-cm resolutions
+  * assign standard attributes, such as speed limits, to lanes with high accuracy
+  * the model shows boundaries, such as walls or tubes and colored lane markings
+  * complex intersections are described by a sophisticated connectivity model
+  * faces two challenges of autonomous driving: to localize the user’s own car and to plan the path on streets
+
+### geographic data
+
+#### dimension
+
+ * 0D - POI - point
+ * 1D - road - line
+ * 2D- area of soil - polygon
+ * 2.5D - (x, y, name, height)
+ * 3D (x, y, z) TIN
+
+#### scale
+
+ * scale is in the detail - spatial resolution or the level of detail in data
+ * scale is about extent - large scale project covers large area
+ * scale of a map - representation fraction: the ratio of distance on the map to distance on the ground
+
+#### georeference
+
+* requirement
+  * unique, one location associated with a given georeference
+  * shared meaning
+  * persistent through time
+* georeference without metric
+  * problem: name change
+  * postal address, postal code...
+* georeference with metric
+  * problem: change of the definition of the system + yearly continious changes
+  * lablic land survey system, latitude/longitude...
+
+#### types of attributes
+
+* nominal: identify or distinguishi one entity from another, includes numbers, letters, and even colors
+* ordinal natural order, averging make no sens
+* interval: the diference make sense: the scale of Celsius temperature
+* ratio: eg. weight
+* cyclic: categories beyond these four mention above(e.g. traffic flow direction)
+
+#### geometric primitives: point, line, polygon
+
+#### topological primitives: node, edge, face
+
+#### geometry classes defined by the OGC: definition is used in databases(like PostGIS, MYSQL,...)
