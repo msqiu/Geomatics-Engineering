@@ -276,3 +276,14 @@ information results from the application of rules and instructions on data
     * poor performance of RDBMS for many types of geographic query
   * object-relational(ORDBMS)
     * a RDBMS engine with an extensibility framwork for handling objects
+
+### requirement engineering(RE)
+
+* objective
+  * selected aspects for spatial data related projects are to understand
+  * aspects of functional requirement analysis(requirement engineering, data cost, and data quality) are important
+* requirements engineering - design - implementation - final check
+* important techniques and methods
+  * research techniques - analysis of requirements
+  * modeling methods - requirements are documented and structured(e.g. UML)
+* Customers requirements regarding the system are to be documented completely, free of contradictions and auditable within the summary of the specifications(detailed description of the services)
