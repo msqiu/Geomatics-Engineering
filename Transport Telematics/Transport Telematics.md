@@ -247,3 +247,32 @@ information results from the application of rules and instructions on data
 #### topological primitives: node, edge, face
 
 #### geometry classes defined by the OGC: definition is used in databases(like PostGIS, MYSQL,...)
+
+### data model
+
+* a set of constructs for describing and representing selected aspects of the real world in a computer
+* provides systems developers and users with a common understanding and reference point
+* there is no single type of all encompassing GIS data model that is best for all circumstances
+* 4 levels of abstraction relevant to GIS data models  
+  ![4 levels of abstraction relevant to GIS data models](levels.jpg)  
+  ![ 4 levels of abstraction relevant to GIS data models ](models.jpg)  
+* object-oriented concepts in GIS
+  * an object is a self-contained package of information describing the characteristics and capaibilities of an entity
+  * an interaction between objects is called a relationship
+  * a collection of objects of the same type is called class.
+  * each class/object might include properties defining its state
+  * each class/object might include methods defining the behavior
+  * three key facets of object data models
+    * encapsulation: describe the fact that each object packages together is a description of its state and behavior
+    * inheritance: the ability to reuse some or all of the characteristics of one object in another object
+    * polymorphism: describe the process whereby each object has its own specific implementation for operations
+* database management system(DBMS)
+  * relational(RDBMS)
+    * set of tables, each of a 2D list of records containing attributes about the objects under study
+    * simple, flexible, and useful structure
+  * object(ODBMS) - address weaknesses of RDBMS
+    * the inability to stor complete objects directly in the database
+    * deal with rich data types such as geographic objects, sound and video
+    * poor performance of RDBMS for many types of geographic query
+  * object-relational(ORDBMS)
+    * a RDBMS engine with an extensibility framwork for handling objects
