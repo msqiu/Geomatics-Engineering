@@ -287,3 +287,59 @@ information results from the application of rules and instructions on data
   * research techniques - analysis of requirements
   * modeling methods - requirements are documented and structured(e.g. UML)
 * Customers requirements regarding the system are to be documented completely, free of contradictions and auditable within the summary of the specifications(detailed description of the services)
+
+### data quality
+
+* definition
+  * totality of characteristics of an entity that bear on its ability to satisfy stated and implied needs
+  * Degree to which a set of inherent characteristics fulfils requirements
+  * avaliability, completeness and correctness
+* quality model
+  * dependability characteristics - discribe the time related aspect of information quality
+    * availability, up-to-dataness
+  * integrity characteristics - discribe the applicability of information
+    * completeness, consistency, correctness
+  * accuracy characteristics - describe the limitation of accuracy and resolution of measurement and interpretation
+    * metric accuracy, semantic accuracy
+  * Possible sources of error with GIS analyses
+  ![sources of error](error.jpg)  
+
+### data costs
+
+*  basis costs: hardware, soft ware, personal costs
+*  project specific costs
+
+### topology
+
+#### intruduction
+
+* application
+  * network: electric power supply, natural gas piprline, water supply/waste water, transportation networks
+  * location: optimally locating p facilities to serve n customer demand at n > p locations
+* topological properties
+  * distinction between point, line, area (and volume)
+  * adjacency, including the touching of land parcels, counties, and nation states
+  * connectivity, including junctions between streets, roads, railroads, and rivers
+  * containment, when a point lies inside rather than outside an area
+
+#### OGC(open geospatial consortium) OpenGIS Simple Features Specification
+
+* Spatial Relations - a and b are two geometries; I(x) ist the interior of x; dim(x) is the dimenson of x, or maximum dimension if x is the result of a relational operation
+  * Spatially equal to: $a=b$
+  * Spatial disjoint: equivalent to a $\cap \mathrm{b}=\emptyset$
+  * Spatially touches: equivalent to $[\mathrm{a} \cap \mathrm{b} \neq \emptyset \text { and } \mathrm{I}(\mathrm{a}) \cap \mathrm{f}(\mathrm{b})=\emptyset] ;$ does not apply if a and b are points
+  * Spatially crosses: equivalent to $[\operatorname{dim}(|(a)) \cap \operatorname{dim}(|(b))<\max \{\operatorname{dim}(|(a)), \operatorname{dim}(|(b))\} \text { and } a \cap b \neq a \text { and } a \cap b \neq b]$
+  * spatially contains: [a contains(b)] is equivalent to [b within(a)]
+  * spatially within: within(b) is equivalent to $[a \cap b=a \text { and }|(a) \cap|(b) \neq \emptyset]$
+  * spatially overlaps: equivalent to $[\operatorname{dim}(|(a) \cap|(b)=\operatorname{dim}(|(a))=\operatorname{dim}(|(b)) \text { and } a \cap b \neq a \text { and } a \cap b \neq b]$
+  * spatially relates, tested by checking for intersections between the interior, boundary and exterior of the two components
+* Spatial analysis
+  * the shortest distance between any two points in the two geometries as calculated in the spatial reference system of this geometry
+  * Buffer: all points whose distance from this geometry is less than or equal to a specified distance value
+  * the convex hull of this geometry. For point sets in the plane the convex polygon of smallest area that completely encloses the set (it may also be used for line and polygon sets)
+  * the point set intersection of the current geometry with another selected geometry
+  * the point set union of the current geometry with another selected geometry
+  * the point set difference of the current geometry with another selected geometry
+  * the point set symmetric difference of the current geometry with another selected geometry (logical XOR)
+* Dimensionally Extended Nine - Intersection Model - DE-9IM
+  ![Dimensionally Extended Nine](dim.jpg)  
