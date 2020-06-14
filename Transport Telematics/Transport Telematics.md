@@ -343,3 +343,126 @@ information results from the application of rules and instructions on data
   * the point set symmetric difference of the current geometry with another selected geometry (logical XOR)
 * Dimensionally Extended Nine - Intersection Model - DE-9IM
   ![Dimensionally Extended Nine](dim.jpg)  
+
+#### topology of a network
+
+* techniques developed for graphs
+  * measuring connectivity
+  * finding shortest path
+  * Network connectivity
+  * Network distance
+  * Traveller salesman problem
+  * Distance analysis
+  * Optimum “place” analysis
+* terminology  
+    ![terminology](terminology1.jpg)  
+    ![terminology](terminology2.jpg)  
+    ![terminology](terminology3.jpg)  
+    ![terminology](terminology4.jpg)  
+  * GDF
+    * 0 Dimensional: point, node(vertex), junction
+    * 1 Dimensional: line(polyline), edge, road elements
+    * 2 Dimensional: polygon, face, area
+* incidence and adjacency  
+  ![incidence and adjacency](ia.jpg)  
+  * Incidence names the meeting of different topologic primitives
+    * Incidence matrix 
+      * $B(i, j)=1$ if edge i starts in node $j$ 
+      * $B(i, j)=-1$ if edge i ends in node $j$
+  * Adjacency names the meeting of same topologic primitives
+    * Adjacency matrix
+      * Main diagonal contains number of adjacent nodes
+      * Nodes adjacent to each other -1
+      * symmetrical
+    * The adjacency matrix A can be calculated directly from the incidence matrix
+  * Pointer structure
+    * edges: Edge_Id \{Node_Id, Node
+    * nodes: Node_Id \{Edge_Id, Edge_Id, $\ldots \ldots .\}$
+* Requirements of transportation network
+  * Topological correct street network: Feature model: Junction / Road elements
+  * Network is „orientated“ For each road element a start- and end-junction is defined
+  * Attributes can be modelled “orientated”
+  * The concept of segmented attributes is realised
+  * Semantic relations are supported to define manoeuvres
+* digitalization of a street network
+  * Hints for manual digitization
+    * Produce a correct topologic geometry
+    * Set junction points first! (Time consuming)
+    * This is definitely necessary at complex crossings!
+    * At simple crossings you may use GIS functions to generate the crossings!
+  * Complex crossing
+    * set all juction crossings
+    * snap on the crossings
+  * simple crossing
+    * digitizing the roads
+    * generate the crossings automatically
+* network analysis
+  * Some key optimisation problems in network analysis
+    * Hamiltonian circuit (HC) - all nodes, bussiness man  
+    ![Hamiltonian circuit](hc.jpg)  
+    If a cycle exists from a given vertex that passes through every other vertex exactly once it is called a Hamiltonian circuit. Testing for the existence of Hamiltonian circuits in a graph is known as the Hamiltonian circuit problem (HCP).
+    * eulerian circuit(EC) - all network at one time, postman
+    ![eulerian circuit](ec.jpg)  
+    A circuit in a directed graph that visits every arc exactly once. A condition that a graph contains an Eulerian circuit is that the number of arcs arriving at every included vertex, i, must be the same as the number of arcs leaving vertex i
+    * shortest path(SP) - time or distance
+    A path between two vertices that minimises a pre-defined metric such as the total number of steps, total distance or time, is called a shortest path. Hence this term is relative to the metric applied and even then may not be unique for any given network. Determination of shortest paths is often described as shortest path analysis (SPA). This is perhaps the central computational problem in network analysis. There are many variants of this problem, including finding the 2nd, 3rd… nth shortest path, finding the shortest path from a given node to all other nodes, and finding the longest path. Can be solved in linear time or better
+    * spanning tree(ST)
+    Given a fixed set of vertices, find a set of edges such that every vertex is connected and the network contains no cycles. Many spanning trees are possible for a given vertex set
+    * minimal spanning tree(MST)  
+    ![minimal spanning tree](mst.jpg)  
+    Find a (Euclidean) spanning tree of minimum total length. Typically this will be unique, but uniqueness is not guaranteed. Solvable in near linear time
+    * Steiner MST, Steiner tree
+      * As per the MST but with additional nodes permitted that are not co-located with the original vertex set.
+      * In the (spatially) constant cost model, each additional point (known as a Steiner point) will be placed intermediate to three existing vertices and will provide a connection between these via three branches that are equally spaced (i.e. at 120 degrees) about the Steiner point.
+      * Steiner points are added to the MST, replacing MST links, if the total network length is reduced by their inclusion.
+    * Travelling salesman problem (TSP)  
+    ![Travelling salesman problem](tsp.jpg)  
+      * Given a set of vertices and symmetric or asymmetric distance matrix for each pair of vertices, find a Hamiltonian circuit of minimal length (cost).
+      * Typically the start location (vertex) is pre-specified and the vertices are not necessarily assumed to lie on a pre-existing network. If certain nodes must be visited before others, the task is known as a sequential ordering problem (SOP)
+    * Transportation problem, Transshipment problem
+      * The general problem of completely servicing a set of target locations with given demand levels from a set of source locations with given supply levels such that total costs are minimised is known as the transportation problem.
+      * The unit cost of shipping from each supply point to each demand point is a key input to this problem specification. This problem is an example of a Minimum Cost Flow Problem (MCFP). A generalisation of the transportation problem is the trans-shipment problem. In the latter case flows from sources to targets can go via trans-shipment points, e.g. factories to warehouses to customers, rather than simply direct to customers
+    * Vehicle routing problem (VRP)
+      * This class of problems relates to servicing customer demand (e.g. deliveries of fuel to retail garages) from a single depot, where each vehicle may have a known capacity (CVRP).
+      * If capacity is not restricted the problem is known simply as a vehicle routing problem (VRP). The number of vehicles and the number of tours of subsets of nodes are variables. The customer locations, depot location and customer demand levels are assumed to be known. The problem is to minimise the overall length of the tours, subject to the constraints.
+      * There are many variants of this problem, notably those in which there are pre-defined time windows for deliveries, problems involving pickups and deliveries, problems involving a series of depots, problems where demand is dynamically variable, problems in which link capacity constraints exist and hence may become congested, and problems where customer locations are generalised rather than fixed.
+    * Arc routing problem (ARP)
+      * Given a network (typically a street network or subset of a street network) find a route that completely traverses every edge, generally in both directions, that has the least cost (distance or time) subject to selected constraints (e.g. cost of turning).
+      * This problem applies to street cleaning, snow-ploughing, postal deliveries, meter reading, garbage collection etc. The capacitated version of the problem is known as CARP.
+    * Facility location: p-median/ p-centre/ coverage
+      * A collection of problems where the objective is to optimally locate one or more facilities within a network in order to satisfy customer requirements (demand, service level).
+      * The most commonly cited problem is minimisation of total (or average) travel cost/time to or from customers (the p-median problem). Minimisation of maximum distance or time is known as a p-centre problem. A related set of problems seeks to ensure that all customers can be served within a fixed upper time or cost, or at least, as many as possible are served within a fixed time or cost. These are known as coverage problems.
+      * They are not explored further in this lecture, mainly because their very restrictive constraints tend to generate solutions that are too costly or ineffective to be implemented in practice. Customer demand is often assumed to be located at vertices in which case p-median solutions for p facilities serving n>p customer sites will always result in the facilities being located at network vertices (although this solution may not be unique). It is the network equivalent of the plane or free-space median location problem — a form of location-allocation task whereby facilities are located and customers are allocated to facilities.
+  * Sample network analysis problem parameters
+    * Objective function: How do we measure the"length" of a path? Options include the Euclidean length, Lp length, link distance/time/cost etc
+    * Constraints on the path: Are we simply to get from point s to point t, or must we also visit other points or other regions along a path or cycle?
+    * Input geometry: What types of obstacles or other entities are specified in the input map?
+    * Dimension of the problem: Are we in 2D-space, 3D-space, or higher dimensions? Typically within GIS we only consider 2D, but transport networks may not be planar
+    * Type of moving object: Are we moving a single point along the path, or is movement specified by some more complex geometry? In GIS off-road vehicular modelling is usually performed using Accumulated Cost Surface (ACS) or Distance Transform (DT) procedures applied to grid datasets rather than vector networks. Constraints on routes may also be applied to vehicles of particular sizes, types or weights (e.g. height restrictions)
+    * Single shot vs. repetitive mode queries: Do we want to build an effective data structure for efficient queries? Many network problems involve very similar searches — for example determining an alternative route (2nd, 3rd best)
+    * Static vs. dynamic environments
+      * Do we allow obstacles to be inserted or deleted, or do we allow obstacles to be moving along known trajectories?
+      * Flow and event dynamics may also be important considerations
+    * Exact vs. approximate algorithms
+      * Are we content with an answer that is guaranteed to be within some small margin of optimal?
+      * Larger problems in many cases cannot be solved exactly in a finite amount of time. Ideally real-world problems should be solved to within a specified level of the optimum for suitably defined subset problems
+    * Known vs. unknown map
+      * Is the complete geometry of the map known in advance, or is it discovered on-line, using some kind of sensor?
+      * Typically the geometry is known (map-able) in advance, but flows or events may not be
+* routing algorithm
+  * finding an algorithm to calculate an optimal path is solved
+  * The main problem is the organisation of mass data to guaranty a quick data access
+  * Traveling-salesman problem (TSP)
+    * a number of places must be visited in a tour from the depot and the distances between pairs of places are known
+    * select the best tour out of all possible orderings, in order to minimize the total distance traveled
+    * if n places to be visited, including the depot, then there are (n-1)!/2 possible tours
+    * this number grows very rapidly (n=5 - 12; n=8 - 2,520; n=10 - 181,440)
+  * Not the best result will be achieved in some cases. There will be a optimised result
+    * In big datasets the calculating time of such algorithms increase
+    * Data access strategies (Quadtree, ... ) has to be used to get response time
+    * Heuristics are implemented to get acceptable response time
+  * Not the complete network will be used for the optimisation - restriction
+    * Direction to the destination
+    * Network hierarchy
+  * Attributes associated with the network's links, such as length, travel speed, restrictions on travel direction, and level of congestion are often taken into account
+  * The path that is strictly shortest is often not suitable, because it involves too many turns or uses too many narrow streets, and algorithms will often be programmed to find longer routes that use faster highways, particularly freeways
