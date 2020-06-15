@@ -466,3 +466,59 @@ information results from the application of rules and instructions on data
     * Network hierarchy
   * Attributes associated with the network's links, such as length, travel speed, restrictions on travel direction, and level of congestion are often taken into account
   * The path that is strictly shortest is often not suitable, because it involves too many turns or uses too many narrow streets, and algorithms will often be programmed to find longer routes that use faster highways, particularly freeways
+
+## location referencing - transfer attributes/information between two maps
+
+### exchange of georeferenced information
+
+* Infrastructure to vehicle
+  * Map updates
+  * Traffic information
+  * Road safety feature updates
+* Vehicle-to-vehicle
+  * Problems with own vehicle
+  * Detected problems on the road
+  * Information from other vehicles (hand-on)
+* Vehicle-to-Infrastructure
+  * Accident information
+  * Detected traffic jams
+* referenced on digital road maps
+  * Pre-coded location references (e.g. TMC used by TPEG)
+  * Dynamic location references (e.g. ISO 17572-3 [AGORA], OpenLR®)
+
+### motivation - tranfer map information automatically
+
+location is described with geometry, topology, and semantics
+
+### problem
+
+* sender and receiver may use different maps
+* Different representation of the road network
+  * The road elements (named "links") differ between different maps
+  * Missing or surplus objects
+  * Different object IDs
+  * Different locations / positions
+
+### TPEG (Transport Protocol Experts Group)
+
+* protocol specification for the exchange of RTTI (Real Time Traffic Information)
+* provide road users with comprehensive, up-to-date traffic and traveler information across multiple transport modes
+* aim to describe real-world events and situational data with their spatio-temporal scope
+  * geographical location
+  * point in time resp. duration associated with
+    * municipal traffic management systems
+    * public transport operation
+    * weather observation
+* distributed to vehicle-based and other mobile client devices through the RDS-TMC system
+  * RDS: radio data system
+  * TMC: traffic message channel
+* use DAB(digital audio broadcast)/DAB+ for transmission
+* further distribution of RTTI data is obstructed because of the limitation of the TMC
+  * low and restricted bandwidth and capacity
+  * only static positions
+  * low coverage of the road network
+* besides the classis area of applications of TMC, TPEG support information resp.
+  * public transport
+  * weather
+  * traffic flow (incl. forecast)
+  * parking information, etc
