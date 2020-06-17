@@ -522,3 +522,63 @@ location is described with geometry, topology, and semantics
   * weather
   * traffic flow (incl. forecast)
   * parking information, etc
+
+### ISO 17572–2 Pre-coded Location References
+
+* regulate static Location Referencing methods in general
+* disadvantage
+  * we need this system in every static navigation system
+  * no possibilities of updates for the table in the car-system
+  * only part of the network is included (generally the highways and motorways)
+* alternative: ISO 17572 Family
+
+### Location referencing
+
+* Exchange of Road Safety Attribute(RSA) updates independent from certain maps
+  * not as a map object's attribute
+  * information about its location / extend
+    * Locations of intersections
+    * Locations of other important shape points
+    * Attributive information
+      * Street names
+      * Road class
+      * Road type
+    * Topological information
+* Introduction
+  * Location Reference (LR) is a clear identification of a spatial object
+  * one spatial object of the real world is represented by one element - feature in a spatial database
+  * In Intelligent Transport Systems (ITS) especially parts of the transportation network were coded as LR
+  * The LRs will be used to share and exchange information between databases
+
+### ISO 17572–3 Dynamic Location References (AGORA-C)
+
+* produce Location Reference at the point in time at it is required
+* on-the-fly Location Referencing
+* fundamental workflow
+  * produce Location Reference from the information of the sending map (geometry, topology, semantic)
+  * often use of binary data format for efficient data transfer (encoded)
+  * transfer of Location Reference to the receiver (normally via Internet)
+  * decoding of the Location Reference in the target map - information of traffic only
+  * after decoding the Location Reference is not longer needed in the target map and will be deleted
+* Mapbased Location Referencing
+* The AGORA Project
+  * objective: develop a method for generating Location References, which is robust within differences in databases (data model or content) on part of the submitter or receiver(hit rate of minimum 95%)
+  * Code-Length and bandwidth not defined
+* AGORA – the principle
+  * Intersection Locations (ILOCs) - Insufficient results
+  * Small group continues improving ILOC - Start of AGORA
+  * Inclusion of 2 additional approaches - Pivot Point (Siemens VDO) & GoodLane (Bosch)
+* AGORA - Approach
+  * Combination of three existing methods
+    * Advanced ILOC(Intersection Locations)
+    * Pivot Point approach (Siemens VDO)
+    * GoodLane approach (Bosch)
+  * Integration of the methods leads to complex algorithm
+    * Four Point classes
+    * Five Location Reference Types
+    * 34 rules for Encoding of Locations
+    * Less efficient binary data format
+  * Implementing and testing
+    * hit rate of 95% reach
+    * average code size was unduly large (about 250 bytes)
+  * encoding rules were perceived as rather complex
