@@ -582,3 +582,71 @@ location is described with geometry, topology, and semantics
     * hit rate of 95% reach
     * average code size was unduly large (about 250 bytes)
   * encoding rules were perceived as rather complex
+* AGORA – Advanced ILOC Approach
+  * first, Intersection Locations (ILOC) coded  
+  ![first, Intersection Locations (ILOC) coded](first.jpg)  
+  attributes: speed limit, location coordinates, direction, type​​
+  * pivot point: Intersection Locations often modeled very different in the maps. Therefore: Points coded outside of ILOCs (Pivot = axis)  
+  ![pivot point: Intersection Locations often modeled very different in the maps. Therefore: Points coded outside of ILOCs (Pivot = axis)](pivot.jpg)  
+  * good lane: If the coded geometry is simple (Shape Point 1 and 2) than, additional points will be chosen and added to the ILOC  
+  ![good lane: If the coded geometry is simple (Shape Point 1 and 2) than, additional points will be chosen and added to the ILOC](good.jpg)  
+  * AGORA Location Referencing method combines the three further mentioned approaches  
+  ![AGORA Location Referencing method combines the three further mentioned approaches](combines.jpg)  
+* An AGORA-C Location Reference consists of
+  * list of all points along the path, which describe the coded element in the sending map
+  * elements - lines
+  * the sorting of the points describe the logical order of the points along the path
+  * if the path along a link with physical cut-off between different lanes, the LR should follow the lane which will be referenced
+  * Each point have to belong to one or more of the following categories according to its meaning - Location point
+    * the shape of the LR is described by the sequence of the Location Points
+    * Start and end point of a LR is automatically also a Location Point
+    * further Location Points must inserted in that way that the difference between the route length and the air line distance between the Location Points is not larger than 10m or 5% of the air line distance
+    * Location Points are described by longitude and latitude resp. WGS 84
+  * Intersection point
+  ![Intersection point](intersection.jpg)  
+    * A Location Point is also a Intersection Point, if one or more of the following attributes changes
+      * Functional Road Class, FC
+      * Form of Way, FW
+      * Road descriptor, RD (Official national Road-Number, apart from that the road name)
+      * Driving Direction, DD
+    * within complex intersections, the intersection point is inserted at the first branch off inside the intersection
+    * additional Intersection Points outside the object, which will be coded, will inserted, if they are along the road network less than Dsearch−area away from the end of the Location Reference  
+    ![additional Intersection Points](additional.jpg)   
+    * Intersection Point Attribute
+      * Functional Road Class, FC
+      * Form of Way, FW
+      * Road descriptor, RD (Official national Road-Number, apart from that the road name)
+      * Driving Direction, DD
+      * Number of intermediate Intersections (NIT)
+      * Intersection Type (IT)
+  * Routing point
+    * A Location Point is also a Routing Point, if the road segment which determine the azimuth, has the minimum length of Dm−bearing
+    * An Intersection Point is also a Routing Point, if the connected side road segments has the minimum length Dm−co−angel
+    * the first and the last point of the LR has to be a Routing Point. If they do not fulfill the length requirements the next point outside the LR which fulfill the length requirements is chosen
+    * The LR is extended with the additional points
+    * the road segment between two following Routing Points is clearly defined, if the following three requirements are fulfilled  
+     ![requirements](requirements.jpg)   
+      * length of the segment not longer than the double Euclidian distance between those rooting points
+      * the segment have the lowest weighted distance (factor * distance) between the routing points The factor is defined by the functional road class
+      * the weighted distance of every fully different alternative route between those points have to be 25% larger than the segment itself
+    * if these requirements are not fulfilled, additional Routing Points will be defined
+    * Routing Point Attribute  
+    ![Routing Point Attribute](rpa.jpg)    
+      * Bearing, BR
+      * Accessible for Routing flag (AFR)
+      * distance to the next Routing Point (PD), calculated along the route
+      * Parallel Carriageway Indicator (PCI)
+      * Side road signature (for the side road with the smallest change of the bearing)
+      * change of bearing (= Connection angle, CA)
+      * Accessible for Routing flag (AFR)
+* An AGORA-C LR has the following attributes:
+  * Location Direction (LD)
+    * aligned, if the points describes the same lane direction
+    * both, if the LR includes both directions
+  * Location Type (LT)
+    * Intersection
+    * limited access road
+    * ferry
+    * housing area
+    * Point-of-interest (POI)
+    * road
