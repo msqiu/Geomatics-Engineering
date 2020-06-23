@@ -631,7 +631,7 @@ location is described with geometry, topology, and semantics
       * the weighted distance of every fully different alternative route between those points have to be 25% larger than the segment itself
     * if these requirements are not fulfilled, additional Routing Points will be defined
     * Routing Point Attribute  
-    ![Routing Point Attribute](rpa.jpg)    
+    ![Routing Point Attribute](rpa.jpg)  
       * Bearing, BR
       * Accessible for Routing flag (AFR)
       * distance to the next Routing Point (PD), calculated along the route
@@ -650,3 +650,32 @@ location is described with geometry, topology, and semantics
     * housing area
     * Point-of-interest (POI)
     * road
+
+### Open Location Reference
+
+* Definition
+  * Open, Compact and Royalty-free Dynamic Location Referencing
+  * dynamic location referencing method which enables reliable data exchange and cross-referencing using digital maps of different vendors and versions (TomTom)
+* Objectives
+  * free and successful exchange of location-relevant content through introduction of a universal standard
+  * To enable market growth and enhance the successful deployment of a wealth of ITS and LBS applications, free of license fees and supported by leading industry players
+  * Quicker enhancement by the expert community, thanks to the Open Source Model
+* Collaboration Model without standardized dynamic location referencing  
+  ![Collaboration Model without standardized dynamic location referencing](collaboration.jpg)  
+* OpenLRTM was originally designed for transferring traffic information from a centre to in-vehicle systems and taken into account
+  * Map vendor and version independency
+  * Covering all roads, including urban and low level roads
+  * Minimum bandwidth usage
+  * Communication channel independency
+  * Maintenance independency
+  * Potentially capable to replace TMC codes in future
+  * Encoding and decoding independent from system operation location e.g. Service centre, in-vehicle systems, etc.
+* Main idea: describing a line location completely with a concatenation of (several) shortest-paths
+  * The concatenation of such shortest-paths shall cover the location completely
+  * Each shortest-path is specified by information about its start and its end
+* Start/End information is combined in so called location reference points (LRPs)
+  * The LRPs are ordered from the start of the location to the end of the location
+  * The shortest-path between two subsequent LRPs covers a part of the location
+  * The concatenation of all such shortest-path(s) is called location reference path
+* Example
+  * 
