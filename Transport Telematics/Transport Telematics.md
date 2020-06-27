@@ -674,8 +674,54 @@ location is described with geometry, topology, and semantics
   * The concatenation of such shortest-paths shall cover the location completely
   * Each shortest-path is specified by information about its start and its end
 * Start/End information is combined in so called location reference points (LRPs)
-  * The LRPs are ordered from the start of the location to the end of the location
-  * The shortest-path between two subsequent LRPs covers a part of the location
+  * The location reference points are ordered from the start of the location to the end of the location
+  * The shortest-path between two subsequent location reference points covers a part of the location
   * The concatenation of all such shortest-path(s) is called location reference path
 * Example
-  * 
+  * Basic idea: a concatenation of a shortest path between location reference points (LRPs) covers the location completely  
+  ![concatenation](concatenation.jpg)  
+  * At least two location reference point needed for start and end of the location
+  * Intermediate location reference points serve as a guide for the route calculation
+* requirements
+  * Map requirements on basis of GDF parameters
+    * Functional road class (FRC): indicating the importance in the network
+    * Form of way (FOW): indicating physical properties
+    * Geometrical shape: lines shall not be abstracted by a straight line
+    * Coordinates in WGS84: every node in the network should have coordinates
+    * Length: indicating the real dimension along the geometrical shape
+  * The map attributes FRC and FOW need to be mapped to corresponding OpenLR™ values
+    * OpenLR™ defines its own FRC and FOW values
+  * all attributes need to be mapped to corresponding OpenLR™ values according the schema
+* Logical Data Format
+  * First / Intermediate location reference points
+    * point coordinates
+    * bearing
+    * Functional Road class FRC
+    * Form of Way FOW
+    * lowest FRC to the next location reference point
+    * offset, as the difference of the start point of the location and the start point of the desired location along the location reference path (optional)
+  * Last location reference point
+    * point coordinates
+    * bearing
+    * Functional Road Class FRC
+    * Form of Way FOW
+    * offset, as the difference of the start point of the location and the start point of the desired location along the location reference path (optional)
+* Process of Encoding
+  * Check validity of the location and offsets to be encoded.
+  * Adjust start and end node of the location to represent valid map nodes
+  * Determine coverage of the location by a shortest-path.
+  * Check whether the calculated shortest-path covers the location completely. Go to step 5 if the location is not covered completely, go to step 7 if the location is covered.
+  * Determine the position of a new intermediate location reference point so that the part of the location between the start of the shortest-path calculation and the new intermediate is covered completely by a shortest-path.
+  * Go to step 3 and restart shortest path calculation between the new intermediate location reference point and the end of the location.
+  * Concatenate the calculated shortest-paths for a complete coverage of the location and form an ordered list of location reference points (from the start to the end of the location).
+  * Check validity of the location reference path. If the location reference path is invalid then go to step 9, if the location reference path is valid then go to step 10.
+  * Add a sufficient number of additional intermediate location reference points if the distance between two location reference points exceeds the maximum distance. Remove the start/ end LR-point if the positive/ negative offset value exceeds the length of the corresponding path.
+  * Create physical representation of the location reference.
+* Process of Decoding
+  * Decode physical data and check its validity
+  * For each location reference point find candidate nodes
+  * For each location reference point find candidate lines
+  * Rate candidate lines for each location reference point
+  * Determine shortest-path(s) between two subsequent location reference points
+  * Check validity of the calculated shortest-path(s)
+  * Concatenate shortest-path(s) to form the location and trim path according to the offsets
