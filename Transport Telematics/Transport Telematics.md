@@ -725,3 +725,52 @@ location is described with geometry, topology, and semantics
   * Determine shortest-path(s) between two subsequent location reference points
   * Check validity of the calculated shortest-path(s)
   * Concatenate shortest-path(s) to form the location and trim path according to the offsets
+
+## communication technologies
+
+### classification
+phone network, radio, short range communication
+
+### Telecommunication: Umbrella term for all kinds of information transmission containing
+
+* Equipment of telecommunications
+* Organisational and operating facilities
+* legal regulation for introduction, operation and use of these facilities
+
+### Uni-directional vs. bi-directional data transfer
+
+* unidirectional: Data exchange only in one direction, mostly collective approaches (broadcast)
+  * radio - receiver
+* bidirectional: Data exchange / communication in both directions, mostly individualised information
+  * phone - id of sending and receiving
+
+### RDS/TMC
+
+* RDS (Radio Data System)
+  * Method for sending small amounts of digital data using conventional analogue FM radio broadcasts (e.g. station abbreviation, textual information about the programme like title and artist of the currently-playing song)
+* TMC (Traffic Message Channel)
+  * Special RDS data for transmitting traffic and travel information (e.g. weather situation, congestions), geo-referenced: TMC - locations
+  * Transmission can be limited on specific routes/areas
+* Characteristics
+  * low transmission rate
+  * Already used by a large number of services
+
+### DAB (Digital Audio Broadcast)
+
+* designed for mobile use (e.g. cars) using a simple rod antenna
+* TMC also be transmitted by DAB
+* Advantages in comparison with RDS/TMC: higher data rate
+* Multi-path effects are used to improve receiving quality
+  * Incoming signals are synchronized after a protection interval
+* Further developments
+  * DAB+
+    * DAB+ - Upgrade to DAB Digital Radio
+    * DAB uses MPEG Audio Layer II (better known as MP2) DAB+ uses MP4
+    * More stations can be broadcast on a multiplex
+    * More efficient use of radio spectrum
+    * Lower transmission costs for digital stations
+  * DMB
+    * DMB = Digital Multimedia Broadcasting
+    * Digital Multimedia Broadcasting (DMB) is a video and multimedia technology based on DAB.
+    * Robust reception of mobile TV at highway speeds (>300km/h)
+    * DMB is an open European Standard
