@@ -91,7 +91,6 @@ information results from the application of rules and instructions on data
 
 #### modelling of traffic flow - directed graph, direction by digitization
 
-
 #### attribute model
 
 * each feature can carry any number of attributes
@@ -127,7 +126,7 @@ information results from the application of rules and instructions on data
   * road element is specified as one way by attribute DF
   * prohibited manoeuvre by relationship
 
-#### GDF
+#### GDF, Geographical Data File
 
 * Data exchange format: simplified representation of the Media Record specification for line features
 * one standard - two maps
@@ -209,17 +208,17 @@ information results from the application of rules and instructions on data
 
 #### dimension
 
- * 0D - POI - point
- * 1D - road - line
- * 2D- area of soil - polygon
- * 2.5D - (x, y, name, height)
- * 3D (x, y, z) TIN
+* 0D - POI - point
+* 1D - road - line
+* 2D- area of soil - polygon
+* 2.5D - (x, y, name, height)
+* 3D (x, y, z) TIN
 
 #### scale
 
- * scale is in the detail - spatial resolution or the level of detail in data
- * scale is about extent - large scale project covers large area
- * scale of a map - representation fraction: the ratio of distance on the map to distance on the ground
+* scale is in the detail - spatial resolution or the level of detail in data
+* scale is about extent - large scale project covers large area
+* scale of a map - representation fraction: the ratio of distance on the map to distance on the ground
 
 #### georeference
 
@@ -306,8 +305,8 @@ information results from the application of rules and instructions on data
 
 ### data costs
 
-*  basis costs: hardware, soft ware, personal costs
-*  project specific costs
+* basis costs: hardware, soft ware, personal costs
+* project specific costs
 
 ### topology
 
@@ -366,8 +365,8 @@ information results from the application of rules and instructions on data
 * incidence and adjacency  
   ![incidence and adjacency](ia.jpg)  
   * Incidence names the meeting of different topologic primitives
-    * Incidence matrix 
-      * $B(i, j)=1$ if edge i starts in node $j$ 
+    * Incidence matrix
+      * $B(i, j)=1$ if edge i starts in node $j$
       * $B(i, j)=-1$ if edge i ends in node $j$
   * Adjacency names the meeting of same topologic primitives
     * Adjacency matrix
@@ -611,7 +610,7 @@ location is described with geometry, topology, and semantics
       * Driving Direction, DD
     * within complex intersections, the intersection point is inserted at the first branch off inside the intersection
     * additional Intersection Points outside the object, which will be coded, will inserted, if they are along the road network less than Dsearch−area away from the end of the Location Reference  
-    ![additional Intersection Points](additional.jpg)   
+    ![additional Intersection Points](additional.jpg)  
     * Intersection Point Attribute
       * Functional Road Class, FC
       * Form of Way, FW
@@ -625,7 +624,7 @@ location is described with geometry, topology, and semantics
     * the first and the last point of the LR has to be a Routing Point. If they do not fulfill the length requirements the next point outside the LR which fulfill the length requirements is chosen
     * The LR is extended with the additional points
     * the road segment between two following Routing Points is clearly defined, if the following three requirements are fulfilled  
-     ![requirements](requirements.jpg)   
+     ![requirements](requirements.jpg)  
       * length of the segment not longer than the double Euclidian distance between those rooting points
       * the segment have the lowest weighted distance (factor * distance) between the routing points The factor is defined by the functional road class
       * the weighted distance of every fully different alternative route between those points have to be 25% larger than the segment itself
@@ -729,6 +728,7 @@ location is described with geometry, topology, and semantics
 ## communication technologies
 
 ### classification
+
 phone network, radio, short range communication
 
 ### Telecommunication: Umbrella term for all kinds of information transmission containing
@@ -774,3 +774,87 @@ phone network, radio, short range communication
     * Digital Multimedia Broadcasting (DMB) is a video and multimedia technology based on DAB.
     * Robust reception of mobile TV at highway speeds (>300km/h)
     * DMB is an open European Standard
+
+### GSM (Global System for Mobile Communications)
+
+* Data transmission between vehicle and service centre can be carried out without additional infrastructure
+* Characteristics
+  * Subscriber and devices authentication
+  * Subscriber localisation
+  * Data encoding
+  * Digital data transmission: 9,6 kBit/s
+  * SMS: Short message service (max 160 characters)
+  * GPRS: package-switched data transmission
+* 3 subsystems  
+  ![subsystems](subsystems.jpg)  
+  * Base Station Subsystem - Connection of subscriber at the network
+    * Mobile phone communicated with the network by Base Transceiver Station (BTS)
+    * One antenna per radio cell
+    * A-bis-interface
+    * Processing via Base Station Controller (BSC)
+    * BSC carries out handover (subscriber pass to a new cell)
+  * Network and Switching Subsystem - Switching within the network and connection to other (telecommunication) networks
+    * Processing of network traffic between BSC (A-interface)
+    * Localisation of subscriber during dial-up
+  * Network and Switching Subsystem - Administration and control of the network
+    * Administration of business-relevant data
+    * Security management
+    * Net configuration
+* Data communication with GSM
+  * Data communication with GSM
+  * SMS (Short Message Service)
+  * GPRS (General Packet Radio Services)
+
+### UMTS (Universal Mobile Telecommunications System)
+
+* Transmission protocol: Wideband-CDMA (Code-Division-Multiple-Access): higher speed, support of more users
+* Parallel transmission and receiving of several data streams
+* Services
+  * Communication (Audio- und Video telephony, ...)
+  * News services (Video-Speech-Mail, Chat, ...)
+  * Information dissemination (WWW, information services, ...)
+  * Localization (PDA, LBS, ...)
+  * Mass service (e-Commerce, online-banking, ...)
+
+### Satellite-based communication systems: Iridium, Globalstar, Teledesic, Annotations
+
+### private mobile radio
+
+* Part of non-public mobile land broadcasting
+* Subdivided into several application areas according to groups of public utility providers
+* Radio network consists of stationary radio installations with appended mobile radio sets
+
+### trunking - trunked radio
+
+![trunking](trunking.jpg)  
+
+* like private mobile radio
+* railway company/police fire station
+* Better frequency utilisation: dynamic frequency allocation using a pool of channels
+
+### private mobile radio vs. trunking
+
+![private mobile radio vs. trunking](private.jpg)  
+
+### Short range communication
+
+![Short range communication](range1.jpg)  
+![Short range communication](range2.jpg)  
+
+### Communication inside the vehicle
+
+![Communication inside the vehicle](communication.jpg)  
+![Communication inside the vehicle](inside.jpg)  
+
+* CAN BUS: Controller Area Netwok
+  * Networking of control units in cars
+  * Line structure with stubs
+* CAN-B: supports intelligent sensors / low data rate / max. 10 stations
+* CAN-C: for drive and chassis electronics / higher data rates / max. 24 stations
+
+### Further BUS systems - real time, capability
+
+* FlexRay
+* MOST (Media Oriented Systems Transport Bus)
+* LIN (Local Interconnect Network)
+
