@@ -858,3 +858,64 @@ phone network, radio, short range communication
 * MOST (Media Oriented Systems Transport Bus)
 * LIN (Local Interconnect Network)
 
+## Positioning and Navigation
+
+### Introduction
+
+* reference system
+  * WGS84: ellipsoid, unique coordinate system, global reference system for GPS
+  * projected system: distortion, calculate between the system and measurement
+  * local reference system in the vehicle: different kinds of sensors define different coordinate systems and different zero points
+* container: segmentation cells link to the antenna - not geodetic
+* beacons, where bus/train is passing logical routing - not geodetic
+* GPS error
+  * junks - change of satellite
+  * multi path
+  * shadowing
+* advantages of GPS or GNSS used for positioning: global position in the map, global coordinates
+  * gyroscopem odometer, compass, speed senser are relative
+* odometer: skip between the real wheel moving direction+distance - calculation from one point to anothers
+
+### classification of location methods
+
+![classification of location methods](classification1.jpg)  
+![classification of location methods](classification2.jpg)  
+
+* global
+  * in a superior (global) reference system
+  * no previous position information is necessary
+  * measurement of absolute position
+  * problem: signal loss
+* local
+  * measurement of position changes
+  * lack of absolute position can be compensated for short time periods (dead-reckoning)
+* self-positioning
+  * positioning is realised by mobile object itself
+* remote-positioning
+  * positioning is realised by a reference system
+  * data privacy has to be considered
+* coordinate system (n-dim)
+  * positioning related to a coordinate system (e.g. WGS84)
+* traffic network resp. road/route (1-dim)
+  * positioning related to a line
+* predefined objects - area-related (containment) or pointrelated (e.g. beacon)
+  * for a specific location
+  * accuracy depends on size of container
+
+### terms
+
+![terms](terms.jpg)  
+
+* Positioning - coordinates
+  * Determination of the current geometric position
+* Location - information about the surroundings
+  * Determination of the current position related to an element (e.g. a node on a graph) of a (digital) map (e.g. the traffic network)
+* Map-Matching: Allocation of the current geometric position or trajectory (sequence of positions) to the traffic network represented as digital map
+* Route calculation: Determination of the optimal path between two or more places within the traffic network concerning a given optimisation criteria
+* Navigation = positioning and guidance
+  * includes positioning, location and route calculation between current location and target
+  * guidance commands to reach the target
+  * dynamic navigation includes
+    * comparison of the calculated route with the actual route
+    * deviations or incidents require the calculation of a new route including new guidance commands
+
