@@ -919,3 +919,55 @@ phone network, radio, short range communication
     * comparison of the calculated route with the actual route
     * deviations or incidents require the calculation of a new route including new guidance commands
 
+### Sensors and their typical errors
+
+![errors](errors.jpg)  
+
+#### Odometer - use gyroscope to check
+
+![odometer](odometer.jpg)  
+
+#### GPS/DGPS
+
+* Errors
+  * jumps and deviations
+    * multipath/shadowing - detection of the junks, check vehicle speed model
+    * shadowing and reflections
+    * changes and faulty in satellite configutation
+    * loss of correction signal
+  * 90%-95% availability of GPS-signal in urban area
+* GPS raw signal not directly usable
+* filter necessary
+* areas without GPS have to be bridged
+* DGPS
+  * improvement of accuracy
+  * availability of correction signal
+* carrier phase - very low availability due to determination of ambiguities
+* GPS Quality  
+  ![GPS Quality](quality.jpg)  
+  * a measurement of the time required for a GPS receiver to acquire satellite signals and navigation data, and calculate a position solution
+  * GPS SiRF III delivers better quality
+    * High sensitive
+    * Very short TTFF(time to first fix)
+    * High-performance correlation unit
+    * Shadowing effect is still existing
+    * Gross errors are still given, but to less extent
+  * GPS-mouse
+    * Sensor fusion with internal gyro (+ speedometer)
+    * Dynamic model of vehicle for filtering
+
+#### Dead reckoning errors
+
+##### use gyros and speed odometer only, speed effects 𝜎Δy, so accuracy error~time  
+
+![GPS accuracy](accuracy.jpg)  
+
+##### Error ellipses with different initial accuracies at the starting point
+
+![Error ellipses](ellipses.jpg)  
+
+##### accuracy of dead reckoning depend on
+
+* shape of the track
+* number of measurements(frequency of measurement, driving dynamics)
+* accuracy of measurement
