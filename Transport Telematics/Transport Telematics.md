@@ -971,3 +971,49 @@ phone network, radio, short range communication
 * shape of the track
 * number of measurements(frequency of measurement, driving dynamics)
 * accuracy of measurement
+
+### map matching - match the position of the car to the digital road map
+
+![map matching](match.jpg)  
+
+#### principle
+
+![principle](principle.jpg)  
+
+* accuracy - how we measure accuracy - standard deviation
+* A reliable algorithm which is suitable real time applications has to be developed, taken into account the accuracy, performance, and the speed of the algorithm.
+  * Different used techniques (simple techniques, medium in difficulty, and complex method).
+  * According to the degree of complexity, the speed is different.
+  * Each algorithm has been developed for a specific purpose.
+  * Real time applications vs. Post processing.
+  * Real time (urban, suburban, or rural environments)
+  * Some algorithms are more accurate than the others.
+  * Different sensors are in use, and thus different input data.
+* Geometric map matching algorithms - shortest distance to the edge/node  
+  rely on the geometric information of the spatial road network data to determine the correct segment, by considering only the shape of the links.
+  ![shape](shape.jpg)  
+  * Point-to-point matching
+    * shape point: do not influence the attributes
+    * node - incl. attributes
+  * Point-to-curve matching
+  * curve-to-curve matching: transformation - shift, rotation, scale
+* Topological map matching algorithms - make use of the geometry of different entities of the spatial road network data, as well as the spatial relationships between the different entities (lines and nodes)
+  * Historical data (previous correct segment)
+  * Connectivity information
+  * Turn restriction data - traffic sign
+  * topology derived from geometrical information - connection related to the coordinates
+* Probabilistic map matching algorithms
+  * take all(accuracy, measurement error) into consideration
+  * an error region (rectangular, elliptical, or circular) has to be generated around each of the positioning fixes which are obtained from the navigation solution.
+  * Sometimes, the error ellipse is generated around each point of the GPS fixes, sometimes it is only used at junctions
+* Advanced map matching algorithms
+  * mathematic methods
+  * category of algorithms which uses more difficult and strong concepts than geometry, and topology, although it uses such information in most cases
+  * kalman filter, particle filter, artificial neural network or a fuzzy logic model
+
+#### Characteristics of map-matching
+
+* Transformation of local positioning information into global positioning information for georeferencing
+* TRealisation of a logical connection between vehicle position and road network stored in the map (geo database)
+  * TLogical connection enables access to further route-related data from the map (locations !)
+* TCompensation of system-immanent measurement errors cause an enhanced quality regarding accuracy, correctness and availability
