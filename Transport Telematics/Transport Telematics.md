@@ -1017,3 +1017,42 @@ phone network, radio, short range communication
 * TRealisation of a logical connection between vehicle position and road network stored in the map (geo database)
   * TLogical connection enables access to further route-related data from the map (locations !)
 * TCompensation of system-immanent measurement errors cause an enhanced quality regarding accuracy, correctness and availability
+
+#### trajectory: curve to curve matching
+
+* Representations of planar graphs  
+  ![planar](planar.jpg)  
+* Evaluation procedures
+  * Map-Matching with coordinate pattern
+    * Similarity transformation - corresponding point coodinates
+    * Affine transformation
+  * Map-Matching with azimuth or curvature pattern
+    * Cross-correlation
+    * Least squares adjustment
+    * Recursive parameter estimate (Kalman filter)
+* Map-matching based on coordinates
+  * Translation (2 parameters)
+    * Does not considers systematic sensor errors at all
+    * Possible useable for DGPS
+  * Similarity transformation (4 parameters)
+    * Translation, rotation
+    * Scale unusable due to equidistant line segments
+    * Determination of initial values for dead reckoning
+  * Affine transformation (6 parameters)
+    * Translation, rotation, shearing, reflection
+    * Most precise allocation due to most degrees of freedom
+* Procedure: Assignment via coordinates  
+  ![planar](planar.jpg)  
+  * problem: scale - segment, corner
+  * Map-Matching in angle or curvature image  
+    ![angle or curvature](winkel.jpg)  
+    * cross correlation: $c(i)=\sum_{j=-\infty}^{\infty} \varphi_{2}(j) \cdot \varphi_{1}(i+j)$
+    * Maximum shows the offset between both functions
+* Procedure: Map-matching with azimuths  
+  ![azimuths](azimuths.jpg)  
+  * Adjustment
+    * offset of arc length
+    * Scale of arc length
+    * Offset of azimuth
+    * Scale of azimuth
+  * Procedure - Overview
