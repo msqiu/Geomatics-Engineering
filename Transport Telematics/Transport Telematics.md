@@ -1055,4 +1055,40 @@ phone network, radio, short range communication
     * Scale of arc length
     * Offset of azimuth
     * Scale of azimuth
-  * Procedure - Overview
+  * Procedure - Overview  
+  ![procedure](procedure.jpg)  
+    * Area selection: raw definition of map matching area by absolute positioning(in genaral: GPS)s
+    * net thining: by azimuth or distance information of measured trajectory
+    * Route identification
+      * Composition and conversion of the routes corresponding to chosen evaluation procedure
+      * Matching of the path to each alternative route
+      * Longitudinal determination: Shifting the trace along selected route
+* Selection of alternative routes
+  * Offline evaluation (service centre)
+    * all measured position are available
+    * accuracy of measurement defines the area in scope
+    * Set-up of topologies from the segments within the fixed area
+    * Pre-selection based on checks of directions and lengths
+  * Online evaluation
+    * Road element at the beginning is given
+    * Limitation of area based on positioning accuracy
+    * Consider topology in course of the road
+    * Each branch is a new alternative route
+
+#### Impact of the map on location quality
+
+* Up-to-dateness of the map
+* Map information disturbs accuracy and correctness of location, if the map does not represent reality
+* Here: used map does not represent the new constructed roundabout 
+  * solution: kalmann filter
+
+#### Evaluation with Kalman filter
+
+![Basic principle](principle1.jpg)  
+
+Example: travelling ship
+![Example: travelling ship](travelling.jpg)  
+
+* Kalman filter: Trajectory approach
+  * Parameterization of vehicle movement on plain trajectory -applied parameters (arc length, curvature / radius)
+  * Vehicle model: 'kinematic' approach – uniform motion on a circle with constant speed (within on sampling interval e.g. t = 1 sec)
