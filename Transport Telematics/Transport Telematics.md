@@ -1089,6 +1089,42 @@ phone network, radio, short range communication
 Example: travelling ship
 ![Example: travelling ship](travelling.jpg)  
 
-* Kalman filter: Trajectory approach
-  * Parameterization of vehicle movement on plain trajectory -applied parameters (arc length, curvature / radius)
-  * Vehicle model: 'kinematic' approach – uniform motion on a circle with constant speed (within on sampling interval e.g. t = 1 sec)
+##### Kalman filter: Trajectory approach
+
+##### Parameterization of vehicle movement on plain trajectory -applied parameters (arc length, curvature / radius)
+
+##### Vehicle model: 'kinematic' approach – uniform motion on a circle with constant speed (within on sampling interval e.g. t = 1 sec)
+
+* Condition vector
+  * $Y, X$
+  * Speed $v$
+  * Orientation of vehicle $\alpha$
+* Measurement
+  * Absolute GPS $Y, X$
+  * Odometer $\Delta s, \Delta \alpha$
+  * Gyro $\Delta \alpha$
+* Transformation into a global reference system
+
+$$\left(\begin{array}{l}
+Y_{k+1} \\
+X_{k+1}
+\end{array}\right)=\left(\begin{array}{l}
+Y_{k} \\
+X_{k}
+\end{array}\right)+\left(\begin{array}{cc}
+\cos (\alpha) & \sin (\alpha) \\
+-\sin (\alpha) & \cos (\alpha)
+\end{array}\right)\left(\begin{array}{c}
+\Delta Y^{L} \\
+\Delta X^{L}
+\end{array}\right)$$
+
+![Transformation into a global reference system](global.jpg)  
+
+* System equation
+
+![System equation](equation.jpg)  
+
+* Filter design
+
+![Filter design](design.jpg)  
