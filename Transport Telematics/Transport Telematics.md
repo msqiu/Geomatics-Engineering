@@ -1128,3 +1128,91 @@ X_{k}
 * Filter design
 
 ![Filter design](design.jpg)  
+
+#### Positioning with GSM: Structure of GSM Network
+
+![Positioning with GSM](gsm.jpg)  
+
+* MS = Mobile Station (Cell Phone)
+* BTS = Base Tranceiver Station (Antenna): controls one antenna respectively cell
+* BSC = Base Station Controller: controls several BTS
+* MSC = Mobile Switching Centre: controls several BSC = one Location Area (LA)
+
+#### Mobile Phone Positioning
+
+##### Signal dispersion - the signal strength decreased as the square of the distance
+
+* shading
+  * large object(building, trees) attenuate the signal so that there is no reception behing them
+  * the higher the frequency, the stronger the attenuation
+* reflection: after reflection of the signal, e.g. on buildings, the absorption of the signal strength is reduced
+* scattering: one signal is split into several weaker signals which preceed in different directions
+* diffraction: signal are diffracted on the edges from the original spreading direction(recipient is accesible behing mountains)
+
+##### Measurements usable for PositioningMeasurements usable for Positioning
+
+![Measurements usable for PositioningMeasurements usable for Positioning](usable.jpg)  
+
+* Cell ID: unique number assigned to one cell resp. BTS
+* Handover
+  * point of time when a MS changes from one cell (BTS) to another one
+  * phone switch from one to another antenna
+* Location Area Update: point of time when a MS changes from one LA (MSC) to another one
+* Timing Advance (TA) value - syncronazation: approximation of the distance between MS and the serving BTS, resolution of approx. 550 m
+* Received Signal Strength (RXLEV-value): signal attenuation between MS and up to 7 BTS, resolution 1 dB
+
+##### Positioning methods
+
+* Cell-based procedure  
+  ![Cell-based procedure](cell.jpg)  
+  * Cell Of Origin (COO)
+    * in city, one antenna may be full(e.g., 500 register) - solution: overlapping
+    * Localisation on cell basis (Cell-ID)
+    * Precision: 100 – 20.000 metres (depending on the size of the cell)
+    * Requires countrywide cell structure
+    * used for Location Based Services (LBS)
+  * Cell Of Origin with Cell Sector
+* Runtime measurement
+  * Timing Advance (TA)
+    * In order to meet the time slots, signal runtimes between mobile station and base station are considered
+    * Runtime measurement for several base stations - increase precision
+  * Time Of Arrival (TOA)  
+    ![Time Of Arrival (TOA)](toa.jpg)  
+    * Direct runtime measurement (TOA)
+    * Synchronisation of signals is required
+    * Multipath effects  
+  * Time Difference Of Arrival / Uplink Time Of Arrival (TDOA)  
+    ![Time Difference Of Arrival / Uplink Time Of Arrival (TDOA)](tdoa.jpg)  
+    * Two reference stations are sending simultaneous signals
+    * Base station measures time difference for the reception of the signals
+    * Advantage (over TOA): The imprecision of the watches is the same in both measurements and thus drops out on the subtraction.
+    * **sycronazation**
+  * Enhanced Observed Time Difference (E-OTD): Mobile phone measures runtime differences
+* Angle measurement
+  * Angle Of Arrival (AOA)  
+    ![Angle Of Arrival (AOA)](aoa.jpg)  
+    * Measurement of the angle of arrival of the receiving signal on at least two stations
+    * Calculation on a centralised basis
+    * Base stations have to be upgraded with special directional antennas
+* Signal strength measurement
+  * Received Signal Strength
+    * Signal strength decreases as the square of the distance
+    * Output signal strength is known
+    * Deduction of a route through signal strength,  transmission power of the antenna and attenuation type
+    * Susceptible to obstacles and multipath effects
+    * antenna, shading
+* Reference data procedure
+  * Principle: Measurement of radio field environment data and comparison with previously measured and georeferenced data
+  * Example: Signal strength chart to several BTS
+  * Collection of reference data
+    * By measurement (extremely time-consuming)
+    * From planning (with disperson models)
+  * Precision: depending on the discretisation depth
+
+##### Mobile phone positioning methods
+
+![Mobile phone positioning methods](mppm.jpg)  
+
+##### Positioning with GSM: Positioning Methods
+
+![Positioning with GSM: Positioning Methods](pgsm.jpg)  
