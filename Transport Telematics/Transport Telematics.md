@@ -1500,3 +1500,7 @@ Bad connections may arise if only few points remain
 
 * spatial-temporal description of traffic situation
 * feasibility of predicting formation, development and reduction of traffic jamming
+
+### Sequence of Traffic-Data Acquisition
+
+![Traffic-Data Acquisition](traffic.jpg)  
