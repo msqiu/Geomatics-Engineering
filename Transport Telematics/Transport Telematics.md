@@ -1418,4 +1418,14 @@ Bad connections may arise if only few points remain
   * High level 1: All motorways
   * Land Use Maps: Object for map generation and representation (water, railroads)
   * Points of Interest (POI): Symbols and additional textual information
- 
+
+### Localisation for regional public transportation
+
+#### Logical localisation (beacons)
+
+![Logical localisation (beacons)](beacons.jpg)  
+
+* Reliable, but inflexible
+* Expensive, as it requires many devices along the tracks
+
+#### Localisation by GPS - Independent from defined way, but not 100 % reliable
