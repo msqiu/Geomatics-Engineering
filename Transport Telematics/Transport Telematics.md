@@ -1356,4 +1356,23 @@ The search for the shortest path is always a search for the best node-edge seque
 * highways function road class
 * proper ways and store the calculation
 * maybe not the best result
+
+### Tour planning - Travelling-Salesman-Problem (TSP)
+
+* Connect several given destinations using the shortest possible path forming a closed tour
+* Using the Distance Matrix we get the following function $f\left(s_{k}\right)=\sum_{i=1}^{n} d_{i, j}=\min$
+
+#### Solution: Nearest-Neighbour-Approach
+
+The nearest neighbour of a starting point is used to create a Hamilton Path  
+Bad connections may arise if only few points remain
+
+##### Christophides' Algorithm
+
+![Christophides' Algorithm](christophides.jpg)  
+
+* Construction of a minimal-spanning tree (undirected graph) via all points (a)
+* Minimum-Matching for all nodes with uneven degree (b)
+* Find an Euler Path (c), each edge has to be passed at least once
+* Create a Hamilton Path (d)
  
