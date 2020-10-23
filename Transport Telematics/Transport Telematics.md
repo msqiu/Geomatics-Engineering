@@ -1216,3 +1216,67 @@ X_{k}
 ##### Positioning with GSM: Positioning Methods
 
 ![Positioning with GSM: Positioning Methods](pgsm.jpg)  
+
+### Mobile phone positioning with A data
+
+#### Input data
+
+* Telephone call: handover (= result of cell changes)
+  * Time
+  * Former LAC(location area code); former CI(cell ID);
+  * New LAC; new CIs
+* Standby mode - Location Area Update
+  * Time
+  * Former LAC; * 
+  * New LAC; new CI
+
+#### Mobile phone data
+
+* Handover
+* Location Area Updates
+* Corrections required
+
+#### Mobile phone network
+
+* Antennas (position, orientation, frequences)
+* Best Server Plot
+* Generalisation / data reduction
+
+#### Map basis
+
+* Navtech GDF -> Localisation network
+* Elimination of residential streets
+
+#### Route calculation
+
+* Graph covering all location areas
+* Start and target node on the first and last change
+* Shortest distances in all combinations
+* Selection of the route with frequency
+
+### Map-based mobile phone positioning - Project Do-iT (data optimization for integrated telematics)
+
+![Project Do-iT](doit.jpg)  
+
+* Least squares adjustment
+  * Further improvement by smoothing (moving average filter) and Kalman filtering
+* Map Aiding
+  * definition: Create logical references to road map
+  * Procedure
+    * Projection of position sequence on road map
+    * Determination of search area
+    * Selection of start and target node
+    * Calculation of all possible (shortest) routes
+    * Selection of most probable route through standard deviation of perpendiculars on measured position sequence
+  * Strong jumping of single items / Real and "planned" signal strengths differ significantly.
+* Positioning with GSM: Conclusions
+  * GSM network may be used for positioning
+  * Classification of positioning methods is presented
+    * based on GSM network structure
+    * available measurements
+  * Availability of positioning methods for net-based anonymous approach is limited
+* Near field communication
+  * WLAN navigation system
+    * WLAN location is intended as alternative to the satellite Global Positioning System (GPS)
+ 
+ 
