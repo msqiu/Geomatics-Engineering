@@ -1375,4 +1375,47 @@ Bad connections may arise if only few points remain
 * Minimum-Matching for all nodes with uneven degree (b)
 * Find an Euler Path (c), each edge has to be passed at least once
 * Create a Hamilton Path (d)
+
+### Functional architecture of navigation system
+
+![Functional architecture of navigation system](navigationsys.jpg)  
+
+* Kinds of navigation systems
+  * Mobile systems
+    * PDA, Smartphone, …
+    * Usually only GPS-based
+    * Map representation
+    * Some devices include TMC/RDS, ...
+    * Without permanent mounting
+    * advantage: bi-direction communication
+    * disadvantage - ID
+  * Radio-integrated systems
+    * Integrated in the radio bay
+    * Display with pictogram
+    * Location using GPS
+    * Usually TMC/RDS-capable
+    * disadvantage
+      * broadcast for all simple table
+      * only one direction, can only receive information
+  * Stand-alone systems
+    * External monitor
+    * Map representation
+    * sensors: gyro, odometer, GPS
+* User interface (MMI)
+  * Tasks of the MMI
+    * Menu-based handling
+    * Input of various destination/s
+    * Display of the recommended way / path to the target = graphical guidance
+    * Acoustic output of the recommended way / path = acoustic guidance
+  * MMI Requirements
+    * Simple handling
+    * No distraction of the driver with respect to current traffic - Pictograms and voice output
+* Route guidance information - Depending on velocity and distance: confirmation, notification and advice
+* Database within a navigation system
+  * Database within a navigation system: All road segments and junctions
+  * High level 3: All motorways, interstate roads and country roads
+  * High level 2: All motorways and interstate roads
+  * High level 1: All motorways
+  * Land Use Maps: Object for map generation and representation (water, railroads)
+  * Points of Interest (POI): Symbols and additional textual information
  
