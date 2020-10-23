@@ -1278,5 +1278,82 @@ X_{k}
 * Near field communication
   * WLAN navigation system
     * WLAN location is intended as alternative to the satellite Global Positioning System (GPS)
+
+### Routing - Identify the best way between different locations within a given transport network taking specified requirements into account
+
+#### Application
+
+* Adoption of traffic requirements for transport networks
+* Navigation systems
+* Fleet management systems / Route planning
+
+#### problem of calculation: efficiency - calculating through the all map algrithoms are time consuming
+
+#### Based on the Graph Theory and its node-edge model
+
+##### A Graph is an amount of distinguishable elements with the same properties having a specific structure. This structure is described by relationships between the different elements
+
+![Graph](graph.jpg)  
+
+##### Basic objects
+
+* Node
+* Edge: directed/undirected
+
+##### A directed graph $G=(V,E)$ consists of
+
+* a limited amount V of nodes
+* a limited amount $E ⊂ V × X$ of (directed) edges
+
+##### Adjacency: Relation between node and node
+
+##### Incidence: Relation between node and edge
+
+##### Distance matrix
+
+$$
+D=\left(d_{i, j}\right)=\left\{\begin{array}{cc}
+d\left(x_{i}, x_{j}\right) & \text { if } a_{i, j}=1 \\
+\infty & \text { else }
+\end{array}\right.
+$$
+
+![Distance matrix](distance.jpg)  
+
+The search for the shortest path is always a search for the best node-edge sequence.
+
+#### Routing algorithms / Best-Way Search
+
+##### Shortest path by Moore
+
+![Shortest path by Moore](moore.jpg)  
+
+* Input
+  * Graph $𝐺(𝑉; 𝐸)$ with cost function $𝑙( 𝑖, 𝑗)$
+  * Start node $𝑣_1$
+* Output
+  * Tree of the shortest paths
+  * List $𝑑 (𝑣_1, ⋯ , 𝑣_𝑛)$ , costs from start node to all other nodes
+* Initialisation
+  * ShortestPathTree = {};
+  * SetOfCandidates {}= ; /* already identified nodes */
+  * Add start node $𝑣_1$ to the set of candidates
+  * Costs of the start node: $𝑑 (𝑣_1) = 0$;
+  * Costs of all other nodes: $𝑑 (𝑣_2 ⋯ 𝑣_𝑛) = ∞$;
  
+##### Dijkstra algorithm
+
+![Dijkstra algorithm](dijkstra.jpg)  
+
+* process
+  * Mark all nodes unvisited. Create a set of all the unvisited nodes called the unvisited set.
+  * Assign to every node a tentative distance value: set it to zero for our initial node and to infinity for all other nodes. Set the initial node as current.
+  * For the current node, consider all of its unvisited neighbors and calculate their tentative distances through the current node. Compare the newly calculated tentative distance to the current assigned value and assign the smaller one.
+  * When we are done considering all of the unvisited neighbors of the current node, mark the current node as visited and remove it from the unvisited set. A visited node will never be checked again.
+  * If the destination node has been marked visited (when planning a route between two specific nodes) or if the smallest tentative distance among the nodes in the unvisited set is infinity (when planning a complete traversal; occurs when there is no connection between the initial node and remaining unvisited nodes), then stop. The algorithm has finished.
+  * Otherwise, select the unvisited node that is marked with the smallest tentative distance, set it as the new "current node", and go back to step 3.
+* distance/direction restriction
+* highways function road class
+* proper ways and store the calculation
+* maybe not the best result
  
