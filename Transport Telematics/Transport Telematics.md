@@ -1340,7 +1340,7 @@ The search for the shortest path is always a search for the best node-edge seque
   * Add start node $𝑣_1$ to the set of candidates
   * Costs of the start node: $𝑑 (𝑣_1) = 0$;
   * Costs of all other nodes: $𝑑 (𝑣_2 ⋯ 𝑣_𝑛) = ∞$;
- 
+
 ##### Dijkstra algorithm
 
 ![Dijkstra algorithm](dijkstra.jpg)  
@@ -1446,4 +1446,24 @@ Bad connections may arise if only few points remain
 * Position of the trains is known at any time
 * More flexibility regarding distance between trains
 * Better information of passengers about current traffic situation
+
+## Traffic Data Acquisition
+
+### Traffic Data Acquisition
+
+![Traffic Data Acquisition](tda.jpg)  
+
+* Usage of traffic information
+  * User-related transmission of traffic information
+  * Off-board computation of route in service centres
+  * On-board computation of route regarding the current traffic situation (dynamic routing)
+  * Traffic prediction
+* Tasks of traffic data acquisition: Collection of the traffic parameter at discrete locations to sustain simulations of traffic situations by measurements
+* Tasks of traffic data collection: Detection of the parameters at discrete locations to support traffic models with these measurements
+* To influence the traffic information on traffic conditions as basic data are required
+* to avoid traffic jam
+  * capacity of the road
+  * speed & capacity
+  * higher speed, higher distance
+  * speed ->constant, limited
  
