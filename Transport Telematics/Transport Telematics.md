@@ -1466,4 +1466,16 @@ Bad connections may arise if only few points remain
   * speed & capacity
   * higher speed, higher distance
   * speed ->constant, limited
+
+### Traffic parameters
+
+* presence/ absence of vehicle
+* direction of traffic
+* velocity
+* vehicle class e. g. "8+1"  
+   ![vehicle class e. g. "8+1"](81.jpg)  
+* durability of allocation (period of presence)
+* time gap (e. g. announcement vehicle1 -announcement vehicle2)
+* traffic volume [vehicles/h] (= traffic flow) - how many in time
+* traffic density [vehicles/km] - how many in length
  
