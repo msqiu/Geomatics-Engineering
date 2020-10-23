@@ -1429,3 +1429,21 @@ Bad connections may arise if only few points remain
 * Expensive, as it requires many devices along the tracks
 
 #### Localisation by GPS - Independent from defined way, but not 100 % reliable
+
+### location of rail vehicle
+
+#### Current Situation: Trains are located using coupled coils. - Location of trains using installed infrastructure
+
+![Current Situation](trains.jpg)  
+
+* High installation costs
+* Expensive maintenance
+* Trains have to keep a large distance to each other
+* Low comfort for passengers
+
+#### Objective: Rail vehicles determine their position itself and communicate the position to a central office or control system - Board-autonomous rail vehicle location
+
+* Position of the trains is known at any time
+* More flexibility regarding distance between trains
+* Better information of passengers about current traffic situation
+ 
