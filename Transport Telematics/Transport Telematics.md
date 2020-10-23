@@ -1478,4 +1478,25 @@ Bad connections may arise if only few points remain
 * time gap (e. g. announcement vehicle1 -announcement vehicle2)
 * traffic volume [vehicles/h] (= traffic flow) - how many in time
 * traffic density [vehicles/km] - how many in length
- 
+
+### Analysis / interpretation of acquired data
+
+#### Path-Time Diagram
+
+![Path-Time Diagram](pathtime.jpg)  
+
+##### display of movement of individual traffic participants
+
+* part time diagram
+* driven route of an indicidual traffic participant subject to time
+
+##### observation methods
+
+![observation methods](observation.jpg)  
+
+##### Description of motion-sequence
+
+![motion-sequence](motion.jpg)  
+
+* spatial-temporal description of traffic situation
+* feasibility of predicting formation, development and reduction of traffic jamming
