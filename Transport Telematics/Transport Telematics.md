@@ -1079,7 +1079,7 @@ phone network, radio, short range communication
 
 * Up-to-dateness of the map
 * Map information disturbs accuracy and correctness of location, if the map does not represent reality
-* Here: used map does not represent the new constructed roundabout 
+* Here: used map does not represent the new constructed roundabout
   * solution: kalmann filter
 
 #### Evaluation with Kalman filter
@@ -1227,7 +1227,7 @@ X_{k}
   * New LAC; new CIs
 * Standby mode - Location Area Update
   * Time
-  * Former LAC; * 
+  * Former LAC; *
   * New LAC; new CI
 
 #### Mobile phone data
@@ -1336,7 +1336,7 @@ The search for the shortest path is always a search for the best node-edge seque
   * List $𝑑 (𝑣_1, ⋯ , 𝑣_𝑛)$ , costs from start node to all other nodes
 * Initialisation
   * ShortestPathTree = {};
-  * SetOfCandidates {}= ; /* already identified nodes */
+  * SetOfCandidates {}= ; /* already identified nodes*/
   * Add start node $𝑣_1$ to the set of candidates
   * Costs of the start node: $𝑑 (𝑣_1) = 0$;
   * Costs of all other nodes: $𝑑 (𝑣_2 ⋯ 𝑣_𝑛) = ∞$;
@@ -1504,3 +1504,33 @@ Bad connections may arise if only few points remain
 ### Sequence of Traffic-Data Acquisition
 
 ![Traffic-Data Acquisition](traffic.jpg)  
+
+### Acquisition methods
+
+#### Stationary acquisition methods: on fixed places along the route, e.g. beacons, induction loops, video, …
+
+##### Manual traffic census
+
+#### Automated (often by induction loops)
+
+* profile based acquisition of all lanes
+* high costs in installation and maintenance
+* high failure rate
+* Induction Loop: Basic principle
+  * disturbance of an magnetic field by a metallic object within the sphere of influence of the loop (LC Resonator)  
+   ![LC Resonator](lc.jpg)  
+  * current change
+  * operation modes  
+   ![LC Resonator](lc.jpg)  
+    * dynamic (pulse-mode): One impulse by every vehicle
+    * static (dwell-mode): Signal as long as vehicle is in the sphere of influence
+  * analysis of amplitude
+    * loss of eddy current in oscillating circuit decreases amplitude
+    * vehicle in sphere of influence
+  * analysis of phase
+    * change in loop inductivity results in phase shift
+    * vehicle in sphere of influence
+  * analysis of frequency
+    * decrease of loop inductivity increases signal frequency
+    * vehicle in sphere of influence
+ 
