@@ -1533,4 +1533,69 @@ Bad connections may arise if only few points remain
   * analysis of frequency
     * decrease of loop inductivity increases signal frequency
     * vehicle in sphere of influence
- 
+  * classification of vehicles
+    * up to 8+1 vehicle classes identifiable, typical detuning graphs for bus, passenger car, lorry, etc.  
+      ![detuning](detuning.jpg)  
+    * detection of driving direction by using two consecutive loops
+      * double-loop = loop consisting of two consecutive loops
+    * measurement of driving speed
+      * use of double-loops
+      * gradient identification of detuning graph (the steeper the faster); but much less accurate than using double-loops
+  * Limits of Application
+    * Detection of unmoved traffic is difficult / not possible
+    * Application in armed concrete road surfaces is difficult
+    * Detection/Influence of passing vehicles on neighbouring lanes possible
+    * Changing the lane in zthe range of loop often leads to errors
+    * Detection of driving direction is problematic
+    * Reliable detection of bicycles
+  * Counteractive measures
+    * Use of double-loops
+    * Combined analysis of several loops
+    * Fine-tuning of loops is essential
+    * Trapezoidal loops (but not very qualified for traffic census)
+  * Induction Loops ahead of light-signal-systems
+    * Function: traffic controlled light-signal system
+      * registration of demands
+      * dimensioning of green phases
+    * Acquired data
+      * presence of vehicles
+      * unusual: speed by evaluation of durability and length of loop
+    * Limited suitability for traffic data acquisition, since loops are often placed in the congestion area of the light-signal system
+* Traffic data acquisition by using sensors on highways
+  * anonymous acquisition of velocity
+  * Acquisition of traffic flow at discrete positions
+    * free flow -unstable flow -congestion
+  * in case of detection of a traffic congestion: forwarding to the control centre by using Short Message Service (SMS)
+  * autarkic energy supply: Batteries and solar
+  * average distance: approx. 3,5 km
+  * Radar-sensor
+    * Use for velocity measurements
+    * Doppler frequency shift due to signal reflection on moving object
+    * only moving objects are recognisable
+  * Bridge-Detector-System  
+    ![Bridge-Detector-System](bds.jpg)  
+  * Passive Infrared-Detector
+    * Suitable for dimensioning of green phases and determination of deallocation periods
+    * not applicable for traffic census, velocity measurement and detection of driving direction
+    * Principle: variations in temperature can be registered as variations in voltage
+      * single-sensors: ΔT between object and background
+      * double sensors: ΔT between two neighbouring sensors (on the same chip)
+    * insensible to snow, rain and fog
+    * only moving objects are recognisable (V > 3 km/h)
+    * protection against disturbing sources of light (sun, street lamp, ...) necessary
+    * cheap, easy and fast installation
+  * Further Systems
+    * Lidar
+      * perpendicular and along the road
+      * Classification of vehicle (10 classes) possible
+    * Radar and Microphone
+      * Noise + length + number of axis
+      * Classification of vehicle (8+1) possible
+    * Combined Systems
+      * Video, Doppler Radar, Super Sonic and Passiv Infrared
+    * Bluetooth
+      * Magnetometer
+      * vehicle detection system
+    * Alternative forinductionloops
+      * Weigh-in-Motion Systems
+      * Over-weight vehicles can be selected and identified
