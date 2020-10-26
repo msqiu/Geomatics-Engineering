@@ -1660,4 +1660,19 @@ Monitoring of traffic situation out of an aircraft or satellite
 
 ### Generating trafficinformation
 
-![Generating trafficinformation](trafficinformation.jpg)  
+![Generating trafficinformation](trafficinformation.jpg)
+
+![Generating trafficinformation](trafficinformation1.jpg)
+
+### Traffic control and guidance - Measures for the control of traffic and optimization of the traffic flow
+
+* speed control
+  * Increasing the safety
+  * Increasing the efficiency of infrastructure
+* Routing - Collective route guidance with traffic sign
+* Traffic signal control - local, threshold-based or adaptive control method
+* change tracks
+* ramp metering (flow control on special tracks) - Maximize traffic flow
+* dynamic toll collection
+
+### Applications
