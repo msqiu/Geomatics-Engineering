@@ -1637,3 +1637,16 @@ Bad connections may arise if only few points remain
 #### External acquisition methods
 
 Monitoring of traffic situation out of an aircraft or satellite
+
+### Demands on Traffic-Data Acquisition
+
+* Requirements on traffic information
+  * up-to-datenessof provided information
+  * completeness of traffic information
+  * full coverage of captured areas
+  * relevance for the driver respectively the automatic processing
+* Requirements on control points
+  * high quality of measurements
+  * sufficient profoundness of information
+  * reproducibility
+ 
