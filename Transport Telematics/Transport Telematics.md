@@ -1649,4 +1649,15 @@ Monitoring of traffic situation out of an aircraft or satellite
   * high quality of measurements
   * sufficient profoundness of information
   * reproducibility
- 
+
+### Current situation
+
+* Traffic information does not fulfil quality requirements
+* Automated data logging systems only at stationary measuring points (e. g. induction loops)
+* Problems with FCD
+  * shows not the required saturation in the majority of cases
+  * fast avoiding of congestions by using alternative routes
+
+### Generating trafficinformation
+
+![Generating trafficinformation](trafficinformation.jpg)  
