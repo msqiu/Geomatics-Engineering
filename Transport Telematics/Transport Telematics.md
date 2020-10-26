@@ -1599,3 +1599,37 @@ Bad connections may arise if only few points remain
     * Alternative forinductionloops
       * Weigh-in-Motion Systems
       * Over-weight vehicles can be selected and identified
+
+#### Mobile acquisition methods
+
+* Monitoring of traffic situation with the help of sensors mounted on vehicles
+* Characteristics
+  * maunal
+  * marginal coverage of area
+  * low up-to dateness
+* Floating Car Data (FCD)
+  ![Floating Car Data (FCD)](fdc.jpg)  
+  * vehicles as "floating measurement points within traffic"
+  * equipped with positioning module
+  * monitoring of location, driving direction, speed
+  * incident-based communication via GSM-mobile network
+  * anonymisation of messages
+  * Floating Car Data: pro / contra
+    * High up-to-dateness
+    * High position accuracy
+    * Nontrivial analysis necessary to identify relevant events
+    * Distinction between intended stops and congestions is nontrivial
+    * Low penetration so far (-> but Smartphones, cars, …)
+    * Taxi-FCD is problematic due to fast avoiding of congestions by using alternative routes
+    * detection of "non-congested" areas
+* Floating Phone Data (FPD) –"cellular FCD"
+  * Using all switched-on mobile phones as traffic probes
+  * Anonymous source of information
+  * Identification of active road users
+    * Detect moving phones
+    * Disregard moving phones on railways or similar
+    * Allocation of detected phones with individual roads / highways
+    * Positioning of the phones using e.g. triangulation
+    * Position of less accuracy - Lots of devices have to be tracked and evaluated
+    * Derivation of traffic information from measured mean velocities (similar to FCD)
+    * Advantage: No additional infrastructure needed
