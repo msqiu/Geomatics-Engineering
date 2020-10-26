@@ -1633,3 +1633,7 @@ Bad connections may arise if only few points remain
     * Position of less accuracy - Lots of devices have to be tracked and evaluated
     * Derivation of traffic information from measured mean velocities (similar to FCD)
     * Advantage: No additional infrastructure needed
+
+#### External acquisition methods
+
+Monitoring of traffic situation out of an aircraft or satellite
