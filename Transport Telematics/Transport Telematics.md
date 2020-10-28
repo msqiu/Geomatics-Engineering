@@ -1676,3 +1676,213 @@ Monitoring of traffic situation out of an aircraft or satellite
 * dynamic toll collection
 
 ### Applications
+
+## application and services - Advanced driver assistance systems (ADAS)
+
+![Advanced driver assistance systems](adas.jpg)
+
+### Applications of Transport Telematics
+
+* Safety-related
+* vehicle-based (in general)
+* Typical tasks
+  * Determination of vehicle position
+  * Observation of vehicle vicinity
+  * Object recognition
+  * (dynamic) Navigation
+
+### Classification of Driver Assistance Systems
+
+![Driver Assistance Systems](das.jpg)  
+
+![Active Safety vs. Passive Safety](asps.jpg)  
+
+![Classification of Driver Assistance Systems](cdas.jpg)
+
+#### Assistance Levels
+
+![Assistance Levels](al.jpg)
+
+* navigation level
+* guidance level
+* stabilization level
+
+#### assistance strategies
+
+##### informing and warning
+
+![Assistance Levels](iw.jpg)
+
+##### intervening - we give comments to the vehicle
+
+![intervening](intervening.jpg)
+
+##### acting
+
+![acting](acting.jpg)
+
+#### assistance concepts
+
+##### board-autonomous - only focus on their own sensors in the car, using kalmann filter
+
+![board-autonomous](ba.jpg)
+
+##### infrastructure-based - best
+
+![infrastructure-based](ib.jpg)
+
+##### cooperative - talk to another cars without knowing right or wrong
+
+![cooperative](cooperative.jpg)
+
+### Input Data of ADAS
+
+![Input Data of ADAS](idadas.jpg)
+
+### Output Data of ADAS
+
+![Output Data of ADAS](odadas.jpg)
+
+### Observation of vehicle vicinity
+
+![Observation of vehicle vicinity](ovv1.jpg)  
+![Observation of vehicle vicinity](ovv2.jpg)  
+![Observation of vehicle vicinity](ovv3.jpg)  
+
+#### Role of Digital Maps
+
+* Extend driver and in-vehicle sensors horizon
+* Static info (DVD)
+* Dynamic map updates (mobile)
+* Safety attributes
+  * speed limit
+  * traffic signs
+  * lane information(number, width, divider, direction, and connectivity)
+  * traffic lights
+  * crossings(pedestrian, tram)
+  * accident hot spots
+  * slope(gradient)
+  * banking(transverse gradient)
+
+#### sensor fusion
+
+![sensor fusion](sf.jpg)  
+
+### Adaptive Cruise Control
+
+* Active and predictive driver assistance system
+  * Basic functionality
+    * No other vehicles ahead: normal cruise control mode
+    * Following other vehicles ahead: adjustment control of relative velocity and distance
+    * Automatic adaption in case of changing scenarios
+* Reduction of collision velocity by automatically initiated emergency brake in case of an unavoidable accident
+
+### automatic emergency brake
+
+![automatic emergency brake](aeb.jpg)  
+
+### Pre Safe
+
+![Pre Safe](ps.jpg)  
+
+### Forward Collision Warning
+
+### Emergency Call System
+
+### Lane Departure Warning
+
+### Lane keeping support - The driver should be warned if he is about to leave the current lane
+
+### Curve Speed Warning
+
+### Blind-spot detection
+
+* Close-range RADAR
+* Increases safety for lane change
+* Detection of vehicles on parallel lanes in the back of the vehicle (blind spot)
+
+### Parking Aid
+
+Parking spot is measured by supersonic sensors when passing, vehicle is parking autonomously by command
+
+### Adaptive Light Control
+
+* Dynamic bending light (Mercedes) to improve visibility at bendings, static bending light (Audi) at turns
+* Driving at night will be less exhausting and significantly safer
+
+### Night Vision
+
+* active system or near-IR system: illuminates the night with projected infrared light, much like optics found in military-issue night-vision goggles
+* passive system: uses far-IR or FIR technology in its onboard night-vision systems
+* Reprocessed picture is displayed on the screen
+
+### ADAS II – Roadmap
+
+![Roadmap](Roadmap.jpg)  
+
+### The idea of incremental updates
+
+* Commercial road map databases contain a huge variety of attributes
+* The acquisition and maintenance of those attributes is laborious and costly
+* Those attributes may change with time
+* Therefore get attribute changes directly from the source: public authorities - define the speed limit/traffic signs, administration
+* This sourcing method ensures
+  * High update rate
+  * Information quality
+  * Is the only possibility to integrate attribute changes in a reasonable time
+
+### ROSATTE - ROad Safety ATTributes Exchange infrastructure in Europe
+
+![ROSATTE](rosatte.jpg)  
+
+* Road databases incl. safety attributes (e.g. traffic signs) are maintained by
+  * Motorway Agencies
+  * District offices
+  * Cities and communes / boroughs
+* No common data management at local authorities
+  * Fully automated and digital
+  * (semi) automated
+  * Analogue (paper-based)
+* The position/extent of the traffic sign is described as
+  * Point information (locations of the traffic signs)
+  * Linear features (linear extend of the traffic regulations)
+* Location / linear extend of the safety attribute (speed limit) must be described in a way that European customers can interpret
+  * standardized data exchange format
+
+### Exchange of georeferenced information
+
+* Big variety of information to be exchanged
+  * Infrastructure to vehicle
+    * Map updates
+    * Traffic information
+    * Road safety feature updates
+  * Vehicle-to-vehicle
+    * Problems with own vehicle
+    * Detected problems on the road
+    * Information from other vehicles (hand-on)
+  * Vehicle-to-Infrastructure
+    * Accident information
+    * Detected traffic jams
+* All this information is referenced on digital road maps
+* Each vehicle matches its position on the map (map matching)
+* Need for map-based but map-independent "Location Referencing"
+* 2 realizations
+  * Pre-coded location references (e.g. TMC)
+  * Dynamic location references (e.g. ISO 17572-3 [AGORA], OpenLR®)
+* Project Examples: CVIS(Cooperative Vehicle-Infrastructure Systems)  
+   ![CVIS](cvis.jpg)  
+  * The CVIS objectives are
+    * continuous and transparent communication between vehicles and infrastructure
+    * to enable cooperative services in the vehicle and roadside equipment
+    * to define an architecture and common core components for a number of cooperative system applications
+  * application design and core software development for
+    * cooperative urban network management, cooperative area destination-based control, cooperative acceleration/deceleration and dynamic bus lanes
+    * enhanced driver awareness and cooperative traveller assistance on inter-urban highways
+    * commercial vehicle parking and loading zones booking and management, monitoring and guidance of hazardous goods and vehicle access control to sensitive areas
+* Project Examples: SAFESPOT
+  * Use the infrastructure and the vehicles as sources and destinations of safetyrelated information
+  * develop an open, flexible and modular architecture and communication platform using ad-hoc dynamic networks, accurate relative localisation and dynamic local traffic maps
+
+### Road Map Automated Driving
+
+![pmad](pmad.jpg)  
